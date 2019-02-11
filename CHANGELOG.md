@@ -29,6 +29,26 @@ NOTHING FIXED
 
 # Released
 
+## v1.2.0
+
+### Added
+
+- Persistant data utilizing Core Data
+
+### Changed
+
+- Went to 0 based artnet subnet and artnet universe instead of 1 base
+- Changed About to be a table view
+
+### Deprecated
+
+- NOTHING DEPRECATED
+
+### Fixed
+
+- Spelling of deprecated in `changelog.md`
+
+
 ## v1.1.0
 
 ### Added
@@ -42,7 +62,7 @@ NOTHING FIXED
 
 ### Depricated
 
-NOTHING DEPRICATED
+NOTHING DEPRECATED
 
 ### Removed
 
@@ -69,7 +89,7 @@ NO CHANGES
 
 ### Depricated
 
-NOTHING DEPRICATED
+NOTHING DEPRECATED
 
 ### Removed
 
