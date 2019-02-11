@@ -38,7 +38,6 @@ NOTHING FIXED
 ### Changed
 
 - Went to 0 based artnet subnet and artnet universe instead of 1 base
-- Changed About to be a table view
 
 ### Deprecated
 
