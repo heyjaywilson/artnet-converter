@@ -33,7 +33,7 @@ NOTHING FIXED
 
 ### Added
 
-- Persistant data utilizing Core Data
+- NOTHING ADDED
 
 ### Changed
 
