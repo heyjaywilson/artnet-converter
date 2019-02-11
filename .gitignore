@@ -77,3 +77,5 @@ fastlane/test_output
 
 iOSInjectionProject/
 /.DS_Store
+/app_design.sketch
+.DS_Store
