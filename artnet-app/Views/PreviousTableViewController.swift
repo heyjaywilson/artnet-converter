@@ -56,9 +56,9 @@ class PreviousTableViewController: UITableViewController {
         
         // Retrieve values from calculation
         let calc = calcs.getCalc(index: row)
-        let fixtureUniverse: String = "\(String(describing: calc.value(forKeyPath: "fixtureUniverse")))"
-        let subnet: String = "\(String(describing: calc.value(forKeyPath: "subnet")))"
-        let universe: String = "\(String(describing: calc.value(forKeyPath: "universe")))"
+        let fixtureUniverse: String = "\(calc.value(forKeyPath: "fixtureUniverse") ?? 1)"
+        let subnet: String = "\(calc.value(forKeyPath: "subnet") ?? 0)"
+        let universe: String = "\(calc.value(forKeyPath: "universe") ?? 0)"
         
         // Cell setup
         cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
