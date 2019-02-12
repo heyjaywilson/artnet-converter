@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		370B20412104ED8600937A51 /* FixtureNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370B20402104ED8600937A51 /* FixtureNotesViewController.swift */; };
 		370B4CB620EC8C1E009EC6A5 /* PreviousTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370B4CB520EC8C1E009EC6A5 /* PreviousTableViewController.swift */; };
 		370B4CB820EEED0C009EC6A5 /* Calc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370B4CB720EEED0C009EC6A5 /* Calc.swift */; };
 		370B4CBA20EF088A009EC6A5 /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370B4CB920EF088A009EC6A5 /* Calculations.swift */; };
@@ -282,7 +281,6 @@
 			files = (
 				370B4CBC20F0FE3A009EC6A5 /* AboutViewController.swift in Sources */,
 				37A1D1D621148F7900793CAE /* ArtnetAppProducts.swift in Sources */,
-				370B20412104ED8600937A51 /* FixtureNotesViewController.swift in Sources */,
 				370B4CB620EC8C1E009EC6A5 /* PreviousTableViewController.swift in Sources */,
 				370B4CBA20EF088A009EC6A5 /* Calculations.swift in Sources */,
 				37A1D1D321148F2F00793CAE /* IAPHelper.swift in Sources */,

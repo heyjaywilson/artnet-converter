@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, CalculationReplaceDelegate {
+class ViewController: UIViewController {
     
     //answer labels
     @IBOutlet weak var fixtureUni: UILabel!
@@ -56,13 +56,13 @@ class ViewController: UIViewController, CalculationReplaceDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.destination is PreviousTableViewController {
-            let vc = segue.destination as? PreviousTableViewController
-            vc?.delegate = self
-            vc?.calcs = calculations.calcs
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.destination is PreviousTableViewController {
+//            let vc = segue.destination as? PreviousTableViewController
+//            vc?.delegate = self
+//            vc?.calcs = calculations.calcs
+//        }
+//    }
     
     // ------------------------------------------
     // HELPER FUNCTIONS

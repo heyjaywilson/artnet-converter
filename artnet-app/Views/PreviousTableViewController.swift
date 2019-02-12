@@ -8,16 +8,16 @@
 
 import UIKit
 
-protocol CalculationReplaceDelegate: class {
-    func replaceCalc(calcs: Array<Calc>)
-}
+//protocol CalculationReplaceDelegate: class {
+//    func replaceCalc(calcs: Array<Calc>)
+//}
 
-class PreviousTableViewController: UITableViewController, NotesEnteredDelegate {
+class PreviousTableViewController: UITableViewController {
     
-    var calcs = Calculations.init().calcs
+    var calcs = Calculations()
     var indexForSelectedRow: Int = 0
     
-    var delegate: CalculationReplaceDelegate? = nil
+//    var delegate: CalculationReplaceDelegate? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +43,7 @@ class PreviousTableViewController: UITableViewController, NotesEnteredDelegate {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return calcs.count
+        return calcs.count()
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -53,9 +53,17 @@ class PreviousTableViewController: UITableViewController, NotesEnteredDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
         let row = indexPath.row
+        
+        // Retrieve values from calculation
+        let calc = calcs.getCalc(index: row)
+        let fixtureUniverse: String = "\(String(describing: calc.value(forKeyPath: "fixtureUniverse")))"
+        let subnet: String = "\(String(describing: calc.value(forKeyPath: "subnet")))"
+        let universe: String = "\(String(describing: calc.value(forKeyPath: "universe")))"
+        
+        // Cell setup
         cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         cell.textLabel?.numberOfLines = 0
-//        cell.textLabel?.text = "Fixture Universe: " + calcs[row].universe + "\nArtnet Subnet: " + calcs[row].artsub + " Artnet Universe: " + calcs[row].artuni
+        cell.textLabel?.text = "Fixture Universe: " + fixtureUniverse + "\nArtnet Subnet: " + subnet + " Artnet Universe: " + universe
         
         return cell
     }
@@ -115,18 +123,12 @@ class PreviousTableViewController: UITableViewController, NotesEnteredDelegate {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "FixtureUniNote" {
-            let vc = segue.destination as! FixtureNotesViewController
-            vc.delegate = self
-            // vc.calc = calcs[indexForSelectedRow]
-            vc.index = indexForSelectedRow
-        }
-    }
-    
-    func addNotes(calc: Calc, index: Int) {
-        calcs[index] = calc
-        // delegate?.replaceCalc(calcs: calcs)
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "FixtureUniNote" {
+//            let vc = segue.destination as! FixtureNotesViewController
+//            vc.delegate = self
+//            vc.index = indexForSelectedRow
+//        }
+//    }
 
 }

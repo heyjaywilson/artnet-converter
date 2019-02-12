@@ -621,9 +621,6 @@
                             <outlet property="delegate" destination="czx-7T-ezx" id="F6N-mf-9jf"/>
                         </connections>
                     </tableView>
-                    <connections>
-                        <segue destination="h7S-Sk-QZQ" kind="show" identifier="FixtureUniNote" id="BAv-ja-teH"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dTd-xa-JVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -638,7 +635,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8HX-JG-Zet">
-                                <rect key="frame" x="0.0" y="201" width="375" height="611"/>
+                                <rect key="frame" x="0.0" y="157" width="375" height="655"/>
                                 <color key="backgroundColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Note" id="1wc-4C-NUI">
@@ -652,7 +649,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MbX-C6-ojg">
-                                <rect key="frame" x="287" y="104" width="72" height="72"/>
+                                <rect key="frame" x="287" y="60" width="72" height="72"/>
                                 <color key="backgroundColor" red="0.62189608511095429" green="1" blue="0.66730358986594784" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="MbX-C6-ojg" secondAttribute="height" multiplier="1:1" id="Af3-nW-gkg"/>
@@ -668,13 +665,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes for fixture universe" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWq-Ic-g4A">
-                                <rect key="frame" x="16" y="104" width="193" height="20.333333333333329"/>
+                                <rect key="frame" x="16" y="60.000000000000007" width="193" height="20.333333333333336"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="255" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4PI-Nl-9Wp">
-                                <rect key="frame" x="16" y="124.33333333333331" width="100" height="60"/>
+                                <rect key="frame" x="16" y="80.333333333333329" width="100" height="59.999999999999986"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="XeI-oi-tfb"/>
                                 </constraints>

@@ -28,6 +28,10 @@ class Calculations {
         }
     }
     
+    func count() -> Int {
+        return calcs.count
+    }
+    
     func calcSubUni(fixtureUniverse: Int) -> [Int] {
         var subnet = fixtureUniverse/16
         if (fixtureUniverse % 16 == 0) {
@@ -63,6 +67,10 @@ class Calculations {
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
+    }
+    
+    func getCalc(index: Int) -> NSManagedObject {
+        return calcs[index]
     }
     
 //    func addNote(index: Int, note: String) {
