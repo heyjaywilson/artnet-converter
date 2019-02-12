@@ -32,6 +32,12 @@ class Calculations {
         return calcs.count
     }
     
+    /**
+    It calculates and returns the ArtNet subnet and universe.
+    
+    - Parameter fixtureUniverse: The universe on the fixture or the primary universe on the node
+    - Returns: An array containing two integers [Subnet, Universe]
+    */
     func calcSubUni(fixtureUniverse: Int) -> [Int] {
         var subnet = fixtureUniverse/16
         if (fixtureUniverse % 16 == 0) {
@@ -42,11 +48,21 @@ class Calculations {
         return [subnet, universe]
     }
     
+    /**
+    It calculates and returns the Fixture Universe.
+    
+    - Parameter subnet: The ArtNet subnet
+    - Parameter universe: The ArtNet universe
+    - Returns: The Fixture Universe
+    */
     func calcFixtureUniverse(subnet: Int, universe: Int) -> Int {
         let fixtureUniverse = universe + (subnet * 16) + 1
         return fixtureUniverse
     }
     
+    /**
+    Adds the numbers to Core Data.
+    */
     func addCalculation(fixtureUniverse: Int, subnet: Int, universe: Int) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
@@ -69,6 +85,9 @@ class Calculations {
         }
     }
     
+    /**
+    Returns the calculation for a given index
+    */
     func getCalc(index: Int) -> NSManagedObject {
         return calcs[index]
     }
