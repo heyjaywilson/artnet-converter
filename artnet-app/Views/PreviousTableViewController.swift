@@ -55,7 +55,7 @@ class PreviousTableViewController: UITableViewController, NotesEnteredDelegate {
         let row = indexPath.row
         cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         cell.textLabel?.numberOfLines = 0
-        cell.textLabel?.text = "Fixture Universe: " + calcs[row].universe + "\nArtnet Subnet: " + calcs[row].artsub + " Artnet Universe: " + calcs[row].artuni
+//        cell.textLabel?.text = "Fixture Universe: " + calcs[row].universe + "\nArtnet Subnet: " + calcs[row].artsub + " Artnet Universe: " + calcs[row].artuni
         
         return cell
     }
@@ -119,14 +119,14 @@ class PreviousTableViewController: UITableViewController, NotesEnteredDelegate {
         if segue.identifier == "FixtureUniNote" {
             let vc = segue.destination as! FixtureNotesViewController
             vc.delegate = self
-            vc.calc = calcs[indexForSelectedRow]
+            // vc.calc = calcs[indexForSelectedRow]
             vc.index = indexForSelectedRow
         }
     }
     
     func addNotes(calc: Calc, index: Int) {
         calcs[index] = calc
-        delegate?.replaceCalc(calcs: calcs)
+        // delegate?.replaceCalc(calcs: calcs)
     }
 
 }

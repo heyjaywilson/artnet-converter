@@ -42,7 +42,7 @@ class ViewController: UIViewController, CalculationReplaceDelegate {
     
     var typeOfCalc = ""
     
-    var calculations = Calculations.init()
+    var calculations = Calculations()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,7 +129,7 @@ class ViewController: UIViewController, CalculationReplaceDelegate {
                 fixtureUniverse += num
                 fixtureUni.text = fixtureUniverse
                 
-                if Double(fixtureUniverse)! == 25.0 {
+                if Int(fixtureUniverse)! == 25 {
                     six.isEnabled = false
                     six.alpha = 0.5
                     seven.isEnabled = false
@@ -139,7 +139,7 @@ class ViewController: UIViewController, CalculationReplaceDelegate {
                     nine.isEnabled = false
                     nine.alpha = 0.5
                 }
-                else if Double(fixtureUniverse)! >= 26 {
+                else if Int(fixtureUniverse)! >= 26 {
                     disableAllNumbers()
                 }
             }
@@ -152,7 +152,7 @@ class ViewController: UIViewController, CalculationReplaceDelegate {
                 artnetSubnet += num
                 subnetLabel.text = artnetSubnet
                 
-                if Double(artnetSubnet)! ==  1{
+                if Int(artnetSubnet)! ==  1{
                     six.isEnabled = false
                     six.alpha = 0.5
                     seven.isEnabled = false
@@ -163,11 +163,11 @@ class ViewController: UIViewController, CalculationReplaceDelegate {
                     nine.alpha = 0.5
                 }
                 
-                else if Double(artnetSubnet)! >= 2 && Double(artnetSubnet)! < 15 {
+                else if Int(artnetSubnet)! >= 2 && Int(artnetSubnet)! < 15 {
                     disableAllNumbers()
                 }
                 
-                else if Double(artnetSubnet)! == 15{
+                else if Int(artnetSubnet)! == 15{
                     disableAllNumbers()
                 }
             }
@@ -180,16 +180,16 @@ class ViewController: UIViewController, CalculationReplaceDelegate {
                 artnetUniverse += num
                 universeLabel.text = artnetUniverse
                 
-                if Double(artnetUniverse)! == 1{
+                if Int(artnetUniverse)! == 1{
                     six.isEnabled = false
                     seven.isEnabled = false
                     eight.isEnabled = false
                     nine.isEnabled = false
                 }
-                else if Double(artnetUniverse)! >= 2 && Double(artnetUniverse)! < 15 {
+                else if Int(artnetUniverse)! >= 2 && Int(artnetUniverse)! < 15 {
                     disableAllNumbers()
                 }
-                else if Double(artnetUniverse)! == 15{
+                else if Int(artnetUniverse)! == 15{
                     disableAllNumbers()
                 }
             }
@@ -334,28 +334,17 @@ class ViewController: UIViewController, CalculationReplaceDelegate {
         calcFixtBttn.alpha = 1
         enableAllNumbers()
         
-        if fixtureUniverse.count != 0 {
-            let numUni: Double = Double(fixtureUniverse)!
-            var sub = 0.0
-            var uni = 0.0
-            if numUni == 1.0 {
-                sub = 0.0
-                uni = 0.0
-            }else {
-                sub = numUni/16.0
-                sub.round(.down)
-                uni = numUni - (sub * 16)
-            }
-            let textSub:String = "\(Int(sub))"
-            let textUni:String = "\(Int(uni))"
-            subnetLabel.text = textSub
-            universeLabel.text = textUni
-            let newCalc:Calc = Calc(universe: fixtureUniverse, artsub: textSub, artuni: textUni, note: [])
-            calculations.addCalc(calculation: newCalc)
-            fixtureUniverse = ""
-        }
+        let artnetNumbers = calculations.calcSubUni(fixtureUniverse: Int(fixtureUniverse)!)
+        let textSub:String = "\(artnetNumbers[0])"
+        let textUni:String = "\(artnetNumbers[1])"
+        
+        calculations.addCalculation(fixtureUniverse: Int(fixtureUniverse)!, subnet: artnetNumbers[0], universe: artnetNumbers[1])
+        subnetLabel.text = textSub
+        universeLabel.text = textUni
+        fixtureUniverse = ""
     }
-    @IBAction func calcFixtUni(_ sender: UIButton) {
+    
+    func calcFixtUni(_ sender: UIButton) {
         selectFixtureUni.isEnabled = true
         selectArtUni.isEnabled = true
         selectArtSub.isEnabled = true
@@ -369,27 +358,9 @@ class ViewController: UIViewController, CalculationReplaceDelegate {
         
         enableAllNumbers()
         
-        if subnetLabel.text == "0" && universeLabel.text == "0" {
-            fixtureUni.text = "1"
-            fixtureUniverse = ""
-            calculations.addCalc(calculation: Calc(universe: "1", artsub: "0", artuni: "0", note: []))
-        }
-        else {
-            if artnetUniverse.count == 0 {
-                artnetUniverse = "0"
-            }
-            if artnetSubnet.count == 0 {
-                artnetSubnet = "0"
-            }
-            var ans: Int = Int(artnetSubnet)!
-            ans *= 16
-            ans += Int(artnetUniverse)!
-            // output
-            fixtureUni.text = "\(ans)"
-            calculations.addCalc(calculation: Calc(universe: "\(ans)", artsub: artnetSubnet, artuni: artnetUniverse, note: []))
-            fixtureUniverse = ""
-        }
-        
+        let fixtureUniverseAnswer = calculations.calcFixtureUniverse(subnet: Int(artnetSubnet)!, universe: Int(artnetUniverse)!)
+        calculations.addCalculation(fixtureUniverse: fixtureUniverseAnswer, subnet: Int(artnetSubnet)!, universe: Int(artnetUniverse)!)
+        fixtureUniverse = ""
         artnetSubnet = ""
         artnetUniverse = ""
     }

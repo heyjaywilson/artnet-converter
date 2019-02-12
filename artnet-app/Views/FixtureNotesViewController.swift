@@ -18,7 +18,7 @@ class FixtureNotesViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var fixtureNoteTableView: UITableView!
     @IBOutlet weak var fixtureUni: UILabel!
     
-    var calc = Calc(universe: "1", artsub: "0", artuni: "1", note: [])
+    // var calc = Calc(universe: "1", artsub: "0", artuni: "1", note: [])
     var index = 0
     
     var delegate: NotesEnteredDelegate? = nil

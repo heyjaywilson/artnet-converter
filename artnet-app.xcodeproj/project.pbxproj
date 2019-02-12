@@ -20,8 +20,21 @@
 		37A1D1CF21139E0500793CAE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A1D1CE21139E0500793CAE /* StoreKit.framework */; };
 		37A1D1D321148F2F00793CAE /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A1D1D221148F2F00793CAE /* IAPHelper.swift */; };
 		37A1D1D621148F7900793CAE /* ArtnetAppProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A1D1D521148F7900793CAE /* ArtnetAppProducts.swift */; };
+		37B13FF222124CF30097C371 /* Calculation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37B13FF022124CF30097C371 /* Calculation.xcdatamodeld */; };
+		37B13FFC2212552F0097C371 /* artnet_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B13FFB2212552F0097C371 /* artnet_appTests.swift */; };
+		37B14003221255530097C371 /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370B4CB920EF088A009EC6A5 /* Calculations.swift */; };
 		37B2E0B92117E7D200B6B118 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2E0B82117E7D200B6B118 /* ProductCell.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		37B13FFE2212552F0097C371 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3754306F20D2A98D00EF6326 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3754307620D2A98D00EF6326;
+			remoteInfo = "artnet-app";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		370B20402104ED8600937A51 /* FixtureNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureNotesViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +52,11 @@
 		37A1D1CE21139E0500793CAE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		37A1D1D221148F2F00793CAE /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		37A1D1D521148F7900793CAE /* ArtnetAppProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtnetAppProducts.swift; sourceTree = "<group>"; };
+		37B13FF122124CF30097C371 /* Calculation.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Calculation.xcdatamodel; sourceTree = "<group>"; };
+		37B13FF42212536D0097C371 /* calculation.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = calculation.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		37B13FF92212552F0097C371 /* artnet-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "artnet-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		37B13FFB2212552F0097C371 /* artnet_appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = artnet_appTests.swift; sourceTree = "<group>"; };
+		37B13FFD2212552F0097C371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37B2E0B82117E7D200B6B118 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,6 +69,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		37B13FF62212552F0097C371 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -59,6 +84,7 @@
 			children = (
 				370B4CB720EEED0C009EC6A5 /* Calc.swift */,
 				370B4CB920EF088A009EC6A5 /* Calculations.swift */,
+				37B13FF022124CF30097C371 /* Calculation.xcdatamodeld */,
 			);
 			path = Calculation;
 			sourceTree = "<group>";
@@ -79,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				3754307920D2A98D00EF6326 /* artnet-app */,
+				37B13FFA2212552F0097C371 /* artnet-appTests */,
 				3754307820D2A98D00EF6326 /* Products */,
 				37EAD23220D43C5F0017DA82 /* Frameworks */,
 			);
@@ -88,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				3754307720D2A98D00EF6326 /* artnet-app.app */,
+				37B13FF92212552F0097C371 /* artnet-appTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,6 +123,7 @@
 		3754307920D2A98D00EF6326 /* artnet-app */ = {
 			isa = PBXGroup;
 			children = (
+				37B13FF3221253570097C371 /* playgrounds */,
 				37A1D1D421148F6300793CAE /* in-app-purchases */,
 				3722230B21122DA600C6B7D9 /* Views */,
 				3722230A21122D7100C6B7D9 /* Calculation */,
@@ -114,6 +143,23 @@
 				37A1D1D521148F7900793CAE /* ArtnetAppProducts.swift */,
 			);
 			path = "in-app-purchases";
+			sourceTree = "<group>";
+		};
+		37B13FF3221253570097C371 /* playgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				37B13FF42212536D0097C371 /* calculation.playground */,
+			);
+			path = playgrounds;
+			sourceTree = "<group>";
+		};
+		37B13FFA2212552F0097C371 /* artnet-appTests */ = {
+			isa = PBXGroup;
+			children = (
+				37B13FFB2212552F0097C371 /* artnet_appTests.swift */,
+				37B13FFD2212552F0097C371 /* Info.plist */,
+			);
+			path = "artnet-appTests";
 			sourceTree = "<group>";
 		};
 		37EAD23220D43C5F0017DA82 /* Frameworks */ = {
@@ -144,13 +190,31 @@
 			productReference = 3754307720D2A98D00EF6326 /* artnet-app.app */;
 			productType = "com.apple.product-type.application";
 		};
+		37B13FF82212552F0097C371 /* artnet-appTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37B140002212552F0097C371 /* Build configuration list for PBXNativeTarget "artnet-appTests" */;
+			buildPhases = (
+				37B13FF52212552F0097C371 /* Sources */,
+				37B13FF62212552F0097C371 /* Frameworks */,
+				37B13FF72212552F0097C371 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				37B13FFF2212552F0097C371 /* PBXTargetDependency */,
+			);
+			name = "artnet-appTests";
+			productName = "artnet-appTests";
+			productReference = 37B13FF92212552F0097C371 /* artnet-appTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		3754306F20D2A98D00EF6326 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = MW;
 				TargetAttributes = {
@@ -165,6 +229,10 @@
 								enabled = 1;
 							};
 						};
+					};
+					37B13FF82212552F0097C371 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 3754307620D2A98D00EF6326;
 					};
 				};
 			};
@@ -182,6 +250,7 @@
 			projectRoot = "";
 			targets = (
 				3754307620D2A98D00EF6326 /* artnet-app */,
+				37B13FF82212552F0097C371 /* artnet-appTests */,
 			);
 		};
 /* End PBXProject section */
@@ -194,6 +263,13 @@
 				3754308520D2A98E00EF6326 /* LaunchScreen.storyboard in Resources */,
 				3754308220D2A98E00EF6326 /* Assets.xcassets in Resources */,
 				3754308020D2A98D00EF6326 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37B13FF72212552F0097C371 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,12 +288,30 @@
 				37A1D1D321148F2F00793CAE /* IAPHelper.swift in Sources */,
 				3754307D20D2A98D00EF6326 /* ViewController.swift in Sources */,
 				37B2E0B92117E7D200B6B118 /* ProductCell.swift in Sources */,
+				37B13FF222124CF30097C371 /* Calculation.xcdatamodeld in Sources */,
 				3754307B20D2A98D00EF6326 /* AppDelegate.swift in Sources */,
 				370B4CB820EEED0C009EC6A5 /* Calc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		37B13FF52212552F0097C371 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37B13FFC2212552F0097C371 /* artnet_appTests.swift in Sources */,
+				37B14003221255530097C371 /* Calculations.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		37B13FFF2212552F0097C371 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3754307620D2A98D00EF6326 /* artnet-app */;
+			targetProxy = 37B13FFE2212552F0097C371 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3754307E20D2A98D00EF6326 /* Main.storyboard */ = {
@@ -389,6 +483,51 @@
 			};
 			name = Release;
 		};
+		37B140012212552F0097C371 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZDK82FGR3Z;
+				INFOPLIST_FILE = "artnet-appTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "maeganwilson.artnet-appTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/artnet-app.app/artnet-app";
+			};
+			name = Debug;
+		};
+		37B140022212552F0097C371 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZDK82FGR3Z;
+				INFOPLIST_FILE = "artnet-appTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "maeganwilson.artnet-appTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/artnet-app.app/artnet-app";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -410,7 +549,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		37B140002212552F0097C371 /* Build configuration list for PBXNativeTarget "artnet-appTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37B140012212552F0097C371 /* Debug */,
+				37B140022212552F0097C371 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		37B13FF022124CF30097C371 /* Calculation.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				37B13FF122124CF30097C371 /* Calculation.xcdatamodel */,
+			);
+			currentVersion = 37B13FF122124CF30097C371 /* Calculation.xcdatamodel */;
+			path = Calculation.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3754306F20D2A98D00EF6326 /* Project object */;
 }
