@@ -62,6 +62,10 @@ class Calculations {
     
     /**
     Adds the numbers to Core Data.
+     
+     - Parameter subnet: The ArtNet subnet that is used to calculate the Fixture Universe or is calculated from the fixture universe
+     - Parameter universe: The ArtNet universe that is used to calculate the Fixture Universe or is calculated from the fixture universe
+     - Parameter fixtureUniverse: The Fixture Universe that could be calculated from subnet and universe or given and used to calculate the subnet/universe
     */
     func addCalculation(fixtureUniverse: Int, subnet: Int, universe: Int) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
