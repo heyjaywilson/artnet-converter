@@ -36,7 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		370B20402104ED8600937A51 /* FixtureNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureNotesViewController.swift; sourceTree = "<group>"; };
+		370B20402104ED8600937A51 /* FixtureNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureNoteViewController.swift; sourceTree = "<group>"; };
 		370B4CB520EC8C1E009EC6A5 /* PreviousTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousTableViewController.swift; sourceTree = "<group>"; };
 		370B4CB720EEED0C009EC6A5 /* Calc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calc.swift; sourceTree = "<group>"; };
 		370B4CB920EF088A009EC6A5 /* Calculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculations.swift; sourceTree = "<group>"; };
@@ -91,7 +91,7 @@
 		3722230B21122DA600C6B7D9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				370B20402104ED8600937A51 /* FixtureNotesViewController.swift */,
+				370B20402104ED8600937A51 /* FixtureNoteViewController.swift */,
 				3754307C20D2A98D00EF6326 /* ViewController.swift */,
 				370B4CB520EC8C1E009EC6A5 /* PreviousTableViewController.swift */,
 				370B4CBB20F0FE3A009EC6A5 /* AboutViewController.swift */,

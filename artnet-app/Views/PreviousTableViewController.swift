@@ -123,12 +123,22 @@ class PreviousTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "FixtureNotesViewController":
+            let destination = segue.destinationViewController as! FixtureNoteViewController
+            let indexPath = tableView.indexPathForSelectedRow?.row
+            let selectedObject = calcs.getCalc(index: indexPath ?? 0)
+            destination.calc = selectedObject
+        default:
+            print("UNKNOWN SEGUE \(segue.identifier ?? "not_sure")")
+        }
+        
 //        if segue.identifier == "FixtureUniNote" {
 //            let vc = segue.destination as! FixtureNotesViewController
 //            vc.delegate = self
 //            vc.index = indexForSelectedRow
 //        }
-//    }
+    }
 
 }
