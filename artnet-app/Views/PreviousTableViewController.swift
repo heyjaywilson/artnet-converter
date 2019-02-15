@@ -68,11 +68,6 @@ class PreviousTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        indexForSelectedRow = indexPath.row
-        //self.performSegue(withIdentifier: "FixtureUniNote", sender: self)
-    }
-    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
@@ -133,12 +128,6 @@ class PreviousTableViewController: UITableViewController {
         default:
             print("UNKNOWN SEGUE \(segue.identifier ?? "not_sure")")
         }
-        
-//        if segue.identifier == "FixtureUniNote" {
-//            let vc = segue.destination as! FixtureNotesViewController
-//            vc.delegate = self
-//            vc.index = indexForSelectedRow
-//        }
     }
 
 }
