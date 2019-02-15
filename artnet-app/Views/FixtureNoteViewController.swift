@@ -7,17 +7,18 @@
 //
 //
 import UIKit
+import CoreData
 //
 class FixtureNoteViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var fixtureNoteTableView: UITableView!
-//    @IBOutlet weak var fixtureUni: UILabel!
+    @IBOutlet weak var fixtureUni: UILabel!
 //
-//    // var calc = Calc(universe: "1", artsub: "0", artuni: "1", note: [])
+    weak var calc: NSManagedObject?
 //    var index = 0
 //
     override func viewDidLoad() {
         super.viewDidLoad()
-//        fixtureUni.text = "\(calc.universe)"
+        fixtureUni.text = "\(calc?.value(forKeyPath: "fixtureUniverse") ?? "001")"
 //
         fixtureNoteTableView.delegate = self
         fixtureNoteTableView.dataSource = self
@@ -53,14 +54,14 @@ class FixtureNoteViewController: UIViewController, UITableViewDataSource, UITabl
     }
 //
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Note", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Note", for: indexPath)
 //        let row = indexPath.row
 //
 //        cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
 //        cell.textLabel?.numberOfLines = 0
 //        cell.textLabel?.text = calc.note[row]
 //
-//        return cell
+        return cell
     }
 //
 //    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {

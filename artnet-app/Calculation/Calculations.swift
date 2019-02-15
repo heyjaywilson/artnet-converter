@@ -68,6 +68,7 @@ class Calculations {
      - Parameter fixtureUniverse: The Fixture Universe that could be calculated from subnet and universe or given and used to calculate the subnet/universe
     */
     func addCalculation(fixtureUniverse: Int, subnet: Int, universe: Int) {
+        let date = Date.init()
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
@@ -80,7 +81,7 @@ class Calculations {
         calc.setValue(subnet, forKeyPath: "subnet")
         calc.setValue(universe, forKeyPath: "universe")
         calc.setValue(fixtureUniverse, forKeyPath: "fixtureUniverse")
-        
+        calc.setValue(date, forKeyPath: "dateMade")
         do {
             try managedContext.save()
             calcs.append(calc)

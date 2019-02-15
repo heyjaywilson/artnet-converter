@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import CoreData
 //protocol CalculationReplaceDelegate: class {
 //    func replaceCalc(calcs: Array<Calc>)
 //}
@@ -70,7 +70,7 @@ class PreviousTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         indexForSelectedRow = indexPath.row
-        self.performSegue(withIdentifier: "FixtureUniNote", sender: self)
+        //self.performSegue(withIdentifier: "FixtureUniNote", sender: self)
     }
     
     /*
@@ -125,11 +125,11 @@ class PreviousTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
-        case "FixtureNotesViewController":
-            let destination = segue.destinationViewController as! FixtureNoteViewController
+        case "FixtureUniNote":
+            let destination = segue.destination as! FixtureNoteViewController
             let indexPath = tableView.indexPathForSelectedRow?.row
             let selectedObject = calcs.getCalc(index: indexPath ?? 0)
-            destination.calc = selectedObject
+            destination.calc = selectedObject as NSManagedObject
         default:
             print("UNKNOWN SEGUE \(segue.identifier ?? "not_sure")")
         }

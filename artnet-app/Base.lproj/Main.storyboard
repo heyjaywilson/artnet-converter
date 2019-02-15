@@ -632,7 +632,7 @@
         <!--Fixture Note View Controller-->
         <scene sceneID="2iG-Bt-OD0">
             <objects>
-                <viewController id="h7S-Sk-QZQ" customClass="FixtureNoteViewController" sceneMemberID="viewController">
+                <viewController id="h7S-Sk-QZQ" customClass="FixtureNoteViewController" customModule="artnet_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XiO-H2-Xqe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
