@@ -16,18 +16,10 @@ class PreviousTableViewController: UITableViewController {
     
     var calcs = Calculations()
     var indexForSelectedRow: Int = 0
-    
-//    var delegate: CalculationReplaceDelegate? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
     }
 
@@ -67,16 +59,6 @@ class PreviousTableViewController: UITableViewController {
         
         return cell
     }
-    
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -86,17 +68,16 @@ class PreviousTableViewController: UITableViewController {
     }
     */
 
-    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            calcs.deleteCalc(index: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
 
     /*
     // Override to support rearranging the table view.
@@ -118,16 +99,16 @@ class PreviousTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segue.identifier {
-        case "FixtureUniNote":
-            let destination = segue.destination as! FixtureNoteViewController
-            let indexPath = tableView.indexPathForSelectedRow?.row
-            let selectedObject = calcs.getCalc(index: indexPath ?? 0)
-            destination.calc = selectedObject as NSManagedObject
-        default:
-            print("UNKNOWN SEGUE \(segue.identifier ?? "not_sure")")
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        switch segue.identifier {
+//        case "FixtureUniNote":
+//            let destination = segue.destination as! FixtureNoteViewController
+//            let indexPath = tableView.indexPathForSelectedRow?.row
+//            let selectedObject = calcs.getCalc(index: indexPath ?? 0)
+//            destination.calc = selectedObject as NSManagedObject
+//        default:
+//            print("UNKNOWN SEGUE \(segue.identifier ?? "not_sure")")
+//        }
+//    }
 
 }

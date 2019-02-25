@@ -91,6 +91,37 @@ class Calculations {
     }
     
     /**
+     Remove calculation from a given index
+     
+     - Parameter index: The location of the calculation
+    */
+    func deleteCalc(index: Int) {
+        calcs.remove(at: index)
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Calc")
+        
+        do {
+            let test = try managedContext.fetch(fetchRequest)
+            
+            let objectToDelete = test[index] as! NSManagedObject
+            managedContext.delete(objectToDelete)
+            
+            do {
+                try managedContext.save()
+            }
+            catch {
+                print(error)
+            }
+        }
+        catch {
+            print(error)
+        }
+    }
+    /**
     Returns the calculation for a given index
     */
     func getCalc(index: Int) -> NSManagedObject {
