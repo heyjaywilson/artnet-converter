@@ -56,7 +56,8 @@ class Calculations {
     - Returns: The Fixture Universe
     */
     func calcFixtureUniverse(subnet: Int, universe: Int) -> Int {
-        let fixtureUniverse = universe + (subnet * 16) + 1
+        var fixtureUniverse = universe + 1
+        fixtureUniverse = subnet * 16
         return fixtureUniverse
     }
     

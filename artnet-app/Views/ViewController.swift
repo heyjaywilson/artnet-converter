@@ -130,8 +130,6 @@ class ViewController: UIViewController {
                 fixtureUni.text = fixtureUniverse
                 
                 if Int(fixtureUniverse)! == 25 {
-                    six.isEnabled = false
-                    six.alpha = 0.5
                     seven.isEnabled = false
                     seven.alpha = 0.5
                     eight.isEnabled = false
@@ -344,7 +342,7 @@ class ViewController: UIViewController {
         fixtureUniverse = ""
     }
     
-    func calcFixtUni(_ sender: UIButton) {
+    @IBAction func calcFixtUni(_ sender: UIButton) {
         selectFixtureUni.isEnabled = true
         selectArtUni.isEnabled = true
         selectArtSub.isEnabled = true
@@ -358,8 +356,12 @@ class ViewController: UIViewController {
         
         enableAllNumbers()
         
+        print("this is before abswer")
         let fixtureUniverseAnswer = calculations.calcFixtureUniverse(subnet: Int(artnetSubnet)!, universe: Int(artnetUniverse)!)
+        print("this is after answer")
         calculations.addCalculation(fixtureUniverse: fixtureUniverseAnswer, subnet: Int(artnetSubnet)!, universe: Int(artnetUniverse)!)
+        print("this is after calc")
+        fixtureUni.text = "\(fixtureUniverseAnswer)"
         fixtureUniverse = ""
         artnetSubnet = ""
         artnetUniverse = ""
