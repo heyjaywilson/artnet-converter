@@ -356,11 +356,8 @@ class ViewController: UIViewController {
         
         enableAllNumbers()
         
-        print("this is before abswer")
         let fixtureUniverseAnswer = calculations.calcFixtureUniverse(subnet: Int(artnetSubnet)!, universe: Int(artnetUniverse)!)
-        print("this is after answer")
         calculations.addCalculation(fixtureUniverse: fixtureUniverseAnswer, subnet: Int(artnetSubnet)!, universe: Int(artnetUniverse)!)
-        print("this is after calc")
         fixtureUni.text = "\(fixtureUniverseAnswer)"
         fixtureUniverse = ""
         artnetSubnet = ""
