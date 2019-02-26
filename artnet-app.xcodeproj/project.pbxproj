@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		370B4CB620EC8C1E009EC6A5 /* PreviousTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370B4CB520EC8C1E009EC6A5 /* PreviousTableViewController.swift */; };
-		370B4CB820EEED0C009EC6A5 /* Calc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370B4CB720EEED0C009EC6A5 /* Calc.swift */; };
 		370B4CBA20EF088A009EC6A5 /* Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370B4CB920EF088A009EC6A5 /* Calculations.swift */; };
 		370B4CBC20F0FE3A009EC6A5 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370B4CBB20F0FE3A009EC6A5 /* AboutViewController.swift */; };
 		3754307B20D2A98D00EF6326 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3754307A20D2A98D00EF6326 /* AppDelegate.swift */; };
@@ -37,7 +36,6 @@
 
 /* Begin PBXFileReference section */
 		370B4CB520EC8C1E009EC6A5 /* PreviousTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousTableViewController.swift; sourceTree = "<group>"; };
-		370B4CB720EEED0C009EC6A5 /* Calc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calc.swift; sourceTree = "<group>"; };
 		370B4CB920EF088A009EC6A5 /* Calculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculations.swift; sourceTree = "<group>"; };
 		370B4CBB20F0FE3A009EC6A5 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		3754307720D2A98D00EF6326 /* artnet-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "artnet-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,7 +78,6 @@
 		3722230A21122D7100C6B7D9 /* Calculation */ = {
 			isa = PBXGroup;
 			children = (
-				370B4CB720EEED0C009EC6A5 /* Calc.swift */,
 				370B4CB920EF088A009EC6A5 /* Calculations.swift */,
 				37B13FF022124CF30097C371 /* Calculation.xcdatamodeld */,
 			);
@@ -286,7 +283,6 @@
 				37B2E0B92117E7D200B6B118 /* ProductCell.swift in Sources */,
 				37B13FF222124CF30097C371 /* Calculation.xcdatamodeld in Sources */,
 				3754307B20D2A98D00EF6326 /* AppDelegate.swift in Sources */,
-				370B4CB820EEED0C009EC6A5 /* Calc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

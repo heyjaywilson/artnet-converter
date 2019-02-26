@@ -180,9 +180,13 @@ class ViewController: UIViewController {
                 
                 if Int(artnetUniverse)! == 1{
                     six.isEnabled = false
+                    six.alpha = 0.5
                     seven.isEnabled = false
+                    seven.alpha = 0.5
                     eight.isEnabled = false
+                    eight.alpha = 0.5
                     nine.isEnabled = false
+                    nine.alpha = 0.5
                 }
                 else if Int(artnetUniverse)! >= 2 && Int(artnetUniverse)! < 15 {
                     disableAllNumbers()
@@ -332,6 +336,10 @@ class ViewController: UIViewController {
         calcFixtBttn.alpha = 1
         enableAllNumbers()
         
+        if(fixtureUniverse == ""){
+            fixtureUniverse = "1"
+        }
+        
         let artnetNumbers = calculations.calcSubUni(fixtureUniverse: Int(fixtureUniverse)!)
         let textSub:String = "\(artnetNumbers[0])"
         let textUni:String = "\(artnetNumbers[1])"
@@ -340,6 +348,8 @@ class ViewController: UIViewController {
         subnetLabel.text = textSub
         universeLabel.text = textUni
         fixtureUniverse = ""
+        artnetSubnet = ""
+        artnetUniverse = ""
     }
     
     @IBAction func calcFixtUni(_ sender: UIButton) {
@@ -355,6 +365,13 @@ class ViewController: UIViewController {
         calcFixtBttn.alpha = 1
         
         enableAllNumbers()
+        
+        if (artnetUniverse == ""){
+            artnetUniverse = "0"
+        }
+        if (artnetSubnet == ""){
+            artnetSubnet = "0"
+        }
         
         let fixtureUniverseAnswer = calculations.calcFixtureUniverse(subnet: Int(artnetSubnet)!, universe: Int(artnetUniverse)!)
         calculations.addCalculation(fixtureUniverse: fixtureUniverseAnswer, subnet: Int(artnetSubnet)!, universe: Int(artnetUniverse)!)
