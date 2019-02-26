@@ -1,99 +1,83 @@
 All notable changes will be documented in this file.
 
-# Unreleased
+# v1.3.0
 
-## v2.0.0
+## Added
 
-Changes to behavior when launching. There might be bug fixes if I get reports, but right now there are not any.
+- Data now persists on log off. Issue #1 in GitHub issues
 
-### Added
+## Removed
 
-- Ability to scan fixture display for fixture universe
-- Ability to share previous calculation
+- Calculation Notes Feature. Issue #9 in GitHub issues. This is going to be brought back, but I need more time to develop it.
 
-### Changed
+## Fixed
 
-- Update for iOS 12
+- Bug with converting the numbers. Issue #3 in GitHub issues
 
-### Depricated
+# v1.2.0
 
-NOTHING DEPRICATED
-
-### Removed
-
-NOTHING REMOVED
-
-### Fixed
-
-NOTHING FIXED
-
-# Released
-
-## v1.2.0
-
-### Added
+## Added
 
 - NOTHING ADDED
 
-### Changed
+## Changed
 
 - Went to 0 based artnet subnet and artnet universe instead of 1 base
 
-### Deprecated
+## Deprecated
 
 - NOTHING DEPRECATED
 
-### Fixed
+## Fixed
 
 - Spelling of deprecated in `changelog.md`
 
+# v1.1.0
 
-## v1.1.0
-
-### Added
+## Added
 
 - Ability to add notes to previous calculations
 - Added ability to tip developer
 
-### Changed
+## Changed
 
 - Default to fixture universe on launch
 
-### Depricated
+## Depricated
 
 NOTHING DEPRECATED
 
-### Removed
+## Removed
 
 NOTHING REMOVED
 
-### Fixed
+## Fixed
 
 - UI is not cut off on 5.5" screens
 
-## V1.0.0
+# V1.0.0
 
 Initial release of application. Nothing will be changed, depricated, removed, or fixed in this version.
 
-### Added
+## Added
 
 - Ability to calculate the artnet subnet and universe based on the fixture universe number
 - Ability to calculate the fixture universe number based on the artnet subnet and universe
 - Ability to view previous calulations
 - Abiliity to see information about the application
 
-### Changed
+## Changed
 
 NO CHANGES
 
-### Depricated
+## Depricated
 
 NOTHING DEPRECATED
 
-### Removed
+## Removed
 
 NOTHING REMOVED
 
-### Fixed
+## Fixed
 
 NOTHING FIXED
