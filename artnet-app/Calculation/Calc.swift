@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Calc {
+struct Calcs {
     let universe: String
     let artsub: String
     let artuni: String
