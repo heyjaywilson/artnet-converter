@@ -214,7 +214,7 @@
 				TargetAttributes = {
 					3754307620D2A98D00EF6326 = {
 						CreatedOnToolsVersion = 9.4;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.GameCenter.iOS = {
 								enabled = 0;
@@ -452,7 +452,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "maeganwilson.artnet-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -470,7 +470,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "maeganwilson.artnet-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
