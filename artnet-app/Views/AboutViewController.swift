@@ -18,11 +18,11 @@ class AboutViewController: UIViewController,  UITableViewDataSource, UITableView
     
     @IBOutlet weak var tipTableView: UITableView!
     
-    var about: String = "This app is created by Maegan. Maegan appreciates you downloading and using the app. The app does not require the input of any personal data nor does it go through your phone to sell personal data."
+    var about: String = "This app is created by Maegan Wilson. She greatly appreciates the download and the use of the app. The app does not require the input of any personal data nor does it go through your phone to sell personal data."
     
-    var issue: String = "Ran into issues while using the app? Click the button to get support from Maegan."
+    var issue: String = "Ran into issues while using the converter or have feedback? Click the button to get support or leave feedback."
     
-    var tippingString: String = "Enjoyed using the app? Please consider giving a tip to show your support."
+    var tippingString: String = "Universe Converter relies on your support to fund its development. Please consider supporting the app and its future by leaving a tip."
     
     var products: [SKProduct] = []
     

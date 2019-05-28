@@ -35,20 +35,20 @@ class ProductCell: UITableViewCell {
             //print(product)
             
             switch product.localizedTitle {
-            case "smile":
+            case "Tip - Smiles":
                 textLabel?.text = "😊"
-            case "coffee":
+            case "Tip - buy a coffee for Maegan":
                 textLabel?.text="☕"
-            case "heart":
+            case "Tip - hearts":
                 textLabel?.text="❤️"
-            case "100":
+            case "Tip - 10 for Maegan":
                 textLabel?.text="💯"
             default:
                 textLabel?.text = product.localizedTitle
             }
             if IAPHelper.canMakePayments() {
                 ProductCell.priceFormatter.locale = product.priceLocale
-                detailTextLabel?.text = product.localizedDescription
+                //detailTextLabel?.text = product.localizedDescription
                 
                 accessoryType = .none
                 accessoryView = self.newBuyButton(price: ProductCell.priceFormatter.string(from: product.price)!)
