@@ -58,13 +58,14 @@
 		37CC93CA23188E62009A60D5 /* uni-converter */ = {
 			isa = PBXGroup;
 			children = (
+				37CC93E323188F50009A60D5 /* CoreData */,
+				37CC93E223188F4B009A60D5 /* Views */,
 				37CC93CB23188E62009A60D5 /* AppDelegate.swift */,
 				37CC93CD23188E62009A60D5 /* SceneDelegate.swift */,
 				37CC93D223188E62009A60D5 /* ContentView.swift */,
 				37CC93D423188E67009A60D5 /* Assets.xcassets */,
 				37CC93D923188E67009A60D5 /* LaunchScreen.storyboard */,
 				37CC93DC23188E67009A60D5 /* Info.plist */,
-				37CC93CF23188E62009A60D5 /* uni_converter.xcdatamodeld */,
 				37CC93D623188E67009A60D5 /* Preview Content */,
 			);
 			path = "uni-converter";
@@ -76,6 +77,21 @@
 				37CC93D723188E67009A60D5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		37CC93E223188F4B009A60D5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		37CC93E323188F50009A60D5 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				37CC93CF23188E62009A60D5 /* uni_converter.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
