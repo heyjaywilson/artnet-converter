@@ -14,6 +14,10 @@
 		37CC93D523188E67009A60D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37CC93D423188E67009A60D5 /* Assets.xcassets */; };
 		37CC93D823188E67009A60D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37CC93D723188E67009A60D5 /* Preview Assets.xcassets */; };
 		37CC93DB23188E67009A60D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37CC93D923188E67009A60D5 /* LaunchScreen.storyboard */; };
+		37CC93E523189079009A60D5 /* CalculateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CC93E423189079009A60D5 /* CalculateView.swift */; };
+		37CC93E823189111009A60D5 /* PrimUniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CC93E723189111009A60D5 /* PrimUniView.swift */; };
+		37CC93EA23189173009A60D5 /* SubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CC93E923189173009A60D5 /* SubView.swift */; };
+		37CC93EC2318918D009A60D5 /* ArtUniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CC93EB2318918D009A60D5 /* ArtUniView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		37CC93D723188E67009A60D5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		37CC93DA23188E67009A60D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37CC93DC23188E67009A60D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37CC93E423189079009A60D5 /* CalculateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateView.swift; sourceTree = "<group>"; };
+		37CC93E723189111009A60D5 /* PrimUniView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimUniView.swift; sourceTree = "<group>"; };
+		37CC93E923189173009A60D5 /* SubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubView.swift; sourceTree = "<group>"; };
+		37CC93EB2318918D009A60D5 /* ArtUniView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtUniView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +90,9 @@
 		37CC93E223188F4B009A60D5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				37CC93ED231892E4009A60D5 /* Buttons */,
+				37CC93E6231890FC009A60D5 /* Answers */,
+				37CC93E423189079009A60D5 /* CalculateView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -92,6 +103,23 @@
 				37CC93CF23188E62009A60D5 /* uni_converter.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		37CC93E6231890FC009A60D5 /* Answers */ = {
+			isa = PBXGroup;
+			children = (
+				37CC93E723189111009A60D5 /* PrimUniView.swift */,
+				37CC93E923189173009A60D5 /* SubView.swift */,
+				37CC93EB2318918D009A60D5 /* ArtUniView.swift */,
+			);
+			path = Answers;
+			sourceTree = "<group>";
+		};
+		37CC93ED231892E4009A60D5 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,8 +194,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				37CC93CC23188E62009A60D5 /* AppDelegate.swift in Sources */,
+				37CC93EC2318918D009A60D5 /* ArtUniView.swift in Sources */,
+				37CC93E823189111009A60D5 /* PrimUniView.swift in Sources */,
 				37CC93CE23188E62009A60D5 /* SceneDelegate.swift in Sources */,
 				37CC93D323188E62009A60D5 /* ContentView.swift in Sources */,
+				37CC93E523189079009A60D5 /* CalculateView.swift in Sources */,
+				37CC93EA23189173009A60D5 /* SubView.swift in Sources */,
 				37CC93D123188E62009A60D5 /* uni_converter.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
