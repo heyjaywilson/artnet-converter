@@ -37,7 +37,7 @@ struct CalculationDetailView: View {
             }){
                 Text("Add Note")
             }.sheet(isPresented: $showNewNote){
-                NewNoteForm(id: self.calc.id).environment(\.managedObjectContext, self.managedObjectContext)
+                NewNoteForm(id: self.calc.id, calc: self.calc).environment(\.managedObjectContext, self.managedObjectContext)
             }
         )
     }

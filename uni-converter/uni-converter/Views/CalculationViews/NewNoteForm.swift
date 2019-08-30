@@ -13,8 +13,10 @@ struct NewNoteForm: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @Environment(\.presentationMode) var presentationMode
     
+    @FetchRequest(fetchRequest: NoteEntity.allNotes()) var notes: FetchedResults<NoteEntity>
     @State private var enteredText: String = ""
     let id: Int64
+    let calc: CalcEntity
     
     var body: some View {
         NavigationView {
@@ -33,16 +35,19 @@ struct NewNoteForm: View {
     
     func saveNote() {
         print("Save")
-        var calc: CalcEntity
-        let request: NSFetchRequest<CalcEntity> = CalcEntity.fetchRequest()
-        request.predicate = NSPredicate(format: "id MATCHES[c] '\(id)'")
-        if let calcs = try? managedObjectContext.fetch(request) {
-            if calcs.count > 0 {
-                calc = calcs[0]
-            }
-        }
         
         let note = NoteEntity(context: managedObjectContext)
+        note.calc = self.calc
+        note.note = enteredText
+        note.id = Int64(notes.count)
+        note.datelog = Date()
+        
+        do {
+            try self.managedObjectContext.save()
+            print(note)
+        } catch {
+            print(error)
+        }
         self.presentationMode.wrappedValue.dismiss()
     }
 }
