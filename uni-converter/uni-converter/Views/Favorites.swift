@@ -13,9 +13,15 @@ struct Favorites: View {
     @EnvironmentObject var calcManager: CalculationManager
     
     var body: some View {
-        List(calcManager.calcs, id: \.id!) { calc in
-            CalculationRowView(calc: calc)
+        List{
+            ForEach(calcManager.calcs, id: \.id!){ calc in
+                CalculationRowView(calc: calc)
+            }.onDelete(perform: delete)
         }
+    }
+    
+    func delete(at offsets: IndexSet){
+        calcManager.calcs.remove(atOffsets: offsets)
     }
 }
 

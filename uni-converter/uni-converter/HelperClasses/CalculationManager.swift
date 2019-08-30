@@ -124,4 +124,14 @@ class CalculationManager: ObservableObject {
             }
         }
     }
+    
+    func deleteCalc(_ calcEnt: CalcEntity) {
+        self.managedContext.delete(calcEnt)
+        do {
+            try self.managedContext.save()
+            self.getCalcs()
+        } catch {
+            print(error)
+        }
+    }
 }
