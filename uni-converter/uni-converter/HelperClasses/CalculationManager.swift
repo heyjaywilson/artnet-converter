@@ -84,12 +84,11 @@ class CalculationManager: ObservableObject {
     }
     
     func saveCalculation() {
-        print("Saving")
         let newCalc = CalcEntity(context: managedContext)
         newCalc.artuni = Int64(art_uni)
         newCalc.subnet = Int64(subnet)
         newCalc.priuni = Int64(prim_uni)
-        newCalc.id = UUID()
+        newCalc.id = Int64(self.calcs.count)
         newCalc.date = Date()
         
         do {
@@ -112,15 +111,10 @@ class CalculationManager: ObservableObject {
     }
     
     func getCalcs() {
-        if let calcs = try? managedContext.fetch(CalcEntity.allCalcs()){
+        if let fetched = try? managedContext.fetch(CalcEntity.allCalcs()){
             self.calcs = []
-            for calc in calcs {
-                if calc.id == nil {
-                    self.managedContext.delete(calc)
-                    self.getCalcs()
-                } else {
-                    self.calcs.append(calc)
-                }
+            for calc in fetched {
+                self.calcs.append(calc)
             }
         }
     }

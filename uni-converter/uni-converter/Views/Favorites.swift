@@ -14,14 +14,16 @@ struct Favorites: View {
     
     var body: some View {
         List{
-            ForEach(calcManager.calcs, id: \.id!){ calc in
+            ForEach(calcManager.calcs, id: \.id){ calc in
                 CalculationRowView(calc: calc)
             }.onDelete(perform: delete)
         }
     }
     
     func delete(at offsets: IndexSet){
-        calcManager.calcs.remove(atOffsets: offsets)
+        let temp = calcManager.calcs[offsets]
+//        calcManager.calcs.remove(atOffsets: offsets)
+        calcManager.deleteCalc(temp[0])
     }
 }
 

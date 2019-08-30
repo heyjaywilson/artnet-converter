@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		372D6A2123196CB80083EF26 /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372D6A2023196CB80083EF26 /* Extenstions.swift */; };
 		37B8B2962318D30100A2C0AD /* CalcEntity+properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B8B2952318D30100A2C0AD /* CalcEntity+properties.swift */; };
 		37B8B2982318D3BC00A2C0AD /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B8B2972318D3BC00A2C0AD /* Favorites.swift */; };
 		37B8B29B2318DFB900A2C0AD /* CalculationRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B8B29A2318DFB900A2C0AD /* CalculationRowView.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		372D6A2023196CB80083EF26 /* Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenstions.swift; sourceTree = "<group>"; };
 		37B8B2952318D30100A2C0AD /* CalcEntity+properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalcEntity+properties.swift"; sourceTree = "<group>"; };
 		37B8B2972318D3BC00A2C0AD /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		37B8B29A2318DFB900A2C0AD /* CalculationRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationRowView.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				37E9CE7F2318A99B00DED49D /* CalculationManager.swift */,
+				372D6A2023196CB80083EF26 /* Extenstions.swift */,
 			);
 			path = HelperClasses;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37CC93CC23188E62009A60D5 /* AppDelegate.swift in Sources */,
+				372D6A2123196CB80083EF26 /* Extenstions.swift in Sources */,
 				37E9CE802318A99B00DED49D /* CalculationManager.swift in Sources */,
 				37CC93E823189111009A60D5 /* PrimUniView.swift in Sources */,
 				37CC93CE23188E62009A60D5 /* SceneDelegate.swift in Sources */,

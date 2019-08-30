@@ -3,7 +3,7 @@
     <entity name="CalcEntity" representedClassName="CalcEntity" syncable="YES" codeGenerationType="class">
         <attribute name="artuni" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="date" attributeType="Date" defaultDateTimeInterval="588831180" usesScalarValueType="NO"/>
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="priuni" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="subnet" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NoteEntity" inverseName="calc" inverseEntity="NoteEntity"/>

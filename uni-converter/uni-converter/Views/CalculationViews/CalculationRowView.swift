@@ -11,25 +11,38 @@ import SwiftUI
 struct CalculationRowView: View {
     var calc: CalcEntity
     var body: some View {
-        HStack{
+        HStack(alignment: .bottom){
             VStack{
-                Text("Primary Universe")
+                Text("uni")
                     .font(.subheadline)
                     .foregroundColor(.gray)
+                    .multilineTextAlignment(.center)
                 Text("\(calc.priuni)")
+                    .font(.title)
             }
             Spacer()
             VStack{
-                Text("Subnet")
+                Text("ArtNet")
                     .font(.subheadline)
                     .foregroundColor(.gray)
-                Text("\(calc.subnet)")
-            }.padding(.horizontal)
-            VStack{
-                Text("ArtNet Universe")
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
-                Text("\(calc.artuni)")
+                    .padding(0)
+                HStack{
+                    VStack{
+                        Text("sub")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                        Text("\(calc.subnet)")
+                            .fontWeight(.bold)
+                    }.padding(.horizontal)
+                    VStack{
+                        Text("uni")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                            .multilineTextAlignment(.center)
+                        Text("\(calc.artuni)")
+                            .fontWeight(.bold)
+                    }
+                }
             }
         }
     }
