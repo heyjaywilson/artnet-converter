@@ -42,6 +42,8 @@ class CalculationManager: ObservableObject {
         if prim_uni > 255 {
             prim_uni = 256
         }
+        
+        calcArtUni()
     }
     
     func deleteNumberFromPrimUni(){
@@ -53,9 +55,27 @@ class CalculationManager: ObservableObject {
             
             prim_uni = Int(originalStr)!
         }
+        
+        calcArtUni()
     }
     
-    func calculate(){
+    func calcSubnet() -> Int{
+        print(prim_uni)
+        if prim_uni == 0 {
+            subnet = 0
+            return 0
+        }
         
+        let  sub = prim_uni / 16
+        
+        subnet = sub
+        print("SUB: \(sub)")
+        return sub
+    }
+    
+    func calcArtUni() {
+        let uni = prim_uni - (self.calcSubnet() * 16)
+        print(uni)
+        art_uni = uni
     }
 }
