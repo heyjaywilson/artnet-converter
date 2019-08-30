@@ -14,7 +14,7 @@ class CalculationManager: ObservableObject {
     let objectWillChange = ObservableObjectPublisher()
     let managedContext: NSManagedObjectContext
     
-    public var prim_uni: Int = 1 {
+    public var prim_uni: Int = 0 {
         willSet {
             self.objectWillChange.send()
         }
