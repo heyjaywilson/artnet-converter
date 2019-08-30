@@ -11,6 +11,8 @@ import SwiftUI
 struct AllButtons: View {
     @EnvironmentObject var calcManager: CalculationManager
     
+    @State private var toggleSave: Bool = false
+    
     var body: some View {
         VStack{
             HStack{
@@ -31,34 +33,35 @@ struct AllButtons: View {
                 }
             }.padding(.horizontal)
             HStack{
-                NumberButton(num: 7)
-                NumberButton(num: 8)
-                NumberButton(num: 9)
+                NumberButton(toggle: self.$toggleSave, num: 7)
+                NumberButton(toggle: self.$toggleSave, num: 8)
+                NumberButton(toggle: self.$toggleSave, num: 9)
             }
             HStack{
-                NumberButton(num: 4)
-                NumberButton(num: 5)
-                NumberButton(num: 6)
+                NumberButton(toggle: self.$toggleSave, num: 4)
+                NumberButton(toggle: self.$toggleSave, num: 5)
+                NumberButton(toggle: self.$toggleSave, num: 6)
             }
             HStack{
-                NumberButton(num: 1)
-                NumberButton(num: 2)
-                NumberButton(num: 3)
+                NumberButton(toggle: self.$toggleSave, num: 1)
+                NumberButton(toggle: self.$toggleSave, num: 2)
+                NumberButton(toggle: self.$toggleSave, num: 3)
             }
             HStack{
-                NumberButton(num: 0).padding(.leading, 0.2)
-                Spacer()
-                Button(action: {
-                    print("calculate")
+                NumberButton(toggle: self.$toggleSave, num: 0)
+                Button(action:
+                    {
+                        self.toggleSave.toggle()
+                        self.toggleSave ? self.calcManager.saveCalculation() : self.calcManager.deleteCalc()
                 }){
-                    Text("Calculate")
-                        .font(.title)
-                        .foregroundColor(Color.red)
-                        .padding(.all, 20.0)
-                        .background(Color.black)
-                        .cornerRadius(2.0)
-                }.padding(.trailing)
-            }
+                    Image(systemName: "\(self.toggleSave ? "heart.fill" : "heart")")
+                        .resizable()
+                        .aspectRatio(1, contentMode: .fit)
+                        .frame(width: 110, height: 70)
+                        .padding(.all, 10.0)
+                        .padding(.horizontal, 40.0)
+                }
+            }.padding(.horizontal)
         }
     }
 }

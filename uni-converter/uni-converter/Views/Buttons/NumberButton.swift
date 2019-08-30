@@ -11,11 +11,15 @@ import SwiftUI
 struct NumberButton: View {
     @EnvironmentObject var calcManager: CalculationManager
     
+    @Binding var toggle: Bool
     var num: Int
     let frameSize: CGFloat = 80.0
     
     var body: some View {
         Button(action: {
+            if self.toggle == true {
+                self.toggle = false
+            }
             self.calcManager.addNumberToPrimUni(self.num)
         }){
             Text("\(self.num)")
@@ -30,8 +34,8 @@ struct NumberButton: View {
     }
 }
 
-struct NumberButton_Previews: PreviewProvider {
-    static var previews: some View {
-        NumberButton(num: 0)
-    }
-}
+//struct NumberButton_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NumberButton(num: 0)
+//    }
+//}

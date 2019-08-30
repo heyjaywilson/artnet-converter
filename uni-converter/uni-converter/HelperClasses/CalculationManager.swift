@@ -13,6 +13,7 @@ import Combine
 class CalculationManager: ObservableObject {
     let objectWillChange = ObservableObjectPublisher()
     let managedContext: NSManagedObjectContext
+    var mostRecentCalc: CalcEntity
     
     public var prim_uni: Int = 0 {
         willSet {
@@ -29,9 +30,15 @@ class CalculationManager: ObservableObject {
             self.objectWillChange.send()
         }
     }
+    public var calcs: [CalcEntity] = [] {
+        willSet {
+            self.objectWillChange.send()
+        }
+    }
     
     init(mc: NSManagedObjectContext){
         managedContext = mc
+        mostRecentCalc = CalcEntity(context: managedContext)
     }
     
     func addNumberToPrimUni(_ num: Int){
@@ -74,5 +81,47 @@ class CalculationManager: ObservableObject {
     func calcArtUni() {
         let uni = prim_uni - (self.calcSubnet() * 16)
         art_uni = uni
+    }
+    
+    func saveCalculation() {
+        print("Saving")
+        let newCalc = CalcEntity(context: managedContext)
+        newCalc.artuni = Int64(art_uni)
+        newCalc.subnet = Int64(subnet)
+        newCalc.priuni = Int64(prim_uni)
+        newCalc.id = UUID()
+        newCalc.date = Date()
+        
+        do {
+            try self.managedContext.save()
+            self.mostRecentCalc = newCalc
+            self.getCalcs()
+        } catch {
+            print(error)
+        }
+    }
+    
+    func deleteCalc() {
+        self.managedContext.delete(mostRecentCalc)
+        do {
+            try self.managedContext.save()
+            self.getCalcs()
+        } catch {
+            print(error)
+        }
+    }
+    
+    func getCalcs() {
+        if let calcs = try? managedContext.fetch(CalcEntity.allCalcs()){
+            self.calcs = []
+            for calc in calcs {
+                if calc.id == nil {
+                    self.managedContext.delete(calc)
+                    self.getCalcs()
+                } else {
+                    self.calcs.append(calc)
+                }
+            }
+        }
     }
 }

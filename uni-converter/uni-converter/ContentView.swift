@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) var managedObjectContext
     @EnvironmentObject var calcManager: CalculationManager
     @State private var selection = 0
     
@@ -22,12 +23,11 @@ struct ContentView: View {
                     }
             }
             .tag(0)
-            Text("Second View")
-                .font(.title)
+            Favorites().environment(\.managedObjectContext, managedObjectContext)
                 .tabItem {
                     VStack {
-                        Image(systemName: "list.dash")
-                        Text("History")
+                        Image(systemName: "heart.circle")
+                        Text("Saved")
                     }
             }
             .tag(1)
