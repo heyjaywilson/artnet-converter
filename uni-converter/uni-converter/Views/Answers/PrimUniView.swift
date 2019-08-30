@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct PrimUniView: View {
+struct UniverseView: View {
     var uni: Int
     var body: some View {
         VStack {
@@ -20,8 +20,8 @@ struct PrimUniView: View {
     }
 }
 
-struct PrimUniView_Previews: PreviewProvider {
+struct UniverseView_Previews: PreviewProvider {
     static var previews: some View {
-        PrimUniView(uni: 8)
+        UniverseView(uni: 8)
     }
 }

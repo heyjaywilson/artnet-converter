@@ -16,12 +16,13 @@ struct CalculateView: View {
     var body: some View {
         VStack {
             HStack {
-                PrimUniView(uni: uni)
+                UniverseView(uni: uni)
                 Spacer()
                 SubView(sub: sub)
-                ArtUniView(uni: art)
-            }
-        }.padding()
+                UniverseView(uni: art)
+            }.padding()
+            AllButtons()
+        }
     }
 }
 

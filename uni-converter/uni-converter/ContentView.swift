@@ -25,7 +25,7 @@ struct ContentView: View {
                 .font(.title)
                 .tabItem {
                     VStack {
-                        Image("second")
+                        Image(systemName: "list.dash")
                         Text("History")
                     }
                 }
