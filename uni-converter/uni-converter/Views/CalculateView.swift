@@ -23,9 +23,8 @@ struct CalculateView: View {
                 SubView(sub: calcManager.subnet)
                     .padding(.trailing)
                 UniverseView(uni: calcManager.art_uni)
-            }.padding()
-                .padding(.bottom, 10)
-            AllButtons().padding(.all)
+            }.padding(.horizontal)
+            AllButtons()
         }
     }
 }

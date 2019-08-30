@@ -29,34 +29,24 @@ struct AllButtons: View {
                 }){
                     Text("Uni -> ArtNet")
                 }
-            }
-            Spacer()
+            }.padding(.horizontal)
             HStack{
                 NumberButton(num: 7)
-                Spacer()
                 NumberButton(num: 8)
-                Spacer()
                 NumberButton(num: 9)
             }
-            Spacer()
             HStack{
                 NumberButton(num: 4)
-                Spacer()
                 NumberButton(num: 5)
-                Spacer()
                 NumberButton(num: 6)
             }
-            Spacer()
             HStack{
                 NumberButton(num: 1)
-                Spacer()
                 NumberButton(num: 2)
-                Spacer()
                 NumberButton(num: 3)
             }
-            Spacer()
             HStack{
-                NumberButton(num: 0)
+                NumberButton(num: 0).padding(.leading, 0.2)
                 Spacer()
                 Button(action: {
                     print("calculate")
@@ -64,8 +54,10 @@ struct AllButtons: View {
                     Text("Calculate")
                         .font(.title)
                         .foregroundColor(Color.red)
-                        .padding(.trailing)
-                }
+                        .padding(.all, 20.0)
+                        .background(Color.black)
+                        .cornerRadius(2.0)
+                }.padding(.trailing)
             }
         }
     }

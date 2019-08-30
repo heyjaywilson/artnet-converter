@@ -12,7 +12,7 @@ struct NumberButton: View {
     @EnvironmentObject var calcManager: CalculationManager
     
     var num: Int
-    let frameSize: CGFloat = 50.0
+    let frameSize: CGFloat = 80.0
     
     var body: some View {
         Button(action: {
@@ -21,10 +21,12 @@ struct NumberButton: View {
             Text("\(self.num)")
                 .font(.title)
                 .fontWeight(.bold)
+                .foregroundColor(.white)
                 .frame(width: frameSize, height: frameSize)
-                .padding(.all, 15.0)
+                .background(Color.gray)
+                .cornerRadius(2.0)
+                .padding(.all, 10.0)
         }
-        .background(Color.gray)
     }
 }
 
