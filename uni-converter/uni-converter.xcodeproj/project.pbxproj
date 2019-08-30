@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		372D6A2123196CB80083EF26 /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372D6A2023196CB80083EF26 /* Extenstions.swift */; };
+		376892B1231983A700C316E5 /* CalculationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376892B0231983A700C316E5 /* CalculationDetailView.swift */; };
+		376892B423198EC400C316E5 /* NoteEntity+properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376892B323198EC400C316E5 /* NoteEntity+properties.swift */; };
 		37B8B2962318D30100A2C0AD /* CalcEntity+properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B8B2952318D30100A2C0AD /* CalcEntity+properties.swift */; };
 		37B8B2982318D3BC00A2C0AD /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B8B2972318D3BC00A2C0AD /* Favorites.swift */; };
 		37B8B29B2318DFB900A2C0AD /* CalculationRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B8B29A2318DFB900A2C0AD /* CalculationRowView.swift */; };
@@ -29,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		372D6A2023196CB80083EF26 /* Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenstions.swift; sourceTree = "<group>"; };
+		376892B0231983A700C316E5 /* CalculationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationDetailView.swift; sourceTree = "<group>"; };
+		376892B323198EC400C316E5 /* NoteEntity+properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteEntity+properties.swift"; sourceTree = "<group>"; };
 		37B8B2952318D30100A2C0AD /* CalcEntity+properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalcEntity+properties.swift"; sourceTree = "<group>"; };
 		37B8B2972318D3BC00A2C0AD /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		37B8B29A2318DFB900A2C0AD /* CalculationRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationRowView.swift; sourceTree = "<group>"; };
@@ -65,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				37B8B29A2318DFB900A2C0AD /* CalculationRowView.swift */,
+				376892B0231983A700C316E5 /* CalculationDetailView.swift */,
 			);
 			path = CalculationViews;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 			children = (
 				37CC93CF23188E62009A60D5 /* uni_converter.xcdatamodeld */,
 				37B8B2952318D30100A2C0AD /* CalcEntity+properties.swift */,
+				376892B323198EC400C316E5 /* NoteEntity+properties.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -169,6 +175,7 @@
 				37CC93C423188E62009A60D5 /* Sources */,
 				37CC93C523188E62009A60D5 /* Frameworks */,
 				37CC93C623188E62009A60D5 /* Resources */,
+				376892B22319853E00C316E5 /* Increment Build */,
 			);
 			buildRules = (
 			);
@@ -225,6 +232,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		376892B22319853E00C316E5 /* Increment Build */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Increment Build";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcrun agvtool next-version -all\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		37CC93C423188E62009A60D5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -233,6 +261,7 @@
 				37CC93CC23188E62009A60D5 /* AppDelegate.swift in Sources */,
 				372D6A2123196CB80083EF26 /* Extenstions.swift in Sources */,
 				37E9CE802318A99B00DED49D /* CalculationManager.swift in Sources */,
+				376892B1231983A700C316E5 /* CalculationDetailView.swift in Sources */,
 				37CC93E823189111009A60D5 /* PrimUniView.swift in Sources */,
 				37CC93CE23188E62009A60D5 /* SceneDelegate.swift in Sources */,
 				37D4F82623189C5200D303F6 /* AllButtons.swift in Sources */,
@@ -240,6 +269,7 @@
 				37B8B2962318D30100A2C0AD /* CalcEntity+properties.swift in Sources */,
 				37CC93E523189079009A60D5 /* CalculateView.swift in Sources */,
 				37D4F82823189F5A00D303F6 /* NumberButton.swift in Sources */,
+				376892B423198EC400C316E5 /* NoteEntity+properties.swift in Sources */,
 				37B8B29B2318DFB900A2C0AD /* CalculationRowView.swift in Sources */,
 				37CC93EA23189173009A60D5 /* SubView.swift in Sources */,
 				37E9CE822318BC2E00DED49D /* Settings.swift in Sources */,
@@ -381,6 +411,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_ASSET_PATHS = "\"uni-converter/Preview Content\"";
 				DEVELOPMENT_TEAM = ZDK82FGR3Z;
 				ENABLE_PREVIEWS = YES;
@@ -389,6 +420,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2019.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "maeganwilson.uni-converter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -401,6 +433,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_ASSET_PATHS = "\"uni-converter/Preview Content\"";
 				DEVELOPMENT_TEAM = ZDK82FGR3Z;
 				ENABLE_PREVIEWS = YES;
@@ -409,6 +442,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2019.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "maeganwilson.uni-converter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

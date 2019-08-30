@@ -16,11 +16,12 @@ struct Favorites: View {
         NavigationView{
             List{
                 ForEach(calcManager.calcs, id: \.id){ calc in
-                    NavigationLink(destination: Text("CALC DETAIL")) {
+                    NavigationLink(destination: CalculationDetailView(calc: calc)) {
                         CalculationRowView(calc: calc)
                     }
                 }.onDelete(perform: delete)
             }
+        .navigationBarTitle("Saved Calculations")
         }
     }
     
