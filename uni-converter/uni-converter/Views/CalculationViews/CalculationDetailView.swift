@@ -14,6 +14,7 @@ struct CalculationDetailView: View {
     
     @State private var showNewNote: Bool = false
     @State private var noteText: String = ""
+    
     var calc: CalcEntity
     
     var body: some View {
@@ -35,15 +36,10 @@ struct CalculationDetailView: View {
                 self.showNewNote = true
             }){
                 Text("Add Note")
-            }.alert(isPresented: self.$showNewNote){
-                Alert(title: Text("New Note"), message: Text("This will have a new note"), primaryButton: .default(Text("Add note")), secondaryButton: .cancel())
+            }.sheet(isPresented: $showNewNote){
+                NewNoteForm(id: self.calc.id).environment(\.managedObjectContext, self.managedObjectContext)
             }
         )
-    }
-    
-    func addNote(){
-        print("add note")
-        print("add note to this calc")
     }
 }
 

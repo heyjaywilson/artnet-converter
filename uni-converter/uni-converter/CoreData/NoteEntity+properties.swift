@@ -15,6 +15,7 @@ extension NoteEntity {
         request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
         return request
     }
+    
     static func notesForCalc(_ id: Int64) -> NSFetchRequest<NoteEntity> {
         let request: NSFetchRequest<NoteEntity> = NoteEntity.fetchRequest()
         request.predicate = NSPredicate(format: "id MATCHES[c] '\(id)'")
