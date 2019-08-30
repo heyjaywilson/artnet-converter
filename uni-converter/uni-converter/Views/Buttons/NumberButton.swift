@@ -21,10 +21,10 @@ struct NumberButton: View {
             Text("\(self.num)")
                 .font(.title)
                 .fontWeight(.bold)
-            
+                .frame(width: frameSize, height: frameSize)
+                .padding(.all, 15.0)
         }
-        .frame(width: frameSize, height: frameSize)
-        .padding(.all, 15.0)
+        .background(Color.gray)
     }
 }
 
