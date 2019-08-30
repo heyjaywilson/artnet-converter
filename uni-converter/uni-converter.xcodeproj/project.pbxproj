@@ -20,6 +20,7 @@
 		37D4F82623189C5200D303F6 /* AllButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D4F82523189C5200D303F6 /* AllButtons.swift */; };
 		37D4F82823189F5A00D303F6 /* NumberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D4F82723189F5A00D303F6 /* NumberButton.swift */; };
 		37E9CE802318A99B00DED49D /* CalculationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E9CE7F2318A99B00DED49D /* CalculationManager.swift */; };
+		37E9CE822318BC2E00DED49D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E9CE812318BC2E00DED49D /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		37D4F82523189C5200D303F6 /* AllButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllButtons.swift; sourceTree = "<group>"; };
 		37D4F82723189F5A00D303F6 /* NumberButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberButton.swift; sourceTree = "<group>"; };
 		37E9CE7F2318A99B00DED49D /* CalculationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationManager.swift; sourceTree = "<group>"; };
+		37E9CE812318BC2E00DED49D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				37CC93ED231892E4009A60D5 /* Buttons */,
 				37CC93E6231890FC009A60D5 /* Answers */,
 				37CC93E423189079009A60D5 /* CalculateView.swift */,
+				37E9CE812318BC2E00DED49D /* Settings.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				37CC93E523189079009A60D5 /* CalculateView.swift in Sources */,
 				37D4F82823189F5A00D303F6 /* NumberButton.swift in Sources */,
 				37CC93EA23189173009A60D5 /* SubView.swift in Sources */,
+				37E9CE822318BC2E00DED49D /* Settings.swift in Sources */,
 				37CC93D123188E62009A60D5 /* uni_converter.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

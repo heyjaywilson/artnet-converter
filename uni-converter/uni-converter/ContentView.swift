@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var calcManager: CalculationManager
     @State private var selection = 0
- 
+    
     var body: some View {
         TabView(selection: $selection){
             CalculateView().environmentObject(calcManager)
@@ -20,8 +20,8 @@ struct ContentView: View {
                         Image(systemName: "square.grid.2x2")
                         Text("Calc")
                     }
-                }
-                .tag(0)
+            }
+            .tag(0)
             Text("Second View")
                 .font(.title)
                 .tabItem {
@@ -29,8 +29,16 @@ struct ContentView: View {
                         Image(systemName: "list.dash")
                         Text("History")
                     }
-                }
-                .tag(1)
+            }
+            .tag(1)
+            Settings()
+                .tabItem {
+                    VStack {
+                        Image(systemName: "gear")
+                        Text("Settings")
+                    }
+            }
+            .tag(2)
         }
     }
 }
