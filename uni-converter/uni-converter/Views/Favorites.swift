@@ -13,16 +13,20 @@ struct Favorites: View {
     @EnvironmentObject var calcManager: CalculationManager
     
     var body: some View {
-        List{
-            ForEach(calcManager.calcs, id: \.id){ calc in
-                CalculationRowView(calc: calc)
-            }.onDelete(perform: delete)
+        NavigationView{
+            List{
+                ForEach(calcManager.calcs, id: \.id){ calc in
+                    NavigationLink(destination: Text("CALC DETAIL")) {
+                        CalculationRowView(calc: calc)
+                    }
+                }.onDelete(perform: delete)
+            }
         }
     }
     
     func delete(at offsets: IndexSet){
         let temp = calcManager.calcs[offsets]
-//        calcManager.calcs.remove(atOffsets: offsets)
+        //        calcManager.calcs.remove(atOffsets: offsets)
         calcManager.deleteCalc(temp[0])
     }
 }
