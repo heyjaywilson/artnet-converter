@@ -9,11 +9,13 @@
 import SwiftUI
 
 struct AllButtons: View {
+    @EnvironmentObject var calcManager: CalculationManager
+    
     var body: some View {
         VStack{
             HStack{
                 Button(action: {
-                    print("Back")
+                    self.calcManager.deleteNumberFromPrimUni()
                 }){
                     Image(systemName: "arrow.left")
                         .resizable()

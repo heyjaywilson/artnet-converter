@@ -19,6 +19,7 @@
 		37CC93EA23189173009A60D5 /* SubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CC93E923189173009A60D5 /* SubView.swift */; };
 		37D4F82623189C5200D303F6 /* AllButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D4F82523189C5200D303F6 /* AllButtons.swift */; };
 		37D4F82823189F5A00D303F6 /* NumberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D4F82723189F5A00D303F6 /* NumberButton.swift */; };
+		37E9CE802318A99B00DED49D /* CalculationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E9CE7F2318A99B00DED49D /* CalculationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		37CC93E923189173009A60D5 /* SubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubView.swift; sourceTree = "<group>"; };
 		37D4F82523189C5200D303F6 /* AllButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllButtons.swift; sourceTree = "<group>"; };
 		37D4F82723189F5A00D303F6 /* NumberButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberButton.swift; sourceTree = "<group>"; };
+		37E9CE7F2318A99B00DED49D /* CalculationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		37CC93CA23188E62009A60D5 /* uni-converter */ = {
 			isa = PBXGroup;
 			children = (
+				37E9CE7E2318A96600DED49D /* HelperClasses */,
 				37CC93E323188F50009A60D5 /* CoreData */,
 				37CC93E223188F4B009A60D5 /* Views */,
 				37CC93CB23188E62009A60D5 /* AppDelegate.swift */,
@@ -123,6 +126,14 @@
 				37D4F82723189F5A00D303F6 /* NumberButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		37E9CE7E2318A96600DED49D /* HelperClasses */ = {
+			isa = PBXGroup;
+			children = (
+				37E9CE7F2318A99B00DED49D /* CalculationManager.swift */,
+			);
+			path = HelperClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37CC93CC23188E62009A60D5 /* AppDelegate.swift in Sources */,
+				37E9CE802318A99B00DED49D /* CalculationManager.swift in Sources */,
 				37CC93E823189111009A60D5 /* PrimUniView.swift in Sources */,
 				37CC93CE23188E62009A60D5 /* SceneDelegate.swift in Sources */,
 				37D4F82623189C5200D303F6 /* AllButtons.swift in Sources */,

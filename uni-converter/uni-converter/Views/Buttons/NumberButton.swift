@@ -9,12 +9,14 @@
 import SwiftUI
 
 struct NumberButton: View {
+    @EnvironmentObject var calcManager: CalculationManager
+    
     var num: Int
     let frameSize: CGFloat = 50.0
     
     var body: some View {
         Button(action: {
-            print("\(self.num)")
+            self.calcManager.addNumberToPrimUni(self.num)
         }){
             Text("\(self.num)")
                 .font(.title)

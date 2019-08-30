@@ -34,5 +34,28 @@ class CalculationManager: ObservableObject {
         managedContext = mc
     }
     
+    func addNumberToPrimUni(_ num: Int){
+        let originalStr = "\(prim_uni)"
+        let newStr = originalStr + "\(num)"
+        
+        prim_uni = Int(newStr)!
+        if prim_uni > 255 {
+            prim_uni = 256
+        }
+    }
     
+    func deleteNumberFromPrimUni(){
+        if prim_uni <= 10 {
+            prim_uni = 0
+        } else {
+            var originalStr = "\(prim_uni)"
+            originalStr.removeLast()
+            
+            prim_uni = Int(originalStr)!
+        }
+    }
+    
+    func calculate(){
+        
+    }
 }
