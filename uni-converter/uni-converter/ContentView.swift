@@ -9,11 +9,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var calcManager: CalculationManager
     @State private var selection = 0
  
     var body: some View {
         TabView(selection: $selection){
-            CalculateView()
+            CalculateView().environmentObject(calcManager)
                 .tabItem {
                     VStack {
                         Image(systemName: "square.grid.2x2")
@@ -35,6 +36,7 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    @EnvironmentObject var calcManager: CalculationManager
     static var previews: some View {
         ContentView()
     }

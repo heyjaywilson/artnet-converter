@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct CalculateView: View {
+    @EnvironmentObject var calcManager: CalculationManager
+    
     var sub = 0
     var uni = 9
     var art = 8
@@ -16,12 +18,14 @@ struct CalculateView: View {
     var body: some View {
         VStack {
             HStack {
-                UniverseView(uni: uni)
+                UniverseView(uni: calcManager.prim_uni)
                 Spacer()
-                SubView(sub: sub)
-                UniverseView(uni: art)
+                SubView(sub: calcManager.subnet)
+                    .padding(.trailing)
+                UniverseView(uni: calcManager.art_uni)
             }.padding()
-            AllButtons()
+                .padding(.bottom, 10)
+            AllButtons().padding(.all)
         }
     }
 }

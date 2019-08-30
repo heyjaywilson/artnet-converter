@@ -19,7 +19,7 @@ struct AllButtons: View {
                         .resizable()
                         .aspectRatio(1, contentMode: .fit)
                 }
-                .frame(width: 50.0, height: 50.0)
+                .frame(width: 40.0, height: 40.0)
                 .padding(.all, 15.0)
                 Spacer()
                 Button(action: {
@@ -28,23 +28,42 @@ struct AllButtons: View {
                     Text("Uni -> ArtNet")
                 }
             }
+            Spacer()
             HStack{
                 NumberButton(num: 7)
+                Spacer()
                 NumberButton(num: 8)
+                Spacer()
                 NumberButton(num: 9)
             }
+            Spacer()
             HStack{
                 NumberButton(num: 4)
+                Spacer()
                 NumberButton(num: 5)
+                Spacer()
                 NumberButton(num: 6)
             }
+            Spacer()
             HStack{
                 NumberButton(num: 1)
+                Spacer()
                 NumberButton(num: 2)
+                Spacer()
                 NumberButton(num: 3)
             }
+            Spacer()
             HStack{
                 NumberButton(num: 0)
+                Spacer()
+                Button(action: {
+                    print("calculate")
+                }){
+                    Text("Calculate")
+                        .font(.title)
+                        .foregroundColor(Color.red)
+                        .padding(.trailing)
+                }
             }
         }
     }
