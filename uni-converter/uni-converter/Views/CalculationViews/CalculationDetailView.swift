@@ -11,7 +11,11 @@ import SwiftUI
 struct CalculationDetailView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @EnvironmentObject var calcManager: CalculationManager
+    
+    @State private var showNewNote: Bool = false
+    @State private var noteText: String = ""
     var calc: CalcEntity
+    
     var body: some View {
         List{
             Section(header: Text("ArtNet")) {
@@ -28,9 +32,11 @@ struct CalculationDetailView: View {
         .navigationBarItems(trailing:
             Button(action: {
                 print("add note")
+                self.showNewNote = true
             }){
                 Text("Add Note")
-                
+            }.alert(isPresented: self.$showNewNote){
+                Alert(title: Text("New Note"), message: Text("This will have a new note"), primaryButton: .default(Text("Add note")), secondaryButton: .cancel())
             }
         )
     }
