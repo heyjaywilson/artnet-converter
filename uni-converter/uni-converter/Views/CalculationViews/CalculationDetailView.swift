@@ -15,7 +15,7 @@ struct CalculationDetailView: View {
     @State private var showNewNote: Bool = false
     @State private var noteText: String = ""
     
-    var calc: CalcEntity
+    @State var calc: CalcEntity
     
     var body: some View {
         List{
@@ -37,7 +37,7 @@ struct CalculationDetailView: View {
             }){
                 Text("Add Note")
             }.sheet(isPresented: $showNewNote){
-                NewNoteForm(id: self.calc.id, calc: self.calc).environment(\.managedObjectContext, self.managedObjectContext)
+                NewNoteForm(id: self.calc.id, calc: self.$calc).environment(\.managedObjectContext, self.managedObjectContext)
             }
         )
     }

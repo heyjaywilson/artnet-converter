@@ -16,7 +16,7 @@ struct NewNoteForm: View {
     @FetchRequest(fetchRequest: NoteEntity.allNotes()) var notes: FetchedResults<NoteEntity>
     @State private var enteredText: String = ""
     let id: Int64
-    let calc: CalcEntity
+    @Binding var calc: CalcEntity
     
     var body: some View {
         NavigationView {
@@ -40,7 +40,7 @@ struct NewNoteForm: View {
         note.calc = self.calc
         note.note = enteredText
         note.id = Int64(notes.count)
-        note.datelog = Date()
+        note.date = Date()
         
         do {
             try self.managedObjectContext.save()

@@ -9,7 +9,7 @@
         <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NoteEntity" inverseName="calc" inverseEntity="NoteEntity"/>
     </entity>
     <entity name="NoteEntity" representedClassName="NoteEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="datelog" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="note" attributeType="String"/>
         <relationship name="calc" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CalcEntity" inverseName="notes" inverseEntity="CalcEntity"/>

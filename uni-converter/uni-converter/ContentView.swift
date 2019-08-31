@@ -23,6 +23,7 @@ struct ContentView: View {
                     }
             }
             .tag(0)
+            
             Favorites().environment(\.managedObjectContext, managedObjectContext)
                 .tabItem {
                     VStack {
@@ -31,6 +32,7 @@ struct ContentView: View {
                     }
             }
             .tag(1)
+            
             Settings()
                 .tabItem {
                     VStack {

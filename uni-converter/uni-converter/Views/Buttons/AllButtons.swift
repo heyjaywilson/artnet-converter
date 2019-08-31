@@ -64,6 +64,7 @@ struct AllButtons: View {
             }.padding(.horizontal)
         }
     }
+    
 }
 
 struct AllButtons_Previews: PreviewProvider {

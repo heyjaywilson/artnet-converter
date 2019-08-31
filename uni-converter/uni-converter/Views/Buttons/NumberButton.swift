@@ -19,6 +19,7 @@ struct NumberButton: View {
         Button(action: {
             if self.toggle == true {
                 self.toggle = false
+                self.calcManager.setPimUni(to: 0)
             }
             self.calcManager.addNumberToPrimUni(self.num)
         }){

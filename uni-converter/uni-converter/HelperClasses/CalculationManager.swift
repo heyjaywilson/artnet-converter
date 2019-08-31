@@ -66,6 +66,11 @@ class CalculationManager: ObservableObject {
         calcArtUni()
     }
     
+    func setPimUni(to num: Int){
+        prim_uni = num
+        calcArtUni()
+    }
+    
     func calcSubnet() -> Int{
         if prim_uni == 0 {
             subnet = 0
@@ -81,6 +86,7 @@ class CalculationManager: ObservableObject {
     func calcArtUni() {
         let uni = prim_uni - (self.calcSubnet() * 16)
         art_uni = uni
+        getCalcs()
     }
     
     func saveCalculation() {

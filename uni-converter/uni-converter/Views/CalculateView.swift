@@ -25,8 +25,6 @@ struct CalculateView: View {
                 UniverseView(uni: calcManager.art_uni)
             }.padding(.horizontal)
             AllButtons()
-        }.onAppear{
-            self.calcManager.getCalcs()
         }
     }
 }
