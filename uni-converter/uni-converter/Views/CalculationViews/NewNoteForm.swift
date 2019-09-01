@@ -13,10 +13,10 @@ struct NewNoteForm: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @Environment(\.presentationMode) var presentationMode
     
-    @FetchRequest(fetchRequest: NoteEntity.allNotes()) var notes: FetchedResults<NoteEntity>
     @State private var enteredText: String = ""
     let id: Int64
     @Binding var calc: CalcEntity
+    @Binding var notes: [String]
     
     var body: some View {
         NavigationView {
@@ -41,6 +41,8 @@ struct NewNoteForm: View {
         note.note = enteredText
         note.id = Int64(notes.count)
         note.date = Date()
+        
+        notes.append(note.note!)
         
         do {
             try self.managedObjectContext.save()

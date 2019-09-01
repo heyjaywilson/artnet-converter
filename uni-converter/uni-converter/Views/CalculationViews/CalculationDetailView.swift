@@ -14,9 +14,10 @@ struct CalculationDetailView: View {
     
     @State private var showNewNote: Bool = false
     @State private var noteText: String = ""
-    
+    @State private var notes: [String] = []
     @State var calc: CalcEntity
-    
+
+    let arr = ["hi", "note"]
     var body: some View {
         List{
             Section(header: Text("ArtNet")) {
@@ -24,7 +25,9 @@ struct CalculationDetailView: View {
                 Text("Universe: \(calc.artuni)")
             }
             Section(header: Text("Notes")){
-                Text("HI")
+                ForEach(notes, id: \.self){ note in
+                    Text("\(note)")
+                }
             }
         }
         .padding(.top)
@@ -37,9 +40,20 @@ struct CalculationDetailView: View {
             }){
                 Text("Add Note")
             }.sheet(isPresented: $showNewNote){
-                NewNoteForm(id: self.calc.id, calc: self.$calc).environment(\.managedObjectContext, self.managedObjectContext)
+                NewNoteForm(id: self.calc.id, calc: self.$calc, notes: self.$notes).environment(\.managedObjectContext, self.managedObjectContext)
             }
-        )
+        ).onAppear{
+            self.getNotes()
+        }
+    }
+    
+    func getNotes() {
+        if let fetched = try? managedObjectContext.fetch(NoteEntity.notesForCalc(calc.id)){
+            for note in fetched {
+                self.notes.append(note.note ?? "")
+                print(note.note)
+            }
+        }
     }
 }
 

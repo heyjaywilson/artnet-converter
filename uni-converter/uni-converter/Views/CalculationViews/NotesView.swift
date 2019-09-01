@@ -9,13 +9,16 @@
 import SwiftUI
 
 struct NotesView: View {
+    var notes: [String]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+        ForEach(notes, id: \.self){ note in
+            Text("\(note)")
+        }
     }
 }
 
 struct NotesView_Previews: PreviewProvider {
     static var previews: some View {
-        NotesView()
+        NotesView(notes: [])
     }
 }
