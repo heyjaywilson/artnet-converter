@@ -46,7 +46,6 @@ struct NewNoteForm: View {
         
         do {
             try self.managedObjectContext.save()
-            print(note)
         } catch {
             print(error)
         }
