@@ -16,13 +16,14 @@ struct CalculationDetailView: View {
     @State private var noteText: String = ""
     @State private var notes: [String] = []
     @State var calc: CalcEntity
-
-    let arr = ["hi", "note"]
+    
     var body: some View {
         List{
             Section(header: Text("ArtNet")) {
                 Text("Subnet: \(calc.subnet)")
                 Text("Universe: \(calc.artuni)")
+            }.onAppear{
+                self.getNotes()
             }
             Section(header: Text("Notes")){
                 ForEach(notes, id: \.self){ note in
@@ -42,16 +43,16 @@ struct CalculationDetailView: View {
             }.sheet(isPresented: $showNewNote){
                 NewNoteForm(id: self.calc.id, calc: self.$calc, notes: self.$notes).environment(\.managedObjectContext, self.managedObjectContext)
             }
-        ).onAppear{
-            self.getNotes()
-        }
+        )
     }
     
     func getNotes() {
+        print("getting notes")
+        print(Array(calc.notes!)[calc.notes!.count-1])
         if let fetched = try? managedObjectContext.fetch(NoteEntity.notesForCalc(calc.id)){
             for note in fetched {
                 self.notes.append(note.note ?? "")
-                print(note.note)
+                print(note.note ?? "no note")
             }
         }
     }
