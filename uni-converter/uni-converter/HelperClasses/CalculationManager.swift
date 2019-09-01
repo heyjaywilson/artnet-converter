@@ -47,7 +47,7 @@ class CalculationManager: ObservableObject {
         
         prim_uni = Int(newStr)!
         if prim_uni > 255 {
-            prim_uni = 256
+            prim_uni = 255
         }
         
         calcArtUni()

@@ -41,6 +41,8 @@ struct ContentView: View {
                     }
             }
             .tag(2)
+        }.onAppear{
+            self.calcManager.getCalcs()
         }
     }
 }
