@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @EnvironmentObject var calcManager: CalculationManager
-    @State private var selection = 1
+    @State private var selection = 2
     
     var body: some View {
         TabView(selection: $selection){

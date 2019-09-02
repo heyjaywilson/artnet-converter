@@ -9,8 +9,22 @@
 import SwiftUI
 
 struct Settings: View {
+    @State private var listenToDevice: Bool = false
+    @State private var colorScheme: Bool = false
+    @State private var zeroArt: Bool = true
+    @State private var zeroUni: Bool = true
+    
     var body: some View {
-        Text("Hello World!")
+        Form {
+            Section(header: Text("Color Scheme")){
+                Toggle(isOn: $listenToDevice) {
+                    Text("Listen to device for color scheme")
+                }
+                Toggle(isOn: $colorScheme){
+                    Text(self.colorScheme ? "Dark mode on" : "Dark mode off")
+                }
+            }
+        }
     }
 }
 
