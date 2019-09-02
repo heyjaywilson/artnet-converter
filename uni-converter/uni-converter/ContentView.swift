@@ -11,6 +11,8 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @EnvironmentObject var calcManager: CalculationManager
+    @EnvironmentObject var settingsManager: SettingsManager
+    
     @State private var selection = 2
     
     var body: some View {
@@ -33,7 +35,7 @@ struct ContentView: View {
             }
             .tag(1)
             
-            Settings()
+            Settings().environmentObject(settingsManager)
                 .tabItem {
                     VStack {
                         Image(systemName: "gear")

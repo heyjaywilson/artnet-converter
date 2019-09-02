@@ -22,8 +22,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Create the SwiftUI view that provides the window contents.
         let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let calcManager = CalculationManager(mc: managedObjectContext)
+        let settingsManager = SettingsManager()
         let contentView = ContentView()
             .environmentObject(calcManager)
+            .environmentObject(settingsManager)
             .environment(\.managedObjectContext, managedObjectContext)
 
         // Use a UIHostingController as window root view controller.
