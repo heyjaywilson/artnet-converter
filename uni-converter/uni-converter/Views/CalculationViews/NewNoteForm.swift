@@ -15,7 +15,6 @@ struct NewNoteForm: View {
     @EnvironmentObject var calcManager: CalculationManager
     
     @State private var enteredText: String = ""
-    let id: Int64
     @Binding var calc: CalcEntity
     @Binding var notes: [String]
     

@@ -94,7 +94,7 @@ class CalculationManager: ObservableObject {
         newCalc.artuni = Int64(art_uni)
         newCalc.subnet = Int64(subnet)
         newCalc.priuni = Int64(prim_uni)
-        newCalc.id = Int64(self.calcs.count)
+        newCalc.id = UUID()
         newCalc.date = Date()
         
         do {
@@ -120,8 +120,7 @@ class CalculationManager: ObservableObject {
         if let fetched = try? managedContext.fetch(CalcEntity.allCalcs()){
             self.calcs = []
             for calc in fetched {
-                print(calc)
-                if calc.id != 0{
+                if calc.id != nil{
                     self.calcs.append(calc)
                 }
             }

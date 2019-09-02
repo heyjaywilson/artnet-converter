@@ -41,7 +41,7 @@ struct CalculationDetailView: View {
             }){
                 Text("Add Note")
             }.sheet(isPresented: $showNewNote){
-                NewNoteForm(id: self.calc.id, calc: self.$calc, notes: self.$notes)
+                NewNoteForm(calc: self.$calc, notes: self.$notes)
                     .environment(\.managedObjectContext, self.managedObjectContext)
                     .environmentObject(self.calcManager)
             }
@@ -51,12 +51,9 @@ struct CalculationDetailView: View {
     func getNotes() {
         let allNotes = Array<Any>(calc.notes ?? [])
         notes = []
-        print("-------NOTES-------")
         for note in allNotes as! [NoteEntity]{
             if !note.note!.isEmpty {
-                notes.append(note.note!)
-                print(note.note!)
-            }
+                notes.append(note.note!)            }
         }
        //  print(allNotes)
     }
