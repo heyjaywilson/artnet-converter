@@ -22,6 +22,8 @@ struct Favorites: View {
                 }.onDelete(perform: delete)
             }
         .navigationBarTitle("Saved Calculations")
+        }.onAppear{
+            self.calcManager.getCalcs()
         }
     }
     

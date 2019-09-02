@@ -20,6 +20,7 @@ struct CalculationRowView: View {
                 Text("\(calc.priuni)")
                     .font(.title)
             }
+            Spacer()
             VStack{
                 Text("ArtNet")
                     .font(.subheadline)
@@ -43,12 +44,6 @@ struct CalculationRowView: View {
                     }
                 }
             }
-            Spacer()
-            Text("notes: \(calc.notes?.count ?? 0)")
-                .foregroundColor(.white)
-                .padding(.all, 10)
-                .background(Color.green)
-                .cornerRadius(20.0)
         }
     }
 }

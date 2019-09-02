@@ -12,6 +12,7 @@ import SwiftUI
 struct NewNoteForm: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var calcManager: CalculationManager
     
     @State private var enteredText: String = ""
     let id: Int64
@@ -49,6 +50,7 @@ struct NewNoteForm: View {
         } catch {
             print(error)
         }
+        calcManager.getCalcs()
         self.presentationMode.wrappedValue.dismiss()
     }
 }

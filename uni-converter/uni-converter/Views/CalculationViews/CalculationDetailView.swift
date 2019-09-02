@@ -41,20 +41,24 @@ struct CalculationDetailView: View {
             }){
                 Text("Add Note")
             }.sheet(isPresented: $showNewNote){
-                NewNoteForm(id: self.calc.id, calc: self.$calc, notes: self.$notes).environment(\.managedObjectContext, self.managedObjectContext)
+                NewNoteForm(id: self.calc.id, calc: self.$calc, notes: self.$notes)
+                    .environment(\.managedObjectContext, self.managedObjectContext)
+                    .environmentObject(self.calcManager)
             }
         )
     }
     
     func getNotes() {
-        print("getting notes")
-        print(Array(calc.notes!)[calc.notes!.count-1])
-        if let fetched = try? managedObjectContext.fetch(NoteEntity.notesForCalc(calc.id)){
-            for note in fetched {
-                self.notes.append(note.note ?? "")
-                print(note.note ?? "no note")
+        let allNotes = Array<Any>(calc.notes ?? [])
+        notes = []
+        print("-------NOTES-------")
+        for note in allNotes as! [NoteEntity]{
+            if !note.note!.isEmpty {
+                notes.append(note.note!)
+                print(note.note!)
             }
         }
+       //  print(allNotes)
     }
 }
 

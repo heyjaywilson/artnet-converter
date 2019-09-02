@@ -120,7 +120,10 @@ class CalculationManager: ObservableObject {
         if let fetched = try? managedContext.fetch(CalcEntity.allCalcs()){
             self.calcs = []
             for calc in fetched {
-                self.calcs.append(calc)
+                print(calc)
+                if calc.id != 0{
+                    self.calcs.append(calc)
+                }
             }
         }
     }
