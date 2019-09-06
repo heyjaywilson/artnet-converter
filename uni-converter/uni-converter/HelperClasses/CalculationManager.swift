@@ -11,6 +11,7 @@ import CoreData
 import Combine
 
 class CalculationManager: ObservableObject {
+    let settings: SettingsManager
     let objectWillChange = ObservableObjectPublisher()
     let managedContext: NSManagedObjectContext
     var mostRecentCalc: CalcEntity
@@ -39,6 +40,7 @@ class CalculationManager: ObservableObject {
     init(mc: NSManagedObjectContext){
         managedContext = mc
         mostRecentCalc = CalcEntity(context: managedContext)
+        settings = SettingsManager()
     }
     
     func addNumberToPrimUni(_ num: Int){
@@ -77,9 +79,9 @@ class CalculationManager: ObservableObject {
             return 0
         }
         
-        let  sub = prim_uni / 16
+        let  sub = (prim_uni / 16)
         
-        subnet = sub
+        subnet = sub + settings.returnZeroOrOne(settings.zeroArt)
         return sub
     }
     

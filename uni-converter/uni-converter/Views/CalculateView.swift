@@ -24,9 +24,3 @@ struct CalculateView: View {
         }
     }
 }
-
-struct CalculateView_Previews: PreviewProvider {
-    static var previews: some View {
-        CalculateView(sub: 0, uni: 10, art: 9)
-    }
-}
