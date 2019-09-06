@@ -18,7 +18,7 @@ struct Settings: View {
                     Text("Primary Universes is \(settingsManager.returnZeroOrOne(self.settingsManager.zeroUni))")
                 }
                 Toggle(isOn: $settingsManager.zeroArt) {
-                    Text("Primary Universes is \(settingsManager.returnZeroOrOne(self.settingsManager.zeroArt))")
+                    Text("Console needs ArtNet settings as \(settingsManager.returnZeroOrOne(self.settingsManager.zeroArt)) based")
                 }
             }
         }
