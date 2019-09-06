@@ -11,10 +11,6 @@ import SwiftUI
 struct CalculateView: View {
     @EnvironmentObject var calcManager: CalculationManager
     
-    var sub = 0
-    var uni = 9
-    var art = 8
-    
     var body: some View {
         VStack {
             HStack {
