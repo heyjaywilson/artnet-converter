@@ -13,13 +13,13 @@ struct Settings: View {
     
     var body: some View {
         Form {
-            Section(header: Text("Color Scheme")){
-                Toggle(isOn: $settingsManager.listenToDevice) {
-                    Text("Listen to device for color scheme")
+            Section(header: Text("Universe Settings")){
+                Toggle(isOn: $settingsManager.zeroUni) {
+                    Text("Primary Universes is \(settingsManager.returnZeroOrOne(self.settingsManager.zeroUni))")
                 }
-//                Toggle(isOn: $settingsManager.colorScheme){
-//                    Text(self.colorScheme ? "Dark mode on" : "Dark mode off")
-//                }
+                Toggle(isOn: $settingsManager.zeroArt) {
+                    Text("Primary Universes is \(settingsManager.returnZeroOrOne(self.settingsManager.zeroArt))")
+                }
             }
         }
     }
