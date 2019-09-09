@@ -10,6 +10,7 @@ import SwiftUI
 
 struct AllButtons: View {
     @EnvironmentObject var calcManager: CalculationManager
+    @EnvironmentObject var settingsManager: SettingsManager
     
     @State private var toggleSave: Bool = false
     
@@ -17,7 +18,7 @@ struct AllButtons: View {
         VStack{
             HStack{
                 Button(action: {
-                    self.calcManager.deleteNumberFromPrimUni()
+                    self.calcManager.deleteNumberFromPrimUni(self.settingsManager.returnZeroOrOne(self.settingsManager.zeroUni))
                 }){
                     Image(systemName: "arrow.left")
                         .resizable()

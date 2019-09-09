@@ -20,14 +20,12 @@ class SettingsManager: ObservableObject {
         willSet {
             self.objectWillChange.send()
             self.defaults.set(newValue, forKey: "zeroArt")
-            self.printDefaults()
         }
     }
     var zeroUni: Bool {
         willSet {
             self.objectWillChange.send()
             self.defaults.set(newValue, forKey: "zeroUni")
-            self.printDefaults()
         }
     }
     
@@ -53,5 +51,14 @@ class SettingsManager: ObservableObject {
             return 1
         }
         return 0
+    }
+    
+    func returnDefaults(_ type: String) -> Bool{
+        switch type {
+        case "zeroArt":
+            return defaults.bool(forKey: "zeroArt")
+        default:
+            return defaults.bool(forKey: "zeroUni")
+        }
     }
 }
