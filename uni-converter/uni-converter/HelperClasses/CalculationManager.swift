@@ -11,7 +11,7 @@ import CoreData
 import Combine
 
 class CalculationManager: ObservableObject {
-    let settings: SettingsManager
+    let set: SettingsManager
     let objectWillChange = ObservableObjectPublisher()
     let managedContext: NSManagedObjectContext
     var mostRecentCalc: CalcEntity
@@ -37,10 +37,10 @@ class CalculationManager: ObservableObject {
         }
     }
     
-    init(mc: NSManagedObjectContext){
+    init(mc: NSManagedObjectContext, settings: SettingsManager){
         managedContext = mc
         mostRecentCalc = CalcEntity(context: managedContext)
-        settings = SettingsManager()
+        self.set = SettingsManager()
     }
     
     func setNum(primUni: Int){
@@ -65,7 +65,7 @@ class CalculationManager: ObservableObject {
     
     func deleteNumberFromPrimUni(){
         if prim_uni <= 10 {
-            prim_uni = 0
+            prim_uni = set.returnZeroOrOne(set.zeroUni)
         } else {
             var originalStr = "\(prim_uni)"
             originalStr.removeLast()
@@ -82,19 +82,35 @@ class CalculationManager: ObservableObject {
     }
     
     func calcSubnet() -> Int{
-        if prim_uni == 0 {
-            subnet = 0
-            return 0
+        if !set.zeroUni {
+            // 0 base
+            if prim_uni == 0 {
+                subnet = 0
+                return 0
+            }
+        } else {
+            if prim_uni == 1 {
+                subnet = set.returnZeroOrOne(set.zeroArt)
+                return subnet
+            }
         }
         
-        let  sub = (prim_uni / 16)
-        
-        subnet = sub + settings.returnZeroOrOne(settings.zeroArt)
-        return sub
+        subnet = (prim_uni / 16)
+        return subnet
     }
     
     func calcArtUni() {
-        let uni = prim_uni - (self.calcSubnet() * 16)
+        let uni: Int
+        if !set.zeroUni {
+            // 0 base
+            uni = prim_uni - (self.calcSubnet() * 16) - 1
+        } else { // 1 base
+            if prim_uni == 1 {
+                uni = 0
+            }else {
+                uni = prim_uni - (self.calcSubnet() * 16)
+            }
+        }
         art_uni = uni
         getCalcs()
     }
@@ -126,6 +142,16 @@ class CalculationManager: ObservableObject {
         }
     }
     
+    func deleteCalc(_ calcEnt: CalcEntity) {
+        self.managedContext.delete(calcEnt)
+        do {
+            try self.managedContext.save()
+            self.getCalcs()
+        } catch {
+            print(error)
+        }
+    }
+    
     func getCalcs() {
         if let fetched = try? managedContext.fetch(CalcEntity.allCalcs()){
             self.calcs = []
@@ -137,13 +163,4 @@ class CalculationManager: ObservableObject {
         }
     }
     
-    func deleteCalc(_ calcEnt: CalcEntity) {
-        self.managedContext.delete(calcEnt)
-        do {
-            try self.managedContext.save()
-            self.getCalcs()
-        } catch {
-            print(error)
-        }
-    }
 }
