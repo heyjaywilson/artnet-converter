@@ -43,6 +43,14 @@ class CalculationManager: ObservableObject {
         settings = SettingsManager()
     }
     
+    func setNum(primUni: Int){
+        prim_uni = primUni
+    }
+    func setNum(art: Int){
+        art_uni = art
+        subnet = art
+    }
+    
     func addNumberToPrimUni(_ num: Int){
         let originalStr = "\(prim_uni)"
         let newStr = originalStr + "\(num)"

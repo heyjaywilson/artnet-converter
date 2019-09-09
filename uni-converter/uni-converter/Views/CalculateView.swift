@@ -10,6 +10,7 @@ import SwiftUI
 
 struct CalculateView: View {
     @EnvironmentObject var calcManager: CalculationManager
+    @EnvironmentObject var settingsManager: SettingsManager
     
     var body: some View {
         VStack {
@@ -21,6 +22,11 @@ struct CalculateView: View {
                 UniverseView(uni: calcManager.art_uni)
             }.padding(.horizontal)
             AllButtons()
+        }.onAppear{
+            if self.calcManager.prim_uni <= 1 {
+                self.calcManager.setNum(art: self.settingsManager.returnZeroOrOne(self.settingsManager.zeroArt))
+                self.calcManager.setNum(primUni: self.settingsManager.returnZeroOrOne(self.settingsManager.zeroUni))
+            }
         }
     }
 }

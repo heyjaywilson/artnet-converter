@@ -17,7 +17,9 @@ struct ContentView: View {
     
     var body: some View {
         TabView(selection: $selection){
-            CalculateView().environmentObject(calcManager)
+            CalculateView()
+                .environmentObject(calcManager)
+                .environmentObject(settingsManager)
                 .tabItem {
                     VStack {
                         Image(systemName: "square.grid.2x2")
