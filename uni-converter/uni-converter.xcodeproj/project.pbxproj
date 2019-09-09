@@ -29,7 +29,6 @@
 		37D4F82823189F5A00D303F6 /* NumberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D4F82723189F5A00D303F6 /* NumberButton.swift */; };
 		37E9CE802318A99B00DED49D /* CalculationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E9CE7F2318A99B00DED49D /* CalculationManager.swift */; };
 		37E9CE822318BC2E00DED49D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E9CE812318BC2E00DED49D /* Settings.swift */; };
-		37EAA6252325F09E00E509E3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37EAA6242325F09E00E509E3 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +56,6 @@
 		37D4F82723189F5A00D303F6 /* NumberButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberButton.swift; sourceTree = "<group>"; };
 		37E9CE7F2318A99B00DED49D /* CalculationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationManager.swift; sourceTree = "<group>"; };
 		37E9CE812318BC2E00DED49D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		37EAA6242325F09E00E509E3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +82,6 @@
 		37CC93BF23188E62009A60D5 = {
 			isa = PBXGroup;
 			children = (
-				37EAA6242325F09E00E509E3 /* Default-568h@2x.png */,
 				37CC93CA23188E62009A60D5 /* uni-converter */,
 				37CC93C923188E62009A60D5 /* Products */,
 			);
@@ -234,7 +231,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				37CC93DB23188E67009A60D5 /* LaunchScreen.storyboard in Resources */,
-				37EAA6252325F09E00E509E3 /* Default-568h@2x.png in Resources */,
 				37CC93D823188E67009A60D5 /* Preview Assets.xcassets in Resources */,
 				37CC93D523188E67009A60D5 /* Assets.xcassets in Resources */,
 			);
