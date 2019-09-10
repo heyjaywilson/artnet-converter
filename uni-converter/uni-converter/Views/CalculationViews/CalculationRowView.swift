@@ -19,6 +19,7 @@ struct CalculationRowView: View {
                     .multilineTextAlignment(.center)
                 Text("\(calc.priuni)")
                     .font(.title)
+                    .foregroundColor(self.determineFontColor(calc.isZeroUni))
             }
             Spacer()
             VStack{
@@ -33,6 +34,7 @@ struct CalculationRowView: View {
                             .foregroundColor(.gray)
                         Text("\(calc.subnet)")
                             .fontWeight(.bold)
+                            .foregroundColor(self.determineFontColor(calc.isZeroArt))
                     }.padding(.horizontal)
                     VStack{
                         Text("uni")
@@ -41,9 +43,18 @@ struct CalculationRowView: View {
                             .multilineTextAlignment(.center)
                         Text("\(calc.artuni)")
                             .fontWeight(.bold)
+                            .foregroundColor(self.determineFontColor(calc.isZeroArt))
                     }
                 }
             }
+        }
+    }
+    
+    func determineFontColor(_ yayOrNay: Bool) -> Color {
+        if yayOrNay{
+            return Color.red
+        } else {
+            return Color.blue
         }
     }
 }

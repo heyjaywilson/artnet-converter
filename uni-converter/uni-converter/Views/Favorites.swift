@@ -29,7 +29,6 @@ struct Favorites: View {
     
     func delete(at offsets: IndexSet){
         let temp = calcManager.calcs[offsets]
-        //        calcManager.calcs.remove(atOffsets: offsets)
         calcManager.deleteCalc(temp[0])
     }
 }

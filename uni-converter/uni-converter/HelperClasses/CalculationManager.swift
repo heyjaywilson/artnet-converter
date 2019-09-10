@@ -94,8 +94,6 @@ class CalculationManager: ObservableObject {
         }
         
         calcAll(uniIsZero: universe, artIsZero: art)
-        print(prim_uni)
-        
     }
     
     func setPimUni(to num: Int){
@@ -147,12 +145,17 @@ class CalculationManager: ObservableObject {
     }
     
     func saveCalculation() {
+        let universe: Bool = set.returnDefaults("zeroUni")
+        let art: Bool = set.returnDefaults("zeroArt")
+        
         let newCalc = CalcEntity(context: managedContext)
         newCalc.artuni = Int64(art_uni)
         newCalc.subnet = Int64(subnet)
         newCalc.priuni = Int64(prim_uni)
         newCalc.id = UUID()
         newCalc.date = Date()
+        newCalc.isZeroUni = universe
+        newCalc.isZeroArt = art
         
         do {
             try self.managedContext.save()

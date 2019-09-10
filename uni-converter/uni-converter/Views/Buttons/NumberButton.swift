@@ -31,6 +31,7 @@ struct NumberButton: View {
                 .background(Color.gray)
                 .cornerRadius(2.0)
                 .padding(.all, 10.0)
+                .shadow(radius: 2.0)
         }
     }
 }
