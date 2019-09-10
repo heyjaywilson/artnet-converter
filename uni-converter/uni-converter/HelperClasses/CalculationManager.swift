@@ -52,6 +52,8 @@ class CalculationManager: ObservableObject {
     }
     
     func addNumberToPrimUni(_ num: Int){
+        let universe: Bool = !set.returnDefaults("zeroUni")
+        let art: Bool = !set.returnDefaults("zeroArt")
         let originalStr = "\(prim_uni)"
         let newStr = originalStr + "\(num)"
         
@@ -60,7 +62,7 @@ class CalculationManager: ObservableObject {
             prim_uni = 255
         }
         
-        calcArtUni()
+        calcAll(uniIsZero: universe, artIsZero: art)
     }
     
     func deleteNumberFromPrimUni(_ num: Int){
@@ -95,6 +97,47 @@ class CalculationManager: ObservableObject {
     func setPimUni(to num: Int){
         prim_uni = num
         calcArtUni()
+    }
+    
+    func calcSub(add: Int){
+        subnet = (prim_uni/16) + add
+    }
+    
+    func calcArtUni(add: Int){
+        art_uni = (prim_uni % 16) + add
+    }
+    
+    func calcAll(uniIsZero: Bool, artIsZero: Bool){
+        if uniIsZero {
+            if artIsZero {
+                if prim_uni == 0 {
+                    subnet = 0
+                    art_uni = 0
+                } else if prim_uni % 16 == 0 {
+                    calcSub(add: -1)
+                    art_uni = 15
+                } else {
+                    calcSub(add: 0)
+                    calcArtUni(add: 0)
+                }
+            } else {
+                calcSub(add: 1)
+                calcArtUni(add: 1)
+            }
+        } else {
+            if artIsZero {
+                if prim_uni % 16 == 0 {
+                    calcSub(add: -1)
+                    art_uni = 15
+                } else {
+                    calcSub(add: 0)
+                    calcArtUni(add: -1)
+                }
+            } else {
+                calcSub(add: 0)
+                calcArtUni(add: 0)
+            }
+        }
     }
     
     func calcSubnet() -> Int{
