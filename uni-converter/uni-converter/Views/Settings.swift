@@ -35,13 +35,12 @@ struct Settings: View {
                     }
                 }
                 Section(header: Text("Support").padding(.top)){
-                    Text("🐛 Bugs (🔗 to GitHub)").onTapGesture {
-                        if let url = URL(string: "https://www.hackingwithswift.com") {
-                            UIApplication.shared.open(url)
-                        }
+                    NavigationLink(destination: WebView(url: "https://github.com/maeganjwilson/artnet-converter/issues/new?assignees=&labels=&template=bug_report.md&title=🐛")){
+                        Text("🐛 Bugs (🔗 to GitHub)")
                     }
-                    Text("⚒️ Requests (🔗 to GitHub)")
-                    Text("✉️ Contact (🔗 to Email)")
+                    NavigationLink(destination: WebView(url: "https://github.com/maeganjwilson/artnet-converter/issues/new?assignees=&labels=&template=feature_request.md&title=⚒%EF%B8%8F")){
+                        Text("⚒️ Requests (🔗 to GitHub)")
+                    }
                 }
             }.navigationBarTitle("Settings & Info")
         }
