@@ -1,7 +1,7 @@
 ---
 name: Bug report
 about: Create a report to help Uni Converter improve
-title: "\U0001F41B"
+title: "BUG"
 labels: ''
 assignees: ''
 
