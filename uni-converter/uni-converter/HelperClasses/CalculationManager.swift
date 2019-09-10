@@ -58,10 +58,15 @@ class CalculationManager: ObservableObject {
         let newStr = originalStr + "\(num)"
         
         prim_uni = Int(newStr)!
-        if prim_uni > 255 {
-            prim_uni = 255
+        if universe{
+            if prim_uni > 255 {
+                prim_uni = 255
+            }
+        } else {
+            if prim_uni > 256 {
+                prim_uni = 256
+            }
         }
-        
         calcAll(uniIsZero: universe, artIsZero: art)
     }
     
@@ -138,8 +143,13 @@ class CalculationManager: ObservableObject {
                     calcArtUni(add: -1)
                 }
             } else {
-                calcSub(add: 1)
-                calcArtUni(add: 0)
+                if prim_uni % 16 == 0 {
+                    calcSub(add: 0)
+                    calcArtUni(add: 16)
+                }else {
+                    calcSub(add: 1)
+                    calcArtUni(add: 0)
+                }
             }
         }
     }
