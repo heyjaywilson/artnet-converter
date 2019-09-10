@@ -30,7 +30,7 @@ struct Settings: View {
                     }
                 }
                 Section(header: Text("About").padding(.top)){
-                    NavigationLink(destination: Text("About")) {
+                    NavigationLink(destination: AboutView()) {
                         VStack(alignment: .leading) {
                             Text("About the App")
                             Text("Version: \(appVersion ?? "VERSION INFO ERROR")")
@@ -42,7 +42,8 @@ struct Settings: View {
                         VStack(alignment: .leading) {
                             Text("Enjoying the app?")
                             Text("Tap here to add to the tip jar")
-                                .font(.subheadline)
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
                         }
                     }
                     NavigationLink(destination: WebView(url: website_URL)){
@@ -69,7 +70,8 @@ struct Settings: View {
                         }
                     }
                 }
-            }.navigationBarTitle("Settings & Info")
+            }
+            .navigationBarTitle("Settings & Info")
         }
     }
 }

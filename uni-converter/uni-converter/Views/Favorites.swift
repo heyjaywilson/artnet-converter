@@ -15,6 +15,19 @@ struct Favorites: View {
     var body: some View {
         NavigationView{
             List{
+                VStack{
+                    Text("What do the colors mean?")
+                        .font(.body)
+                    HStack{
+                        Text("Red text is 1 based")
+                            .font(.headline)
+                            .foregroundColor(.red)
+                        Spacer()
+                        Text("Blue text is 0 based")
+                            .font(.headline)
+                            .foregroundColor(.blue)
+                    }.padding(.bottom, 5)
+                }
                 ForEach(calcManager.calcs, id: \.id){ calc in
                     NavigationLink(destination: CalculationDetailView(calc: calc)) {
                         CalculationRowView(calc: calc)
