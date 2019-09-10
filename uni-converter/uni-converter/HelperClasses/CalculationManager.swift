@@ -66,8 +66,10 @@ class CalculationManager: ObservableObject {
     }
     
     func deleteNumberFromPrimUni(_ num: Int){
-        let uni: Bool = set.returnDefaults("zeroUni")
-        if uni {
+        let universe: Bool = !set.returnDefaults("zeroUni")
+        let art: Bool = !set.returnDefaults("zeroArt")
+        
+        if !universe {
             // 1 based
             if prim_uni < 20 {
                 prim_uni = 1
@@ -79,7 +81,7 @@ class CalculationManager: ObservableObject {
             }
         } else {
             // 0 based
-            if prim_uni == 1 {
+            if prim_uni < 10 {
                 prim_uni = 0
             } else {
                 var originalStr = "\(prim_uni)"
@@ -89,14 +91,16 @@ class CalculationManager: ObservableObject {
             }
         }
         
-        calcArtUni()
+        calcAll(uniIsZero: universe, artIsZero: art)
         print(prim_uni)
         
     }
     
     func setPimUni(to num: Int){
+        let universe: Bool = !set.returnDefaults("zeroUni")
+        let art: Bool = !set.returnDefaults("zeroArt")
         prim_uni = num
-        calcArtUni()
+        calcAll(uniIsZero: universe, artIsZero: art)
     }
     
     func calcSub(add: Int){
@@ -134,48 +138,10 @@ class CalculationManager: ObservableObject {
                     calcArtUni(add: -1)
                 }
             } else {
-                calcSub(add: 0)
+                calcSub(add: 1)
                 calcArtUni(add: 0)
             }
         }
-    }
-    
-    func calcSubnet() -> Int{
-        let universe: Bool = set.returnDefaults("zeroUni")
-        let art: Bool = set.returnDefaults("zeroArt")
-        if !universe {
-            // 0 base
-            if prim_uni == 0 {
-                subnet = 0
-                return 0
-            }
-        } else {
-            if prim_uni == 1 {
-                subnet = set.returnZeroOrOne(art)
-                return subnet
-            }
-        }
-        
-        subnet = (prim_uni / 16)
-        return subnet
-    }
-    
-    func calcArtUni() {
-        let universe: Bool = set.returnDefaults("zeroUni")
-        let uni: Int
-        let sub: Int = calcSubnet()
-        if !universe {
-            // 0 base
-            uni = prim_uni - (sub * 16)
-        } else { // 1 base
-            if prim_uni == 1 {
-                uni = 0
-            }else {
-                uni = prim_uni - (sub * 16)
-            }
-        }
-        art_uni = uni
-        getCalcs()
     }
     
     func saveCalculation() {
