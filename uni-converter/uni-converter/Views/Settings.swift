@@ -11,6 +11,13 @@ import SwiftUI
 struct Settings: View {
     @EnvironmentObject var settingsManager: SettingsManager
     
+    let website_URL = URL(string: "https://maeganjwilson.github.io/artnet-converter/")!
+    let bug_URL = URL(string: "https://github.com/maeganjwilson/artnet-converter/issues/new?assignees=&labels=&template=bug_report.md&title=BUG")!
+    
+    let request_URL = URL(string: "https://github.com/maeganjwilson/artnet-converter/issues/new?assignees=&labels=&template=feature_request.md&title=FEATURE")!
+    
+    let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+    
     var body: some View {
         NavigationView{
             List {
@@ -24,7 +31,12 @@ struct Settings: View {
                 }
                 Section(header: Text("About").padding(.top)){
                     NavigationLink(destination: Text("About")) {
-                        Text("About the App")
+                        VStack(alignment: .leading) {
+                            Text("About the App")
+                            Text("Version: \(appVersion ?? "VERSION INFO ERROR")")
+                                .font(.subheadline)
+                                .foregroundColor(.green)
+                        }
                     }
                     NavigationLink(destination: Text("Tipping")) {
                         VStack(alignment: .leading) {
@@ -33,13 +45,28 @@ struct Settings: View {
                                 .font(.subheadline)
                         }
                     }
+                    NavigationLink(destination: WebView(url: website_URL)){
+                        VStack(alignment: .leading){
+                            Text("🖥️ App Website (🔗 to website)")
+                        }
+                    }
                 }
                 Section(header: Text("Support").padding(.top)){
-                    NavigationLink(destination: WebView(url: "https://github.com/maeganjwilson/artnet-converter/issues/new?assignees=&labels=&template=bug_report.md&title=🐛")){
-                        Text("🐛 Bugs (🔗 to GitHub)")
+                    NavigationLink(destination: WebView(url: bug_URL)){
+                        VStack(alignment: .leading){
+                            Text("🐛 Bugs (🔗 to GitHub)")
+                            Text("Will need GitHub account to report issue")
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                        }
                     }
-                    NavigationLink(destination: WebView(url: "https://github.com/maeganjwilson/artnet-converter/issues/new?assignees=&labels=&template=feature_request.md&title=⚒%EF%B8%8F")){
-                        Text("⚒️ Requests (🔗 to GitHub)")
+                    NavigationLink(destination: WebView(url: request_URL)){
+                        VStack(alignment: .leading){
+                            Text("⚒️ Requests (🔗 to GitHub)")
+                            Text("Will need GitHub account to report issue")
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                        }
                     }
                 }
             }.navigationBarTitle("Settings & Info")
