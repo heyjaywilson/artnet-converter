@@ -17,6 +17,7 @@ struct AllButtons: View {
     var body: some View {
         VStack{
             HStack{
+                Spacer()
                 Button(action: {
                     self.calcManager.deleteNumberFromPrimUni(self.settingsManager.returnZeroOrOne(self.settingsManager.zeroUni))
                 }){
@@ -26,12 +27,6 @@ struct AllButtons: View {
                 }
                 .frame(width: 40.0, height: 40.0)
                 .padding(.all, 15.0)
-                Spacer()
-                Button(action: {
-                    print("P -> A")
-                }){
-                    Text("Uni -> ArtNet")
-                }
             }.padding(.horizontal)
             HStack{
                 NumberButton(toggle: self.$toggleSave, num: 7)

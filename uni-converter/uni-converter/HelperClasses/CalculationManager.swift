@@ -78,7 +78,7 @@ class CalculationManager: ObservableObject {
             // 1 based
             if prim_uni < 20 && prim_uni > 1 {
                 prim_uni = 1
-            } else if prim_uni == 1{
+            } else if prim_uni == 1 || prim_uni == 0{
                 prim_uni = 0
             } else {
                 var originalStr = "\(prim_uni)"

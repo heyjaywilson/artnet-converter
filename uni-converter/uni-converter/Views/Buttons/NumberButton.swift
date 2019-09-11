@@ -10,6 +10,7 @@ import SwiftUI
 
 struct NumberButton: View {
     @EnvironmentObject var calcManager: CalculationManager
+    @EnvironmentObject var settingsManager: SettingsManager
     
     @Binding var toggle: Bool
     var num: Int

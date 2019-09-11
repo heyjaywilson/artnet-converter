@@ -13,7 +13,7 @@ struct ContentView: View {
     @EnvironmentObject var calcManager: CalculationManager
     @EnvironmentObject var settingsManager: SettingsManager
     
-    @State private var selection = 2
+    @State private var selection = 0
     
     var body: some View {
         TabView(selection: $selection){
