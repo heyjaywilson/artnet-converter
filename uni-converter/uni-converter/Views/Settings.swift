@@ -38,9 +38,9 @@ struct Settings: View {
                                 .foregroundColor(.green)
                         }
                     }
-                    NavigationLink(destination: Text("Tipping")) {
+                    NavigationLink(destination: TippingView()) {
                         VStack(alignment: .leading) {
-                            Text("Enjoying the app?")
+                            Text("👍 Enjoying the app?")
                             Text("Tap here to add to the tip jar")
                             .font(.subheadline)
                             .foregroundColor(.gray)
