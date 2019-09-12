@@ -11,10 +11,10 @@ import SwiftUI
 struct Settings: View {
     @EnvironmentObject var settingsManager: SettingsManager
     
-    let website_URL = URL(string: "https://maeganjwilson.github.io/artnet-converter/")!
+    let website_URL: URL = URL(string: "https://maeganjwilson.github.io/artnet-converter/")!
     let bug_URL = URL(string: "https://github.com/maeganjwilson/artnet-converter/issues/new?assignees=&labels=&template=bug_report.md&title=BUG")!
     
-    let request_URL = URL(string: "https://github.com/maeganjwilson/artnet-converter/issues/new?assignees=&labels=&template=feature_request.md&title=FEATURE")!
+    let request_URL: URL = URL(string: "https://github.com/maeganjwilson/artnet-converter/issues/new?assignees=&labels=&template=feature_request.md&title=FEATURE")!
     
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
     
@@ -72,7 +72,7 @@ struct Settings: View {
                 }
             }
             .navigationBarTitle("Settings & Info")
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

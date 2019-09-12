@@ -54,7 +54,7 @@
 		37B8B2952318D30100A2C0AD /* CalcEntity+properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalcEntity+properties.swift"; sourceTree = "<group>"; };
 		37B8B2972318D3BC00A2C0AD /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		37B8B29A2318DFB900A2C0AD /* CalculationRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationRowView.swift; sourceTree = "<group>"; };
-		37CC93C823188E62009A60D5 /* uni-converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uni-converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		37CC93C823188E62009A60D5 /* LUC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LUC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37CC93CB23188E62009A60D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37CC93CD23188E62009A60D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		37CC93D023188E62009A60D5 /* uni_converter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = uni_converter.xcdatamodel; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 		37CC93C923188E62009A60D5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				37CC93C823188E62009A60D5 /* uni-converter.app */,
+				37CC93C823188E62009A60D5 /* LUC.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -235,7 +235,7 @@
 			);
 			name = "uni-converter";
 			productName = "uni-converter";
-			productReference = 37CC93C823188E62009A60D5 /* uni-converter.app */;
+			productReference = 37CC93C823188E62009A60D5 /* LUC.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -471,18 +471,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 302;
+				CURRENT_PROJECT_VERSION = 274;
 				DEVELOPMENT_ASSET_PATHS = "\"uni-converter/Preview Content\"";
 				DEVELOPMENT_TEAM = ZDK82FGR3Z;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "uni-converter/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2019.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "maeganwilson.artnet-app";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LUC;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -493,18 +494,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 302;
+				CURRENT_PROJECT_VERSION = 274;
 				DEVELOPMENT_ASSET_PATHS = "\"uni-converter/Preview Content\"";
 				DEVELOPMENT_TEAM = ZDK82FGR3Z;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "uni-converter/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2019.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "maeganwilson.artnet-app";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LUC;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
