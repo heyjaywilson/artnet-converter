@@ -17,6 +17,7 @@ struct Settings: View {
     let request_URL: URL = URL(string: "https://github.com/maeganjwilson/artnet-converter/issues/new?assignees=&labels=&template=feature_request.md&title=FEATURE")!
     
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+    let appBuild = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
     
     var body: some View {
         NavigationView{
@@ -33,7 +34,7 @@ struct Settings: View {
                     NavigationLink(destination: AboutView()) {
                         VStack(alignment: .leading) {
                             Text("About the App")
-                            Text("Version: \(appVersion ?? "VERSION INFO ERROR")")
+                            Text("Version: \(appVersion ?? "VERSION INFO ERROR") (\(appBuild ?? "BUILD"))")
                                 .font(.subheadline)
                                 .foregroundColor(.green)
                         }
