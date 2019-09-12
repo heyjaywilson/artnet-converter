@@ -1,5 +1,20 @@
 All notable changes will be documented in this file.
 
+# v2019.3
+
+## Added
+
+- Notes feature
+- Save calculations
+- Support for Dark mode
+- Settings
+
+## Deprecated
+
+- This version will only work with devices running iOS 13 and above and iPadOS 13 and above.
+
+---
+
 # v1.3.0
 
 ## Added
