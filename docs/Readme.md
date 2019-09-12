@@ -20,7 +20,12 @@ If you are enjoying the app, please leave a review on the App Store, consider le
 
 # Releases
 
-- v2019.3 - [Release Notes can be found clicking here]()
+[All Releases](https://github.com/maeganjwilson/artnet-converter/releases)
+
+- v2019.3 - [Release Notes can be found clicking here](https://github.com/maeganjwilson/artnet-converter/releases/tag/v2019.3)
+- v2019.2 - [Release Notes can be found clicking here](https://github.com/maeganjwilson/artnet-converter/releases/tag/v2019.2)
+- v1.3.0 - [Release Notes can be found clicking here](https://github.com/maeganjwilson/artnet-converter/releases/tag/v1.3.0b011)
+- v1.2.0 - [Release Notes can be found clicking here](https://github.com/maeganjwilson/artnet-converter/releases/tag/v1.2.0b001)
 
 # Look for Maegan on the web!
 
