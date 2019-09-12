@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -54,7 +54,7 @@
 		37B8B2952318D30100A2C0AD /* CalcEntity+properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalcEntity+properties.swift"; sourceTree = "<group>"; };
 		37B8B2972318D3BC00A2C0AD /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		37B8B29A2318DFB900A2C0AD /* CalculationRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationRowView.swift; sourceTree = "<group>"; };
-		37CC93C823188E62009A60D5 /* LUC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LUC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37CC93C823188E62009A60D5 /* Universe Convert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Universe Convert.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37CC93CB23188E62009A60D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37CC93CD23188E62009A60D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		37CC93D023188E62009A60D5 /* uni_converter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = uni_converter.xcdatamodel; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 		37CC93C923188E62009A60D5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				37CC93C823188E62009A60D5 /* LUC.app */,
+				37CC93C823188E62009A60D5 /* Universe Convert.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -235,7 +235,7 @@
 			);
 			name = "uni-converter";
 			productName = "uni-converter";
-			productReference = 37CC93C823188E62009A60D5 /* LUC.app */;
+			productReference = 37CC93C823188E62009A60D5 /* Universe Convert.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -254,7 +254,7 @@
 				};
 			};
 			buildConfigurationList = 37CC93C323188E62009A60D5 /* Build configuration list for PBXProject "uni-converter" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -471,7 +471,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 275;
+				CURRENT_PROJECT_VERSION = 280;
 				DEVELOPMENT_ASSET_PATHS = "\"uni-converter/Preview Content\"";
 				DEVELOPMENT_TEAM = ZDK82FGR3Z;
 				ENABLE_PREVIEWS = YES;
@@ -483,7 +483,7 @@
 				);
 				MARKETING_VERSION = 2019.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "maeganwilson.artnet-app";
-				PRODUCT_NAME = LUC;
+				PRODUCT_NAME = "Universe Convert";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -494,7 +494,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 275;
+				CURRENT_PROJECT_VERSION = 280;
 				DEVELOPMENT_ASSET_PATHS = "\"uni-converter/Preview Content\"";
 				DEVELOPMENT_TEAM = ZDK82FGR3Z;
 				ENABLE_PREVIEWS = YES;
@@ -506,7 +506,7 @@
 				);
 				MARKETING_VERSION = 2019.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "maeganwilson.artnet-app";
-				PRODUCT_NAME = LUC;
+				PRODUCT_NAME = "Universe Convert";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
