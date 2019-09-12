@@ -7,7 +7,9 @@ All notable changes will be documented in this file.
 - Notes feature
 - Save calculations
 - Support for Dark mode
-- Settings
+- Settings to perform calulations for 0 or 1 based
+- New Design
+- Rewritten in SwiftUI
 
 ## Deprecated
 
