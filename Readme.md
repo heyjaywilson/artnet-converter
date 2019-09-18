@@ -15,7 +15,7 @@ An application to convert a fixture universe or primary universe to art-net subn
 - **Version in App Store**: [v2019.2](https://github.com/maeganjwilson/artnet-converter/releases/tag/v2019.2)
   - Supports **iOS 11.4** or later
 - **Next release**: [v2019.3](https://github.com/maeganjwilson/artnet-converter/releases/tag/v2019.3)
-  - _This release is waiting for review_
+  - _This release is waiting for iOS 13 to be released_
   - Supports **iOS 13** or later and **iPadOS 13** or later
 
 # Why show my code?
