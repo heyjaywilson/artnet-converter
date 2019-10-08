@@ -1,7 +1,6 @@
 # Universe Converter for ArtNet
 
 An application to convert a fixture universe or primary universe to art-net subnet and art-net universe that many lighting consoles require to communicate to a fixture or to an art-net node.
-
 [![Download on the App Store](https://raw.githubusercontent.com/maeganjwilson/artnet-converter/master/docs/images/download_app_store.svg?sanitize=true)](https://apps.apple.com/us/app/universe-converter-for-artnet/id1399672978)
 
 # Features of the App
@@ -19,7 +18,6 @@ Have issues and feedback? Please post an issue on [the GitHub repo](https://gith
 # Enjoying the app?
 
 If you are enjoying the app, please leave a review on the App Store, consider leaving me a tip in the app, or [Buy Me a Coffee](https://www.buymeacoffee.com/mwilsonapps)!
-
 <a href="https://www.buymeacoffee.com/mwilsonapps" target="_blank"><img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 
 # Releases
