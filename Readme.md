@@ -1,4 +1,4 @@
-![Badge](https://img.shields.io/github/last-commit/maeganjwilson/artnet-converter?style=for-the-badge)
+![Release version](https://img.shields.io/itunes/v/1399672978?style=for-the-badge) ![Badge](https://img.shields.io/github/last-commit/maeganjwilson/artnet-converter?style=for-the-badge) ![Language](https://img.shields.io/github/languages/top/maeganjwilson/artnet-converter?style=for-the-badge)
 
 [![Download on the App Store](https://raw.githubusercontent.com/maeganjwilson/artnet-converter/master/docs/images/download_app_store.svg?sanitize=true)](https://apps.apple.com/us/app/universe-converter-for-artnet/id1399672978)
 # Universe Converter for ArtNet
