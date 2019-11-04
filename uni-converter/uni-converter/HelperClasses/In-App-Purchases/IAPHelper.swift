@@ -141,6 +141,7 @@ extension IAPHelper: SKPaymentTransactionObserver {
         guard let productIdentifier = transaction.original?.payment.productIdentifier else { return }
         
         print("restore... \(productIdentifier)")
+        print(transaction.payment)
         deliverPurchaseNotificationFor(identifier: productIdentifier)
         SKPaymentQueue.default().finishTransaction(transaction)
     }

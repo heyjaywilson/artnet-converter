@@ -11,6 +11,8 @@ import StoreKit
 struct TippingView: View {
     @State private var products: [SKProduct] = []
     
+    var store = ArtnetAppProducts.store
+    
     var body: some View {
         VStack{
             Text("If you enjoy using the app, please consider giving Maegan a tip using an in-app purchase. Your support is greatly appreciated.")
@@ -22,8 +24,13 @@ struct TippingView: View {
         }
         .padding(.horizontal)
         .navigationBarTitle("👍 Tips")
+        .navigationBarItems(trailing: Button(action: {
+            self.store.restorePurchases()
+        }, label: {
+            Text("Restore Purchases")
+        }))
         .onAppear{
-            ArtnetAppProducts.store.requestProducts { (success, products) in
+            self.store.requestProducts { (success, products) in
                 if success {
                     self.products = products!
                 }
