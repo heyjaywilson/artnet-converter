@@ -53,9 +53,9 @@ struct CalculationDetailView: View {
         notes = []
         for note in allNotes as! [NoteEntity]{
             if !note.note!.isEmpty {
-                notes.append(note.note!)            }
+                notes.append(note.note!)
+            }
         }
-       //  print(allNotes)
     }
 }
 
