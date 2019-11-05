@@ -1,5 +1,17 @@
 All notable changes will be documented in this file.
 
+# 2019.4
+
+## Added
+
+- Context menu to quickly delete and add notes
+
+## Fixed
+
+- Bug with tipping feature where the payment process never actually started.
+
+---
+
 # v2019.3
 
 ## Added
