@@ -12,6 +12,9 @@ struct Favorites: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @EnvironmentObject var calcManager: CalculationManager
     
+    @State private var display: Bool = false
+    @State private var calcAddNote: CalcEntity = CalcEntity()
+    @State private var notes: [String] = []
     var body: some View {
         NavigationView{
             List{
@@ -30,12 +33,19 @@ struct Favorites: View {
                 }
                 ForEach(calcManager.calcs, id: \.id){ calc in
                     NavigationLink(destination: CalculationDetailView(calc: calc)) {
-                        CalculationRowView(calc: calc)
+                        CalculationRowView(calc: calc, display: self.$display, calcAddNote: self.$calcAddNote)
                     }
-                }.onDelete(perform: delete)
+                }
+                .onDelete(perform: delete)
             }
-        .navigationBarTitle("Saved Calculations")
-        }.navigationViewStyle(StackNavigationViewStyle())
+            .navigationBarTitle("Saved Calculations")
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
+        .sheet(isPresented: $display){
+            NewNoteForm(calc: self.$calcAddNote, notes: self.$notes)
+                .environment(\.managedObjectContext, self.managedObjectContext)
+                .environmentObject(self.calcManager)
+        }
         .onAppear{
             self.calcManager.getCalcs()
         }

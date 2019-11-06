@@ -27,6 +27,7 @@ struct TippingRow: View {
             Spacer()
             Button(action: {
                 print("Buy")
+                ArtnetAppProducts.store.buyProduct(self.product)
             }){
                 Text("\(TippingRow.priceFormatter.string(from: self.product.price) ?? "--")")
                     .padding(.all, 8)
@@ -51,6 +52,7 @@ struct TippingRow: View {
                 return product.localizedTitle
         }
     }
+    
 }
 
 //struct TippingRow_Previews: PreviewProvider {

@@ -9,7 +9,10 @@
 import SwiftUI
 
 struct CalculationRowView: View {
+    @EnvironmentObject var calcManager: CalculationManager
     var calc: CalcEntity
+    @Binding var display: Bool
+    @Binding var calcAddNote: CalcEntity
     var body: some View {
         HStack(alignment: .center){
             VStack{
@@ -46,6 +49,22 @@ struct CalculationRowView: View {
                             .foregroundColor(self.determineFontColor(calc.isZeroArt))
                     }
                 }
+            }
+        }
+        .contextMenu{
+            Button(action: {
+                print("delete")
+                self.calcManager.deleteCalc(self.calc)
+            }) {
+                Text("Delete")
+                Image(systemName: "trash")
+            }
+            Button(action: {
+                self.display.toggle()
+                self.calcAddNote = self.calc
+            }) {
+                Text("Add Note")
+                Image(systemName: "plus.app")
             }
         }
     }
