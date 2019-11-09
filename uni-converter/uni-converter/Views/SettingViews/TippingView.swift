@@ -10,13 +10,27 @@ import SwiftUI
 import StoreKit
 struct TippingView: View {
     @State private var products: [SKProduct] = []
-    
+    @State private var totalTipped: Double = 0.0
     var store = ArtnetAppProducts.store
+    
+    static let priceFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        
+        formatter.formatterBehavior = .behavior10_4
+        formatter.numberStyle = .currency
+        
+        return formatter
+    }()
     
     var body: some View {
         VStack{
             Text("If you enjoy using the app, please consider giving Maegan a tip using an in-app purchase. Your support is greatly appreciated.")
             List{
+                HStack{
+                    Text("Total Tipped")
+                    Spacer()
+                    Text("")
+                }
                 ForEach(self.products, id: \.productIdentifier){ product in
                     TippingRow(product: product)
                 }
@@ -24,17 +38,13 @@ struct TippingView: View {
         }
         .padding(.horizontal)
         .navigationBarTitle("👍 Tips")
-        .navigationBarItems(trailing: Button(action: {
-            self.store.restorePurchases()
-        }, label: {
-            Text("Restore Purchases")
-        }))
         .onAppear{
             self.store.requestProducts { (success, products) in
                 if success {
                     self.products = products!
                 }
             }
+            
         }
     }
 }

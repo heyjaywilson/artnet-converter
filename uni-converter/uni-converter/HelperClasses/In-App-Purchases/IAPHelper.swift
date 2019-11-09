@@ -17,7 +17,7 @@ extension Notification.Name {
 }
 
 open class IAPHelper: NSObject  {
-    
+    var purchaseAmount: NSDecimalNumber = 0
     private let productIdentifiers: Set<ProductIdentifier>
     
     // tracks what has been purchased
@@ -62,6 +62,7 @@ extension IAPHelper {
     public func buyProduct(_ product: SKProduct) {
         print("Buying \(product.productIdentifier)...")
         let payment = SKPayment(product: product)
+        purchaseAmount = product.price
         SKPaymentQueue.default().add(payment)
     }
     
@@ -116,6 +117,7 @@ extension IAPHelper: SKPaymentTransactionObserver {
                 complete(transaction: transaction)
                 break
             case .failed:
+                purchaseAmount = 0.0
                 fail(transaction: transaction)
                 break
             case .restored:
@@ -133,6 +135,16 @@ extension IAPHelper: SKPaymentTransactionObserver {
     
     private func complete(transaction: SKPaymentTransaction) {
         print("complete...")
+        var totalamt: Double = 0.0
+        if UserDefaults.standard.object(forKey: "total") == nil {
+            UserDefaults.standard.set(purchaseAmount, forKey: "total")
+            totalamt = purchaseAmount.doubleValue
+        } else {
+            totalamt = UserDefaults.standard.double(forKey: "total")
+            totalamt = purchaseAmount.doubleValue + totalamt
+            UserDefaults.standard.set(totalamt, forKey: "total")
+        }
+        print(totalamt)
         deliverPurchaseNotificationFor(identifier: transaction.payment.productIdentifier)
         SKPaymentQueue.default().finishTransaction(transaction)
     }

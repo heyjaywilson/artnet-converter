@@ -28,7 +28,9 @@ struct ContentView: View {
             }
             .tag(0)
             
-            Favorites().environment(\.managedObjectContext, managedObjectContext)
+            Favorites()
+                .environment(\.managedObjectContext, managedObjectContext)
+                .environmentObject(calcManager)
                 .tabItem {
                     VStack {
                         Image(systemName: "heart.circle")
