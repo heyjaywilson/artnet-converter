@@ -28,6 +28,12 @@ class SettingsManager: ObservableObject {
       self.defaults.set(newValue, forKey: "zeroUni")
     }
   }
+  var showHex: Bool {
+    willSet {
+      self.objectWillChange.send()
+      self.defaults.set(newValue, forKey: "showHex")
+    }
+  }
   
   init() {
     if defaults.object(forKey: "zeroArt") == nil {
@@ -36,9 +42,13 @@ class SettingsManager: ObservableObject {
     if defaults.object(forKey: "zeroUni") == nil {
       defaults.set(true, forKey: "zeroUni")
     }
+    if defaults.object(forKey: "showHex") == nil {
+      defaults.set(false, forKey: "showHex")
+    }
     
-    zeroArt = (defaults.bool(forKey: "zeroArt"))
-    zeroUni = (defaults.bool(forKey: "zeroUni"))
+    zeroArt = defaults.bool(forKey: "zeroArt")
+    zeroUni = defaults.bool(forKey: "zeroUni")
+    showHex = defaults.bool(forKey: "showHex")
   }
   
   func printDefaults(){
