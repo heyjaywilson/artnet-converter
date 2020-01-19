@@ -11,54 +11,54 @@ import Combine
 import SwiftUI
 
 class SettingsManager: ObservableObject {
-    @Environment(\.colorScheme) var colorScheme
-    
-    let objectWillChange: ObservableObjectPublisher = ObservableObjectPublisher()
-    
-    let defaults: UserDefaults = UserDefaults.standard
-    var zeroArt: Bool {
-        willSet {
-            self.objectWillChange.send()
-            self.defaults.set(newValue, forKey: "zeroArt")
-        }
+  @Environment(\.colorScheme) var colorScheme
+  
+  let objectWillChange: ObservableObjectPublisher = ObservableObjectPublisher()
+  
+  let defaults: UserDefaults = UserDefaults.standard
+  var zeroArt: Bool {
+    willSet {
+      self.objectWillChange.send()
+      self.defaults.set(newValue, forKey: "zeroArt")
     }
-    var zeroUni: Bool {
-        willSet {
-            self.objectWillChange.send()
-            self.defaults.set(newValue, forKey: "zeroUni")
-        }
+  }
+  var zeroUni: Bool {
+    willSet {
+      self.objectWillChange.send()
+      self.defaults.set(newValue, forKey: "zeroUni")
     }
-    
-    init() {
-        if defaults.object(forKey: "zeroArt") == nil {
-            defaults.set(true, forKey: "zeroArt")
-        }
-        if defaults.object(forKey: "zeroUni") == nil {
-            defaults.set(true, forKey: "zeroUni")
-        }
-        
-        zeroArt = (defaults.bool(forKey: "zeroArt"))
-        zeroUni = (defaults.bool(forKey: "zeroUni"))
+  }
+  
+  init() {
+    if defaults.object(forKey: "zeroArt") == nil {
+      defaults.set(true, forKey: "zeroArt")
+    }
+    if defaults.object(forKey: "zeroUni") == nil {
+      defaults.set(true, forKey: "zeroUni")
     }
     
-    func printDefaults(){
-        print("\(defaults.bool(forKey: "zeroArt") ) || \(zeroArt)")
-        print("\(defaults.bool(forKey: "zeroUni") ) || \(zeroUni)")
+    zeroArt = (defaults.bool(forKey: "zeroArt"))
+    zeroUni = (defaults.bool(forKey: "zeroUni"))
+  }
+  
+  func printDefaults(){
+    print("\(defaults.bool(forKey: "zeroArt") ) || \(zeroArt)")
+    print("\(defaults.bool(forKey: "zeroUni") ) || \(zeroUni)")
+  }
+  
+  func returnZeroOrOne(_ prop: Bool) -> Int{
+    if prop {
+      return 1
     }
-    
-    func returnZeroOrOne(_ prop: Bool) -> Int{
-        if prop {
-            return 1
-        }
-        return 0
+    return 0
+  }
+  
+  func returnDefaults(_ type: String) -> Bool{
+    switch type {
+      case "zeroArt":
+        return defaults.bool(forKey: "zeroArt")
+      default:
+        return defaults.bool(forKey: "zeroUni")
     }
-    
-    func returnDefaults(_ type: String) -> Bool{
-        switch type {
-        case "zeroArt":
-            return defaults.bool(forKey: "zeroArt")
-        default:
-            return defaults.bool(forKey: "zeroUni")
-        }
-    }
+  }
 }
