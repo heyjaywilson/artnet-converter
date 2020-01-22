@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct UniverseView: View {
+  @EnvironmentObject var settingsManager: SettingsManager
   var isPrimeUni = false
   var uni: Int
   var body: some View {
@@ -27,12 +28,17 @@ struct UniverseView: View {
     } else {
       // check userdefault for hex
       // if true output = showHex()
+      if settingsManager.showHex {
+        output = showHex()
+      } else {
+        output = "\(uni)"
+      }
     }
     return output
   }
   
   func showHex() -> String{
-    let hexValue = String(format:"%02X", uni)
+    let hexValue = String(format:"%0X", uni)
     return hexValue
   }
 }

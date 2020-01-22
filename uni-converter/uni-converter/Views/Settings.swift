@@ -42,6 +42,7 @@ struct Settings: View {
                 .foregroundColor(.green)
             }
           }
+    
           NavigationLink(destination: TippingView()) {
             VStack(alignment: .leading) {
               Text("👍 Enjoying the app?")
