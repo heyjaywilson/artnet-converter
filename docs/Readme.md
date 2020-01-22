@@ -34,7 +34,7 @@ If you want to support the app, please consider the following ways!
 
 [All Releases](https://github.com/maeganjwilson/artnet-converter/releases)
 
-- 2020.1 - [Release Notes can be found clicking here](https://github.com/maeganjwilson/artnet-converter/releases/tag/v2020.1)
+- v2020.1 - [Release Notes can be found clicking here](https://github.com/maeganjwilson/artnet-converter/releases/tag/v2020.1)
 - v2019.4 - [Release Notes can be found clicking here](https://github.com/maeganjwilson/artnet-converter/releases/tag/v2019.4)
 - v2019.3 - [Release Notes can be found clicking here](https://github.com/maeganjwilson/artnet-converter/releases/tag/v2019.3)
 - v2019.2 - [Release Notes can be found clicking here](https://github.com/maeganjwilson/artnet-converter/releases/tag/v2019.2)
