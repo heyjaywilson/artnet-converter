@@ -9,6 +9,7 @@ An application to convert a fixture universe or primary universe to art-net subn
 - Input a single universe number and receive a art-net subnet and universe
 - Choose between 1 base and 0 base for primary/fixture universe
 - Choose between 1 base and 0 base for ArtNet subnet and universe
+- Choose between showing the ArtNet subnet and universe in decimal or hex
 - Save calculations
 - Add notes to calculations
 
@@ -33,6 +34,7 @@ If you want to support the app, please consider the following ways!
 
 [All Releases](https://github.com/maeganjwilson/artnet-converter/releases)
 
+- 2020.1 - [Release Notes can be found clicking here](https://github.com/maeganjwilson/artnet-converter/releases/tag/v2020.1)
 - v2019.4 - [Release Notes can be found clicking here](https://github.com/maeganjwilson/artnet-converter/releases/tag/v2019.4)
 - v2019.3 - [Release Notes can be found clicking here](https://github.com/maeganjwilson/artnet-converter/releases/tag/v2019.3)
 - v2019.2 - [Release Notes can be found clicking here](https://github.com/maeganjwilson/artnet-converter/releases/tag/v2019.2)
