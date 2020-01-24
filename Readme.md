@@ -28,5 +28,6 @@ If you want to support the app, please consider the following ways!
 
 [![Download on the App Store](https://raw.githubusercontent.com/maeganjwilson/artnet-converter/master/docs/images/download_app_store.svg?sanitize=true)](https://apps.apple.com/us/app/universe-converter-for-artnet/id1399672978) and use an in-app purchase
 
+<a href="https://www.buymeacoffee.com/appsbymw" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/arial-blue.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
 
-<a href="https://www.buymeacoffee.com/mwilsonapps" target="_blank"><img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/E1E21AELD)
