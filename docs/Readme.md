@@ -1,5 +1,7 @@
 # Universe Converter for ArtNet
 
+![Release Badge](https://img.shields.io/github/v/release/maeganjwilson/artnet-converter?include_prereleases)
+
 An application to convert a fixture universe or primary universe to art-net subnet and art-net universe that many lighting consoles require to communicate to a fixture or to an art-net node.
 
 [![Download on the App Store](https://raw.githubusercontent.com/maeganjwilson/artnet-converter/master/docs/images/download_app_store.svg?sanitize=true)](https://apps.apple.com/us/app/universe-converter-for-artnet/id1399672978)
