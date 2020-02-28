@@ -30,8 +30,6 @@ If you want to support the app, please consider the following ways!
 
 <a href="https://www.buymeacoffee.com/mwilsonapps" target="_blank"><img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 
-<a href="https://www.patreon.com/bePatron?u=5237407" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script>
-
 # Releases
 
 [All Releases](https://github.com/maeganjwilson/artnet-converter/releases)
