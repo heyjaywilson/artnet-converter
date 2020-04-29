@@ -36,6 +36,8 @@
 		37D4F82823189F5A00D303F6 /* NumberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D4F82723189F5A00D303F6 /* NumberButton.swift */; };
 		37E9CE802318A99B00DED49D /* CalculationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E9CE7F2318A99B00DED49D /* CalculationManager.swift */; };
 		37E9CE822318BC2E00DED49D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E9CE812318BC2E00DED49D /* Settings.swift */; };
+		37F74A102459D914007D1541 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F74A0F2459D914007D1541 /* UserSettings.swift */; };
+		37F74A132459DE18007D1541 /* CalcSavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F74A122459DE18007D1541 /* CalcSavedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,15 @@
 		37D4F82723189F5A00D303F6 /* NumberButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberButton.swift; sourceTree = "<group>"; };
 		37E9CE7F2318A99B00DED49D /* CalculationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationManager.swift; sourceTree = "<group>"; };
 		37E9CE812318BC2E00DED49D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		37F749FD2459D8E6007D1541 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		37F749FF2459D8E6007D1541 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		37F74A012459D8E6007D1541 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		37F74A032459D8E8007D1541 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		37F74A062459D8E8007D1541 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		37F74A092459D8E8007D1541 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		37F74A0B2459D8E8007D1541 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37F74A0F2459D914007D1541 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		37F74A122459DE18007D1541 /* CalcSavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcSavedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				37CC93CA23188E62009A60D5 /* uni-converter */,
+				37F749FC2459D8E6007D1541 /* iPadOS-uni-converter */,
 				37CC93C923188E62009A60D5 /* Products */,
 				3744638C23287337009833E5 /* Frameworks */,
 			);
@@ -167,6 +179,7 @@
 		37CC93E223188F4B009A60D5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				37F74A112459DDF9007D1541 /* iPadViews */,
 				370D1377232742FA002A2B0D /* SettingViews */,
 				37B8B2992318DFA400A2C0AD /* CalculationViews */,
 				37CC93ED231892E4009A60D5 /* Buttons */,
@@ -213,8 +226,39 @@
 				37E9CE7F2318A99B00DED49D /* CalculationManager.swift */,
 				372D6A2023196CB80083EF26 /* Extenstions.swift */,
 				37B6BE63231DD05E0061759D /* SettingsManager.swift */,
+				37F74A0F2459D914007D1541 /* UserSettings.swift */,
 			);
 			path = HelperClasses;
+			sourceTree = "<group>";
+		};
+		37F749FC2459D8E6007D1541 /* iPadOS-uni-converter */ = {
+			isa = PBXGroup;
+			children = (
+				37F749FD2459D8E6007D1541 /* AppDelegate.swift */,
+				37F749FF2459D8E6007D1541 /* SceneDelegate.swift */,
+				37F74A012459D8E6007D1541 /* ContentView.swift */,
+				37F74A032459D8E8007D1541 /* Assets.xcassets */,
+				37F74A082459D8E8007D1541 /* LaunchScreen.storyboard */,
+				37F74A0B2459D8E8007D1541 /* Info.plist */,
+				37F74A052459D8E8007D1541 /* Preview Content */,
+			);
+			path = "iPadOS-uni-converter";
+			sourceTree = "<group>";
+		};
+		37F74A052459D8E8007D1541 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				37F74A062459D8E8007D1541 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		37F74A112459DDF9007D1541 /* iPadViews */ = {
+			isa = PBXGroup;
+			children = (
+				37F74A122459DE18007D1541 /* CalcSavedView.swift */,
+			);
+			path = iPadViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,7 +288,7 @@
 		37CC93C023188E62009A60D5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = MW;
 				TargetAttributes = {
@@ -326,7 +370,9 @@
 				37B6BE64231DD05E0061759D /* SettingsManager.swift in Sources */,
 				37B8B2962318D30100A2C0AD /* CalcEntity+properties.swift in Sources */,
 				37CC93E523189079009A60D5 /* CalculateView.swift in Sources */,
+				37F74A132459DE18007D1541 /* CalcSavedView.swift in Sources */,
 				3744639523287886009833E5 /* TippingRow.swift in Sources */,
+				37F74A102459D914007D1541 /* UserSettings.swift in Sources */,
 				37D4F82823189F5A00D303F6 /* NumberButton.swift in Sources */,
 				376892B423198EC400C316E5 /* NoteEntity+properties.swift in Sources */,
 				3713F4CC231996ED007B15BC /* NewNoteForm.swift in Sources */,
@@ -345,6 +391,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				37CC93DA23188E67009A60D5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		37F74A082459D8E8007D1541 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37F74A092459D8E8007D1541 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -471,7 +525,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 355;
+				CURRENT_PROJECT_VERSION = 376;
 				DEVELOPMENT_ASSET_PATHS = "\"uni-converter/Preview Content\"";
 				DEVELOPMENT_TEAM = ZDK82FGR3Z;
 				ENABLE_PREVIEWS = YES;
@@ -481,7 +535,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2020.1;
+				MARKETING_VERSION = 2020.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "maeganwilson.artnet-app";
 				PRODUCT_NAME = "Universe Convert";
 				SWIFT_VERSION = 5.0;
@@ -494,7 +548,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 355;
+				CURRENT_PROJECT_VERSION = 376;
 				DEVELOPMENT_ASSET_PATHS = "\"uni-converter/Preview Content\"";
 				DEVELOPMENT_TEAM = ZDK82FGR3Z;
 				ENABLE_PREVIEWS = YES;
@@ -504,7 +558,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2020.1;
+				MARKETING_VERSION = 2020.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "maeganwilson.artnet-app";
 				PRODUCT_NAME = "Universe Convert";
 				SWIFT_VERSION = 5.0;
