@@ -58,4 +58,18 @@ final class UserSettings: ObservableObject {
       objectWillChange.send()
     }
   }
+  
+  @UserDefault("currentVersion", defaultValue: "1")
+  var currentVersion: String{
+    willSet {
+      objectWillChange.send()
+    }
+  }
+  
+  @UserDefault("numberTimesLaunched", defaultValue: 0)
+  var numberTimesLaunched: Int {
+    willSet {
+      objectWillChange.send()
+    }
+  }
 }
