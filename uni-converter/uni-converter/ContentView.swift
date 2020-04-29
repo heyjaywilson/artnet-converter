@@ -14,12 +14,10 @@ struct ContentView: View {
   @EnvironmentObject var calcManager: CalculationManager
   @EnvironmentObject var settingsManager: SettingsManager
   
-  
   @ObservedObject var settings = UserSettings()
   
   @State private var selection = 0
   
-  @State private var selectedSettings: Int? = 1
   @State private var showUpdate = false
   
   var body: some View {
@@ -103,9 +101,13 @@ struct ContentView: View {
         SKStoreReviewController.requestReview()
       }
       
-      if totalLaunched > 100 {
-        SKStoreReviewController.requestReview()
+      if totalLaunched % 100 == 0{
+        self.showUpdate = true
+      } else {
+        self.showUpdate = false
       }
+      
+      print("TotalLaunched = \(totalLaunched)")
       
       self.settings.numberTimesLaunched = totalLaunched
       self.setDevice()

@@ -9,11 +9,16 @@
 import SwiftUI
 import StoreKit
 struct TippingView: View {
+  @ObservedObject var settings = UserSettings()
+  
   @State private var products: [SKProduct] = []
   @State private var totalTipped: Double = 0.0
+  @State private var showUsingText = false
   
   var store = ArtnetAppProducts.store
   var showUpdate = false
+  
+  var updateText = "Thanks for updating to the latest version of Universe Converter for ArtNet!"
   
   static let priceFormatter: NumberFormatter = {
     let formatter = NumberFormatter()
@@ -26,7 +31,16 @@ struct TippingView: View {
   
   var body: some View {
     VStack{
-      Text("If you enjoy using the app, please consider giving Maegan a tip using an in-app purchase. Your support is greatly appreciated.")
+      if showUpdate{
+        Text(updateText)
+          .font(.largeTitle)
+          .padding(.all)
+      } else {
+        Text("Thanks for using Universe Converter for ArtNet!")
+          .font(.largeTitle)
+          .padding(.all)
+      }
+      Text("The app is free to use and download. It relies on your support to fund further development. If you have found the app useful in any way, please consider leaving a \"tip\".")
       List{
         ForEach(self.products, id: \.productIdentifier){ product in
           TippingRow(product: product)
@@ -40,6 +54,12 @@ struct TippingView: View {
         if success {
           self.products = products!
         }
+      }
+      let totalLaunched = self.settings.numberTimesLaunched
+      if totalLaunched % 100 == 0{
+        self.showUsingText = true
+      } else {
+        self.showUsingText = false
       }
       
     }
