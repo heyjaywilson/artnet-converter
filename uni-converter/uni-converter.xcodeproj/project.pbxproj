@@ -535,7 +535,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2020.1;
+				MARKETING_VERSION = 2020.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "maeganwilson.artnet-app";
 				PRODUCT_NAME = "Universe Convert";
 				SWIFT_VERSION = 5.0;
@@ -558,7 +558,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2020.1;
+				MARKETING_VERSION = 2020.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "maeganwilson.artnet-app";
 				PRODUCT_NAME = "Universe Convert";
 				SWIFT_VERSION = 5.0;
