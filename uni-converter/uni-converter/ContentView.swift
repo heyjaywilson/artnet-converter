@@ -9,53 +9,60 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) var managedObjectContext
-    @EnvironmentObject var calcManager: CalculationManager
-    @EnvironmentObject var settingsManager: SettingsManager
-    
-    @State private var selection = 0
-    
-    var body: some View {
-        TabView(selection: $selection){
-            CalculateView()
-                .environmentObject(calcManager)
-                .environmentObject(settingsManager)
-                .tabItem {
-                    VStack {
-                        Image(systemName: "square.grid.2x2")
-                        Text("Calc")
-                    }
-            }
-            .tag(0)
-            
-            Favorites()
-                .environment(\.managedObjectContext, managedObjectContext)
-                .environmentObject(calcManager)
-                .tabItem {
-                    VStack {
-                        Image(systemName: "heart.circle")
-                        Text("Saved")
-                    }
-            }
-            .tag(1)
-            
-            Settings().environmentObject(settingsManager)
-                .tabItem {
-                    VStack {
-                        Image(systemName: "gear")
-                        Text("Settings")
-                    }
-            }
-            .tag(2)
-        }.onAppear{
-            self.calcManager.getCalcs()
-        }
+  @Environment(\.managedObjectContext) var managedObjectContext
+  @EnvironmentObject var calcManager: CalculationManager
+  @EnvironmentObject var settingsManager: SettingsManager
+  
+  
+  @ObservedObject var settings = UserSettings()
+  
+  @State private var selection = 0
+  
+  var body: some View {
+    TabView(selection: $selection){
+      CalculateView()
+        .environmentObject(calcManager)
+        .environmentObject(settingsManager)
+        .tabItem {
+          VStack {
+            Image(systemName: "square.grid.2x2")
+            Text("Calc")
+          }
+      }
+      .tag(0)
+      
+      Favorites()
+        .environment(\.managedObjectContext, managedObjectContext)
+        .environmentObject(calcManager)
+        .tabItem {
+          VStack {
+            Image(systemName: "heart.circle")
+            Text("Saved")
+          }
+      }
+      .tag(1)
+      
+      Settings().environmentObject(settingsManager)
+        .tabItem {
+          VStack {
+            Image(systemName: "gear")
+            Text("Settings")
+          }
+      }
+      .tag(2)
+    }.onAppear{
+      self.calcManager.getCalcs()
     }
+  }
+  
+  func setDevice(){
+    
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    @EnvironmentObject var calcManager: CalculationManager
-    static var previews: some View {
-        ContentView()
-    }
+  @EnvironmentObject var calcManager: CalculationManager
+  static var previews: some View {
+    ContentView()
+  }
 }
