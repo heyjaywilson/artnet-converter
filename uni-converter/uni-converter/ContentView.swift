@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct ContentView: View {
   @Environment(\.managedObjectContext) var managedObjectContext
@@ -17,6 +18,9 @@ struct ContentView: View {
   @ObservedObject var settings = UserSettings()
   
   @State private var selection = 0
+  
+  @State private var selectedSettings: Int? = 1
+  @State private var showUpdate = false
   
   var body: some View {
     Group{
@@ -76,9 +80,35 @@ struct ContentView: View {
         }
       }
     }
+    .sheet(isPresented: $showUpdate){
+      TippingView(showUpdate: self.showUpdate)
+    }
     .onAppear{
-      self.setDevice()
       self.calcManager.getCalcs()
+      let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+      print(self.settings.currentVersion)
+      print(self.settings.numberTimesLaunched)
+      var totalLaunched = self.settings.numberTimesLaunched
+      totalLaunched = totalLaunched + 1
+      
+      if self.settings.currentVersion != appVersion {
+        if totalLaunched < 2 {
+          self.showUpdate = false
+        } else {
+          self.showUpdate = true
+        }
+      }
+      
+      if totalLaunched > 5 {
+        SKStoreReviewController.requestReview()
+      }
+      
+      if totalLaunched > 100 {
+        SKStoreReviewController.requestReview()
+      }
+      
+      self.settings.numberTimesLaunched = totalLaunched
+      self.setDevice()
     }
 
   }
