@@ -19,44 +19,77 @@ struct ContentView: View {
   @State private var selection = 0
   
   var body: some View {
-    TabView(selection: $selection){
-      CalculateView()
-        .environmentObject(calcManager)
-        .environmentObject(settingsManager)
-        .tabItem {
-          VStack {
-            Image(systemName: "square.grid.2x2")
-            Text("Calc")
+    Group{
+      if settings.isiPad {
+        TabView(selection: $selection){
+          CalcSavedView()
+            .environmentObject(calcManager)
+            .environmentObject(settingsManager)
+            .tabItem {
+              VStack {
+                Image(systemName: "square.grid.2x2")
+                Text("Calc")
+              }
           }
-      }
-      .tag(0)
-      
-      Favorites()
-        .environment(\.managedObjectContext, managedObjectContext)
-        .environmentObject(calcManager)
-        .tabItem {
-          VStack {
-            Image(systemName: "heart.circle")
-            Text("Saved")
+          .tag(0)
+          Settings().environmentObject(settingsManager)
+            .tabItem {
+              VStack {
+                Image(systemName: "gear")
+                Text("Settings")
+              }
           }
-      }
-      .tag(1)
-      
-      Settings().environmentObject(settingsManager)
-        .tabItem {
-          VStack {
-            Image(systemName: "gear")
-            Text("Settings")
+          .tag(2)
+        }
+      } else {
+        TabView(selection: $selection){
+          CalculateView()
+            .environmentObject(calcManager)
+            .environmentObject(settingsManager)
+            .tabItem {
+              VStack {
+                Image(systemName: "square.grid.2x2")
+                Text("Calc")
+              }
           }
+          .tag(0)
+          
+          Favorites()
+            .environment(\.managedObjectContext, managedObjectContext)
+            .environmentObject(calcManager)
+            .tabItem {
+              VStack {
+                Image(systemName: "heart.circle")
+                Text("Saved")
+              }
+          }
+          .tag(1)
+          
+          Settings().environmentObject(settingsManager)
+            .tabItem {
+              VStack {
+                Image(systemName: "gear")
+                Text("Settings")
+              }
+          }
+          .tag(2)
+        }
       }
-      .tag(2)
-    }.onAppear{
+    }
+    .onAppear{
+      self.setDevice()
       self.calcManager.getCalcs()
     }
+
   }
   
   func setDevice(){
-    
+    let modelName = UIDevice.modelName
+    if modelName.contains("iPad"){
+      settings.isiPad = true
+    } else {
+      settings.isiPad = false
+    }
   }
 }
 

@@ -59,4 +59,3 @@ final class UserSettings: ObservableObject {
     }
   }
 }
-
