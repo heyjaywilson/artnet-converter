@@ -101,7 +101,7 @@ struct ContentView: View {
         SKStoreReviewController.requestReview()
       }
       
-      if totalLaunched % 100 == 0{
+      if totalLaunched % 25 == 0{
         self.showUpdate = true
       } else {
         self.showUpdate = false
