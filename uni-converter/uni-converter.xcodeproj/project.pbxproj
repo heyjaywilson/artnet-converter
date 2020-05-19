@@ -525,7 +525,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 378;
+				CURRENT_PROJECT_VERSION = 427;
 				DEVELOPMENT_ASSET_PATHS = "\"uni-converter/Preview Content\"";
 				DEVELOPMENT_TEAM = ZDK82FGR3Z;
 				ENABLE_PREVIEWS = YES;
@@ -535,7 +535,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2020.3;
+				MARKETING_VERSION = 2020.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "maeganwilson.artnet-app";
 				PRODUCT_NAME = "Universe Convert";
 				SWIFT_VERSION = 5.0;
@@ -548,7 +548,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 378;
+				CURRENT_PROJECT_VERSION = 427;
 				DEVELOPMENT_ASSET_PATHS = "\"uni-converter/Preview Content\"";
 				DEVELOPMENT_TEAM = ZDK82FGR3Z;
 				ENABLE_PREVIEWS = YES;
@@ -558,7 +558,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2020.3;
+				MARKETING_VERSION = 2020.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "maeganwilson.artnet-app";
 				PRODUCT_NAME = "Universe Convert";
 				SWIFT_VERSION = 5.0;

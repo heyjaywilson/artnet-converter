@@ -16,6 +16,11 @@ class CalculationManager: ObservableObject {
     let managedContext: NSManagedObjectContext
     var mostRecentCalc: CalcEntity
     
+    public var outputPrimaryUniverse: Int = 0 {
+        willSet {
+            self.objectWillChange.send()
+        }
+    }
     public var prim_uni: Int = 0 {
         willSet {
             self.objectWillChange.send()
@@ -45,6 +50,7 @@ class CalculationManager: ObservableObject {
     
     func setNum(primUni: Int){
         prim_uni = primUni
+        outputPrimaryUniverse = prim_uni
     }
     func setNum(art: Int){
         art_uni = art
@@ -52,60 +58,71 @@ class CalculationManager: ObservableObject {
     }
     
     func addNumberToPrimUni(_ num: Int){
-        let universe: Bool = !set.returnDefaults("zeroUni")
-        let art: Bool = !set.returnDefaults("zeroArt")
+        let isPrimaryUniverseZero: Bool = set.returnDefaults("zeroUni")
+        let isArtNetZero: Bool = set.returnDefaults("zeroArt")
         let originalStr = "\(prim_uni)"
         let newStr = originalStr + "\(num)"
         
         prim_uni = Int(newStr)!
-        if universe{
-            if prim_uni > 255 {
-                prim_uni = 255
-            }
-        } else {
+        if isPrimaryUniverseZero == false {
             if prim_uni > 256 {
                 prim_uni = 256
+                outputPrimaryUniverse = 256
+            }
+        } else {
+            if prim_uni > 255 {
+                prim_uni = 255
+                outputPrimaryUniverse = 255
             }
         }
-        calcAll(uniIsZero: universe, artIsZero: art)
+        outputPrimaryUniverse = prim_uni
+        calcAll(isPrimaryUniverseOne: isPrimaryUniverseZero, isArtNetOne: isArtNetZero)
     }
     
     func deleteNumberFromPrimUni(_ num: Int){
-        let universe: Bool = !set.returnDefaults("zeroUni")
-        let art: Bool = !set.returnDefaults("zeroArt")
+        let isPrimaryUniverseOne: Bool = set.returnDefaults("zeroUni")
+        let isArtNetOne: Bool = set.returnDefaults("zeroArt")
         
-        if !universe {
-            // 1 based
+        print(prim_uni)
+        if isPrimaryUniverseOne == true {
             if prim_uni < 20 && prim_uni > 1 {
                 prim_uni = 1
-            } else if prim_uni == 1 || prim_uni == 0{
+                outputPrimaryUniverse = 1
+                calcAll(isPrimaryUniverseOne: isPrimaryUniverseOne, isArtNetOne: isArtNetOne)
+            } else if prim_uni == 1 {
                 prim_uni = 0
+                outputPrimaryUniverse = 1
             } else {
                 var originalStr = "\(prim_uni)"
                 originalStr.removeLast()
-                
-                prim_uni = Int(originalStr)!
+                prim_uni = Int(originalStr) ?? 1
+                outputPrimaryUniverse = prim_uni
+                calcAll(isPrimaryUniverseOne: isPrimaryUniverseOne, isArtNetOne: isArtNetOne)
             }
         } else {
-            // 0 based
             if prim_uni < 10 {
                 prim_uni = 0
+                outputPrimaryUniverse = prim_uni
+                calcAll(isPrimaryUniverseOne: isPrimaryUniverseOne, isArtNetOne: isArtNetOne)
             } else {
                 var originalStr = "\(prim_uni)"
                 originalStr.removeLast()
                 
                 prim_uni = Int(originalStr)!
+                outputPrimaryUniverse = prim_uni
+                calcAll(isPrimaryUniverseOne: isPrimaryUniverseOne, isArtNetOne: isArtNetOne)
             }
         }
         
-        calcAll(uniIsZero: universe, artIsZero: art)
+        print(prim_uni)
     }
     
     func setPimUni(to num: Int){
-        let universe: Bool = !set.returnDefaults("zeroUni")
-        let art: Bool = !set.returnDefaults("zeroArt")
+        let isPrimaryUniverseOne: Bool = set.returnDefaults("zeroUni")
+        let isArtNetOne: Bool = set.returnDefaults("zeroArt")
         prim_uni = num
-        calcAll(uniIsZero: universe, artIsZero: art)
+        outputPrimaryUniverse = prim_uni
+        calcAll(isPrimaryUniverseOne: isPrimaryUniverseOne, isArtNetOne: isArtNetOne)
     }
     
     func calcSub(add: Int){
@@ -116,40 +133,39 @@ class CalculationManager: ObservableObject {
         art_uni = (prim_uni % 16) + add
     }
     
-    func calcAll(uniIsZero: Bool, artIsZero: Bool){
-        if uniIsZero {
-            if artIsZero {
-                if prim_uni == 0 {
-                    subnet = 0
-                    art_uni = 0
-                } else if prim_uni % 16 == 0 {
-                    calcSub(add: -1)
-                    art_uni = 15
-                } else {
-                    calcSub(add: 0)
-                    calcArtUni(add: 0)
-                }
-            } else {
-                calcSub(add: 1)
-                calcArtUni(add: 1)
-            }
-        } else {
-            if artIsZero {
+    func calculateArtnet(add: Int){
+        subnet = prim_uni / 16 + add
+        art_uni = prim_uni % 16 + add
+    }
+    
+    func calcAll(isPrimaryUniverseOne: Bool, isArtNetOne: Bool){
+        
+        if isPrimaryUniverseOne == true {
+            // ArtNet 0 based
+            if isArtNetOne == false {
                 if prim_uni % 16 == 0 {
                     calcSub(add: -1)
-                    art_uni = 15
+                    calcArtUni(add: 15)
                 } else {
                     calcSub(add: 0)
                     calcArtUni(add: -1)
                 }
-            } else {
+            }
+            // ArtNet 1 based
+            else {
                 if prim_uni % 16 == 0 {
                     calcSub(add: 0)
                     calcArtUni(add: 16)
-                }else {
+                } else {
                     calcSub(add: 1)
                     calcArtUni(add: 0)
                 }
+            }
+        } else {
+            if isArtNetOne == true {
+                calculateArtnet(add: 1)
+            } else {
+                calculateArtnet(add: 0)
             }
         }
     }

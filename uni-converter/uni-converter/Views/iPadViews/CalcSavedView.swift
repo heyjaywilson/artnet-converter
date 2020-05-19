@@ -21,7 +21,7 @@ struct CalcSavedView: View {
     HStack{
       VStack {
         HStack {
-          UniverseView(isPrimeUni: true, uni: calcManager.prim_uni)
+          UniverseView(isPrimeUni: true, uni: calcManager.outputPrimaryUniverse)
           Spacer()
           Group{
             SubView(sub: calcManager.subnet)
@@ -67,7 +67,7 @@ struct CalcSavedView: View {
       }
     }.onAppear{
       self.calcManager.getCalcs()
-      if self.calcManager.prim_uni <= 1 {
+      if self.calcManager.outputPrimaryUniverse <= 1 {
         self.calcManager.setNum(art: self.settingsManager.returnZeroOrOne(self.settingsManager.zeroArt))
         self.calcManager.setNum(primUni: self.settingsManager.returnZeroOrOne(self.settingsManager.zeroUni))
       }
