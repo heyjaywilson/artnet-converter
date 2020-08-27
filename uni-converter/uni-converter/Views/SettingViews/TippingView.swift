@@ -8,6 +8,7 @@
 
 import SwiftUI
 import StoreKit
+
 struct TippingView: View {
   @ObservedObject var settings = UserSettings()
   
