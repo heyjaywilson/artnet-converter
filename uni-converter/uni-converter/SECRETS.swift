@@ -7,3 +7,5 @@
 //
 
 import Foundation
+
+let REVENUECAT_API_KEY = "mygOAyICoRrxHzKBOEFRXLkuAuIVrVnn"

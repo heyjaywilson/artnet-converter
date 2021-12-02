@@ -8,6 +8,7 @@
 
 import SwiftUI
 import StoreKit
+import Purchases
 
 struct TippingView: View {
   @ObservedObject var settings = UserSettings()
@@ -42,6 +43,7 @@ struct TippingView: View {
           .padding(.all)
       }
       Text("The app is free to use and download. It relies on your support to fund further development. If you have found the app useful in any way, please consider leaving a \"tip\".")
+        Text("Total Tipped: \(TippingView.priceFormatter.string(from: NSNumber(value: self.settings.tipJarTotal))!)")
       List{
         ForEach(self.products, id: \.productIdentifier){ product in
           TippingRow(product: product)
@@ -51,18 +53,9 @@ struct TippingView: View {
     .padding(.horizontal)
     .navigationBarTitle("👍 Tips")
     .onAppear{
-      self.store.requestProducts { (success, products) in
-        if success {
-          self.products = products!
+        Purchases.shared.products(["tier1", "tier2", "tier3","tier4"]) { tipLevels in
+            products = tipLevels
         }
-      }
-      let totalLaunched = self.settings.numberTimesLaunched
-      if totalLaunched % 100 == 0{
-        self.showUsingText = true
-      } else {
-        self.showUsingText = false
-      }
-      
     }
   }
 }

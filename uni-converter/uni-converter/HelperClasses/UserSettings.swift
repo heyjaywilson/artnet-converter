@@ -72,4 +72,11 @@ final class UserSettings: ObservableObject {
       objectWillChange.send()
     }
   }
+
+    @UserDefault("tipjar", defaultValue: 0.0)
+    var tipJarTotal: Double {
+        willSet{
+            objectWillChange.send()
+        }
+    }
 }

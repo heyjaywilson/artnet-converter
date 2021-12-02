@@ -80,3 +80,5 @@ iOSInjectionProject/
 /app_design.sketch
 .DS_Store
 /exports/icons
+
+uni-converter/uni-converter/SECRETS.swift

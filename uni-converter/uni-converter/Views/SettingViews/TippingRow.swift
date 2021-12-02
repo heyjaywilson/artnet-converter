@@ -8,8 +8,10 @@
 
 import SwiftUI
 import StoreKit
+import Purchases
 
 struct TippingRow: View {
+    @ObservedObject var settings = UserSettings()
     var product: SKProduct
     
     static let priceFormatter: NumberFormatter = {
@@ -27,7 +29,11 @@ struct TippingRow: View {
             Spacer()
             Button(action: {
                 print("Buy")
-                ArtnetAppProducts.store.buyProduct(self.product)
+                Purchases.shared.purchaseProduct(product) { (transaction, purchaserInfo, error, userCancelled) in
+                    if error == nil {
+                        settings.tipJarTotal += Double(truncating: product.price)
+                    }
+                }
             }){
                 Text("\(TippingRow.priceFormatter.string(from: self.product.price) ?? "--")")
                     .padding(.all, 8)
