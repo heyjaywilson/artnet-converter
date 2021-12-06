@@ -14,6 +14,9 @@ struct TippingRow: View {
     @ObservedObject var settings = UserSettings()
     var product: SKProduct
     
+    @Binding var totalTipped: Double
+    @Binding var formattedTip: String
+    
     static let priceFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         
@@ -30,9 +33,23 @@ struct TippingRow: View {
             Button(action: {
                 print("Buy")
                 Purchases.shared.purchaseProduct(product) { (transaction, purchaserInfo, error, userCancelled) in
-                    if error == nil {
-                        settings.tipJarTotal += Double(truncating: product.price)
+                    
+                    guard let purchase = transaction else {
+                        print(error!)
+                        return
                     }
+                    print("🧑‍💻 \(purchase)")
+                    totalTipped += Double(truncating: product.price)
+                    
+                    let currencyFormatter = NumberFormatter()
+                    currencyFormatter.usesGroupingSeparator = true
+                    currencyFormatter.numberStyle = .currency
+                    currencyFormatter.locale = Locale.current
+                    
+                    let amount = currencyFormatter.string(from: NSNumber(value: totalTipped))!
+                    
+                    formattedTip = amount
+                    
                 }
             }){
                 Text("\(TippingRow.priceFormatter.string(from: self.product.price) ?? "--")")

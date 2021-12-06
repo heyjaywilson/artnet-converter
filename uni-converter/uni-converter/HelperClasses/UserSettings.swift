@@ -79,4 +79,10 @@ final class UserSettings: ObservableObject {
             objectWillChange.send()
         }
     }
+    @UserDefault("tipjarString", defaultValue: "0.0")
+    var tipJarFormatted: String {
+        willSet{
+            objectWillChange.send()
+        }
+    }
 }
