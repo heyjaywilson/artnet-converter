@@ -11,7 +11,7 @@ import SwiftUI
 struct AboutView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10.0) {
-            Text("This app is created by Maegan Wilson. She greatly appreciates the download and the use of the app.")
+            Text("This app is created by Jay Wilson. He greatly appreciates the download and the use of the app.")
             Text("Privacy Policy")
                 .font(.title)
             Text("The app does not require the input of any personal data nor does it go through your phone to sell personal data.")

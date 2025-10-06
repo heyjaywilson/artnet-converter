@@ -8,6 +8,7 @@
 
 import SwiftUI
 import StoreKit
+import RevenueCatUI
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
@@ -79,7 +80,7 @@ struct ContentView: View {
             }
         }
         .sheet(isPresented: $showUpdate){
-            TippingView(showUpdate: self.showUpdate)
+          PaywallView()
         }
         .onAppear{
             self.calcManager.getCalcs()
@@ -98,7 +99,9 @@ struct ContentView: View {
             }
             
             if totalLaunched > 5 {
-                SKStoreReviewController.requestReview()
+              if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                AppStore.requestReview(in: scene)
+              }
             }
             
             if totalLaunched % 25 == 0{

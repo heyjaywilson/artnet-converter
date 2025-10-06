@@ -7,14 +7,15 @@
 //
 
 import SwiftUI
+import RevenueCatUI
 
 struct Settings: View {
   @EnvironmentObject var settingsManager: SettingsManager
   
-  let website_URL: URL = URL(string: "https://maeganjwilson.github.io/artnet-converter/")!
-  let bug_URL = URL(string: "https://github.com/maeganjwilson/artnet-converter/issues/new?assignees=&labels=&template=bug_report.md&title=BUG")!
+  let website_URL: URL = URL(string: "https://heyjaywilson.github.io/artnet-converter/")!
+  let bug_URL = URL(string: "https://github.com/heyjaywilson/artnet-converter/issues/new?assignees=&labels=&template=bug_report.md&title=BUG")!
   
-  let request_URL: URL = URL(string: "https://github.com/maeganjwilson/artnet-converter/issues/new?assignees=&labels=&template=feature_request.md&title=FEATURE")!
+  let request_URL: URL = URL(string: "https://github.com/heyjaywilson/artnet-converter/issues/new?assignees=&labels=&template=feature_request.md&title=FEATURE")!
   
   let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
   let appBuild = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
@@ -43,10 +44,10 @@ struct Settings: View {
             }
           }
     
-          NavigationLink(destination: TippingView()) {
+          NavigationLink(destination: PaywallView()) {
             VStack(alignment: .leading) {
               Text("👍 Enjoying the app?")
-              Text("Tap here to add to the tip jar")
+              Text("Support it with a cup of coffee!  ")
                 .font(.subheadline)
                 .foregroundColor(.gray)
             }
