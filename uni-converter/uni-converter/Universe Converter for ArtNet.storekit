@@ -1,0 +1,141 @@
+{
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+      {
+        "locale" : "en_US",
+        "policyText" : "",
+        "policyURL" : ""
+      }
+    ]
+  },
+  "identifier" : "C20C7881",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "1422870561",
+      "localizations" : [
+        {
+          "description" : "Small tip for the developer",
+          "displayName" : "Tip - Smiles",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "tier1",
+      "referenceName" : "tier 1",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "1423599783",
+      "localizations" : [
+        {
+          "description" : "Generous tip",
+          "displayName" : "Generous",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "tier2",
+      "referenceName" : "tier 2",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "1423600286",
+      "localizations" : [
+        {
+          "description" : "Buy the developer a cup of coffee",
+          "displayName" : "Tip - Cup of Coffee",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "tier3",
+      "referenceName" : "tier 3",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "internalID" : "1423601548",
+      "localizations" : [
+        {
+          "description" : "Huge tip",
+          "displayName" : "Huge Tip",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "tier4",
+      "referenceName" : "tier 4",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "1399672978",
+    "_askToBuyEnabled" : false,
+    "_billingGracePeriodEnabled" : false,
+    "_billingIssuesEnabled" : false,
+    "_compatibilityTimeRate" : {
+      "3" : 6
+    },
+    "_developerTeamID" : "ZDK82FGR3Z",
+    "_disableDialogs" : false,
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 781486662.50420594,
+    "_locale" : "en_US",
+    "_renewalBillingIssuesEnabled" : false,
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+
+    ],
+    "_timeRate" : 13
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "20471165",
+      "localizations" : [
+
+      ],
+      "name" : "continuous support",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "0.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6753659620",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Monthly supporter subscription",
+              "displayName" : "Monthly supporter subscription",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "ucfa.ongoing.support.001",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "ucfa-ongoing-support",
+          "subscriptionGroupID" : "20471165",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}

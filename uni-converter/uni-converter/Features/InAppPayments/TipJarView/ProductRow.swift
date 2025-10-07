@@ -7,44 +7,77 @@
 //
 
 import SwiftUI
+import RevenueCat
 
 struct ProductRow: View {
   var tipOption: TipOption
-  
+  var package: Package? = nil
+  #if DEBUG
+  var isPreview: Bool = false
+  #endif
+
   var body: some View {
-    VStack(alignment: .leading, spacing: 8) {
-      HStack {
-        Text(tipOption.icon)
-        Text(tipOption.name)
-        Spacer()
-        Text(tipOption.price)
-          .foregroundStyle(tipOption.isMonthly ? Color.white : .accentColor)
-      }
-      .font(.headline)
-      .fontWeight(.bold)
-      .fontDesign(.rounded)
-      Text(tipOption.description)
-    }
-    .foregroundStyle(tipOption.isMonthly ? Color.white : .primary)
-    .listRowBackground(
-      Group {
-        if let colors = tipOption.gradientColors {
-          LinearGradient(
-            colors: colors,
-            startPoint: .topLeading,
-            endPoint: .bottomTrailing
-          )
-        } else {
-          Color(.systemBackground)
+    if let package {
+      Button {
+        purchase(package: package)
+      } label: {
+        VStack(alignment: .leading, spacing: 8) {
+          HStack {
+            Text(tipOption.icon)
+            Text(tipOption.name)
+            Spacer()
+            Text(tipOption.price)
+              .foregroundStyle(tipOption.isMonthly ? Color.white : .accentColor)
+          }
+          .font(.headline)
+          .fontWeight(.bold)
+          .fontDesign(.rounded)
+          Text(tipOption.description)
         }
+        .foregroundStyle(tipOption.isMonthly ? Color.white : .primary)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .contentShape(Rectangle())
       }
-    )
+      .buttonStyle(.plain)
+      .listRowBackground(
+        Group {
+          if let colors = tipOption.gradientColors {
+            LinearGradient(
+              colors: colors,
+              startPoint: .topLeading,
+              endPoint: .bottomTrailing
+            )
+          } else {
+            Color(.systemBackground)
+          }
+        }
+      )
+    } else {
+      EmptyView()
+    }
+  }
+
+  func purchase(package: Package) {
+    #if DEBUG
+    if isPreview { return }
+    #endif
+    Task {
+      do {
+        let purchase = try await Purchases.shared.purchase(package: package)
+
+        if !purchase.userCancelled {
+          print(purchase.transaction?.purchaseDate ?? .now)
+        }
+      } catch {
+        print(error)
+      }
+    }
   }
 }
 
 #Preview {
   @Previewable @Environment(\.colorScheme) var colorScheme
-  
+
   List {
     ProductRow(
       tipOption: TipOption(
@@ -54,7 +87,8 @@ struct ProductRow: View {
         description: "Monthly support that keeps things running smoothly",
         isMonthly: true,
         gradientColors: [Color(red: 0.369, green: 0.361, blue: 0.902), Color(red: 0.0, green: 0.478, blue: 1.0)]
-      )
+      ),
+      isPreview: true
     )
     Section {
       ProductRow(
@@ -65,7 +99,8 @@ struct ProductRow: View {
           description: "Even a little bit of coffee keeps the app being develolped",
           isMonthly: false,
           gradientColors: nil
-        )
+        ),
+        isPreview: true
       )
     }
 //    ProductRow(

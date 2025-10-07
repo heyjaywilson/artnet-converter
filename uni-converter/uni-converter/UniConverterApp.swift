@@ -12,17 +12,15 @@ import RevenueCat
 @main
 struct UniConverterApp: App {
   @Environment(\.scenePhase) var scenePhase
+  @State private var paymentService = AppPaymentService()
   @StateObject private var settingsManager = SettingsManager()
   
   let persistenceController = PersistenceController()
   
-  init() {
-    
-  }
-  
   var body: some Scene {
     WindowGroup {
       ContentView()
+        .environment(paymentService)
         .environment(
           \.managedObjectContext,
            persistenceController.viewContext
@@ -34,6 +32,9 @@ struct UniConverterApp: App {
             settings: settingsManager
           )
         )
+        .task {
+          paymentService.configure()
+        }
     }
     .onChange(of: scenePhase) {
       persistenceController.save()

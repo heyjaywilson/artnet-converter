@@ -10,6 +10,7 @@ import SwiftUI
 import RevenueCatUI
 
 struct Settings: View {
+  @Environment(AppPaymentService.self) var paymentService
   @EnvironmentObject var settingsManager: SettingsManager
   
   let website_URL: URL = URL(string: "https://heyjaywilson.github.io/artnet-converter/")!
@@ -44,14 +45,36 @@ struct Settings: View {
             }
           }
     
-          NavigationLink(destination: PaywallView()) {
-            VStack(alignment: .leading) {
-              Text("👍 Enjoying the app?")
-              Text("Support it with a cup of coffee!  ")
-                .font(.subheadline)
-                .foregroundColor(.gray)
+          NavigationLink(destination: TipJarView().environment(paymentService)) {
+            if paymentService.totalTipped == 0 {
+              VStack(alignment: .leading) {
+                Text("💝 Support Universe Converter")
+                Text("Help keep the app free and maintained")
+                  .font(.subheadline)
+              }
+              .foregroundStyle(.white)
+            } else {
+              VStack(alignment: .leading) {
+                Text("✨ Thanks for Supporting!")
+                Text("You've contributed \(paymentService.formattedTotalTipped) total")
+                  .font(.subheadline)
+              }
+              .foregroundStyle(.white)
             }
           }
+          .listRowBackground(
+            LinearGradient(
+              colors: paymentService.totalTipped > 0 ? [
+                Color(red: 0.369, green: 0.361, blue: 0.902),
+                Color(red: 0.0, green: 0.478, blue: 1.0)
+              ] : [
+                Color(red: 1.0, green: 0.42, blue: 0.42),
+                Color(red: 1.0, green: 0.557, blue: 0.325)
+              ],
+              startPoint: .topLeading,
+              endPoint: .bottomTrailing
+            )
+          )
           NavigationLink(destination: WebView(url: website_URL)){
             VStack(alignment: .leading){
               Text("🖥️ App Website (🔗 to website)")
@@ -85,5 +108,7 @@ struct Settings: View {
 struct Settings_Previews: PreviewProvider {
   static var previews: some View {
     Settings()
+      .environment(AppPaymentService())
+      .environmentObject(SettingsManager())
   }
 }
