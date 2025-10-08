@@ -37,3 +37,15 @@ struct CalculateView: View {
     }
   }
 }
+
+#Preview {
+  @Previewable @StateObject var settings = SettingsManager()
+  CalculateView()
+    .environmentObject(settings)
+    .environmentObject(
+      CalculationManager(
+        mc: PersistenceController.preview.viewContext,
+        settings: settings
+      )
+    )
+}
