@@ -15,9 +15,6 @@ struct ProductRow: View {
     
     var tipOption: TipOption
     var package: Package? = nil
-#if DEBUG
-    var isPreview: Bool = false
-#endif
     
     var body: some View {
         if let package {
@@ -61,9 +58,6 @@ struct ProductRow: View {
     }
     
     func purchase(package: Package) {
-#if DEBUG
-        if isPreview { return }
-#endif
         Task {
             do {
                 let purchase = try await Purchases.shared.purchase(package: package)
@@ -107,8 +101,7 @@ struct ProductRow: View {
                 description: "Monthly support that keeps things running smoothly",
                 isMonthly: true,
                 gradientColors: [Color(red: 0.369, green: 0.361, blue: 0.902), Color(red: 0.0, green: 0.478, blue: 1.0)]
-            ),
-            isPreview: true
+            )
         )
         Section {
             ProductRow(
@@ -119,26 +112,8 @@ struct ProductRow: View {
                     description: "Even a little bit of coffee keeps the app being develolped",
                     isMonthly: false,
                     gradientColors: nil
-                ),
-                isPreview: true
+                )
             )
         }
-        //    ProductRow(
-        //      icon: .lightbulbMinFill,
-        //      headline: "Monthly",
-        //      bodyText: "Monthly support that keeps things running smoothly.",
-        //      priceString: "$10.99",
-        //      textColor: .white,
-        //      gradientColors: [Color(red: 0.369, green: 0.361, blue: 0.902), Color(red: 0.0, green: 0.478, blue: 1.0)]
-        //    )
-        //    Section {
-        //      ProductRow(
-        //        icon: .lightbulbMinFill,
-        //        headline: "Monthly",
-        //        bodyText: "This is some text to get you to upgrade",
-        //        priceString: "$10.99",
-        //        gradientColors: colorScheme == .light ? [.white] : [.black]
-        //      )
-        //    }
     }
 }
