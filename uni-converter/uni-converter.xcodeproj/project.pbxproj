@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3744638E23287337009833E5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3744638D23287337009833E5 /* StoreKit.framework */; };
+		697CA0772E99DBF500B29B45 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 697CA0762E99DBF500B29B45 /* Factory */; };
+		697CA07A2E99DC2700B29B45 /* TelemetryDeck in Frameworks */ = {isa = PBXBuildFile; productRef = 697CA0792E99DC2700B29B45 /* TelemetryDeck */; };
 		698726FE2E92C58800E6F0DE /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 698726FD2E92C58800E6F0DE /* RevenueCat */; };
 		698727002E92C58800E6F0DE /* RevenueCatUI in Frameworks */ = {isa = PBXBuildFile; productRef = 698726FF2E92C58800E6F0DE /* RevenueCatUI */; };
 /* End PBXBuildFile section */
@@ -45,6 +47,8 @@
 				698726FE2E92C58800E6F0DE /* RevenueCat in Frameworks */,
 				3744638E23287337009833E5 /* StoreKit.framework in Frameworks */,
 				698727002E92C58800E6F0DE /* RevenueCatUI in Frameworks */,
+				697CA07A2E99DC2700B29B45 /* TelemetryDeck in Frameworks */,
+				697CA0772E99DBF500B29B45 /* Factory in Frameworks */,
 			);
 		};
 /* End PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 			packageProductDependencies = (
 				698726FD2E92C58800E6F0DE /* RevenueCat */,
 				698726FF2E92C58800E6F0DE /* RevenueCatUI */,
+				697CA0762E99DBF500B29B45 /* Factory */,
+				697CA0792E99DC2700B29B45 /* TelemetryDeck */,
 			);
 			productName = "uni-converter";
 			productReference = 37CC93C823188E62009A60D5 /* Universe Convert.app */;
@@ -125,6 +131,8 @@
 			mainGroup = 37CC93BF23188E62009A60D5;
 			packageReferences = (
 				698726FC2E92C58800E6F0DE /* XCRemoteSwiftPackageReference "purchases-ios-spm" */,
+				697CA0752E99DBF500B29B45 /* XCRemoteSwiftPackageReference "Factory" */,
+				697CA0782E99DC2700B29B45 /* XCRemoteSwiftPackageReference "SwiftSDK" */,
 			);
 			preferredProjectObjectVersion = 90;
 			productRefGroup = 37CC93C923188E62009A60D5 /* Products */;
@@ -337,6 +345,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		697CA0752E99DBF500B29B45 /* XCRemoteSwiftPackageReference "Factory" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Factory";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.3;
+			};
+		};
+		697CA0782E99DC2700B29B45 /* XCRemoteSwiftPackageReference "SwiftSDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TelemetryDeck/SwiftSDK";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.4;
+			};
+		};
 		698726FC2E92C58800E6F0DE /* XCRemoteSwiftPackageReference "purchases-ios-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RevenueCat/purchases-ios-spm.git";
@@ -348,6 +372,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		697CA0762E99DBF500B29B45 /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 697CA0752E99DBF500B29B45 /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
+		};
+		697CA0792E99DC2700B29B45 /* TelemetryDeck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 697CA0782E99DC2700B29B45 /* XCRemoteSwiftPackageReference "SwiftSDK" */;
+			productName = TelemetryDeck;
+		};
 		698726FD2E92C58800E6F0DE /* RevenueCat */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 698726FC2E92C58800E6F0DE /* XCRemoteSwiftPackageReference "purchases-ios-spm" */;
