@@ -13,7 +13,10 @@ import Factory
 
 extension Container {
     var analytics: Factory<AnalyticsService> {
-        self { TelemetryDeckAnalytics() }
+        self {
+            TelemetryDeckAnalytics.configure()
+            return TelemetryDeckAnalytics()
+        }
             .singleton
     }
 }
