@@ -120,8 +120,6 @@ struct ContentView: View {
                 self.showUpdate = false
             }
             
-            print("TotalLaunched = \(totalLaunched)")
-            
             self.settings.numberTimesLaunched = totalLaunched
             self.setDevice()
         }

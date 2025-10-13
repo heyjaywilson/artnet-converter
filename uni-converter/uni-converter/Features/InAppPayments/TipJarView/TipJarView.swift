@@ -19,6 +19,7 @@ struct TipJarView: View {
     @State private var packages: [String: Package] = [:]
     @State private var showTipInCoffees = false
     @State private var showCustomerCenter = false
+    @State private var urlSelected: URL? = nil
     
     var body: some View {
         List {
@@ -109,13 +110,37 @@ If you've found any value in Universe Converter, then consider tossing a tip my 
                     )
                 }
             }
-            Section {
-                Button("Need help?") {
+            Section(header: Text("Help")) {
+                Button(
+                    "Need help?",
+                    systemImage: SFSymbol.questionMarkCircle.rawValue
+                ) {
                     showCustomerCenter.toggle()
                 }
                 .sheet(isPresented: $showCustomerCenter) {
                     CustomerCenterView()
                 }
+                Button("Restore purchases",
+                       systemImage: SFSymbol.clockArrowTrianglehead2CounterClockwiseRotate90.rawValue) {
+                    Task {
+                        await appPaymentService.restorePurchases()
+                    }
+                }
+            }
+            Section(header: Text("Legal")) {
+                Button(
+                    "Privacy Policy",
+                    systemImage: SFSymbol.link.rawValue) {
+                        urlSelected = AppInfo.urlPrivacy
+                    }
+                Button(
+                    "Terms",
+                    systemImage: SFSymbol.link.rawValue) {
+                        urlSelected = AppInfo.urlPrivacy
+                    }
+            }
+            .sheet(item: $urlSelected) { url in
+                WebView(url: url)
             }
         }
         .task {

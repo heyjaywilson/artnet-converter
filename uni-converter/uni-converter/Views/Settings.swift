@@ -14,8 +14,6 @@ struct Settings: View {
     @EnvironmentObject var settingsManager: SettingsManager
     
     let website_URL: URL = URL(string: "https://cctplus.dev/universe-converter-for-artnet/")!
-    let privacyURL = URL(string: "https://cctplus.dev/apps-privacy-policy/")!
-    let termsURL = URL(string: "https://cctplus.dev/apps-terms-of-service/")!
     let bug_URL = URL(string: "https://github.com/heyjaywilson/artnet-converter/issues/new?assignees=&labels=&template=bug_report.md&title=BUG")!
     
     let request_URL: URL = URL(string: "https://github.com/heyjaywilson/artnet-converter/issues/new?assignees=&labels=&template=feature_request.md&title=FEATURE")!
@@ -74,10 +72,14 @@ struct Settings: View {
                             endPoint: .bottomTrailing
                         )
                     )
-                    NavigationLink(destination: WebView(url: privacyURL)) {
+                    NavigationLink(
+                        destination: WebView(url: AppInfo.urlPrivacy)
+                    ) {
                         Text("Privacy Policy")
                     }
-                    NavigationLink(destination: WebView(url: termsURL)) {
+                    NavigationLink(
+                        destination: WebView(url: AppInfo.urlTerms)
+                    ) {
                         Text("Terms")
                     }
                     NavigationLink(destination: WebView(url: website_URL)){

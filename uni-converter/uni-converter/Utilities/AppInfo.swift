@@ -8,11 +8,13 @@
 import Foundation
 
 enum AppInfo {
-  static let revenueCatKey = "mygOAyICoRrxHzKBOEFRXLkuAuIVrVnn"
-  static let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "0.0.0"
-  /// Current build number of the app
-  static let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "0"
-  /// App's display name
-  static let name = Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? "Universer Converter"
-  static let bundleId = Bundle.main.bundleIdentifier!
+    static let revenueCatKey = "mygOAyICoRrxHzKBOEFRXLkuAuIVrVnn"
+    static let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "0.0.0"
+    /// Current build number of the app
+    static let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "0"
+    /// App's display name
+    static let name = Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? "Universer Converter"
+    static let bundleId = Bundle.main.bundleIdentifier!
+    static let urlPrivacy = URL(string: "https://cctplus.dev/apps-privacy-policy/")!
+    static let urlTerms = URL(string: "https://cctplus.dev/apps-terms-of-service/")!
 }
